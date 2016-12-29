@@ -1,0 +1,24 @@
+.container
+  %h1 Order details:
+  
+  General information:
+  = @order.id
+  = @order.total
+  = @order.created_at
+    
+  First course:
+  = @first_course.title
+  = @first_course.price
+  = image_tag @first_course.image_url.to_s
+    
+  Main course:
+  = @main_course.title
+  = @main_course.price
+  = image_tag @main_course.image_url.to_s
+    
+  Drink:
+  = @drink.title
+  = @drink.price
+  = image_tag @drink.image_url.to_s
+  
+  = link_to "Back", :back

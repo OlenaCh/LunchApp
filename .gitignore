@@ -1,0 +1,21 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+
+# Ignore local settings
+/.ruby-version
+/.ruby-gemset
+/.rvmrc
+/.idea
+/.idea/workspace.xml
+/config/database.yml
+
+# Ignore application configuration
+/config/application.yml
+
+# Ignore coverage files
+/coverage/*

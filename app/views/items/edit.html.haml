@@ -1,0 +1,8 @@
+%h2 Edit item:
+
+= simple_form_for @item, :html => { :multipart => true, method: :put } do |f|
+  = f.input :title
+  = f.input :price
+  = image_tag @item.image_url.to_s
+  = f.input :image
+  = f.submit "Update"

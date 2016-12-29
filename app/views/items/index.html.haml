@@ -1,0 +1,23 @@
+.container
+  %h1 All menu items:
+  #accordion.panel-group
+    .panel.panel-default
+      - @items_list.each do |key1, value1|
+        .panel-heading
+          %h4.panel-title
+            %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "##{key1}"}= key1
+        .panel-collapse.collapse{:id => key1}
+          %ul.list-group
+            - value1.each do |key2, value2|
+              %li.list-group-item
+                %h4.item-title= key2
+                .item-content{:id => key2}
+                  %form
+                    - value2.each do |item|
+                      %label
+                        = item.title
+                        = item.price
+                        = image_tag item.image_url.to_s
+                      - if current_user.admin
+                        = button_to "Edit", { action: "edit", id: item.id }, method: :get
+                        = button_to "Delete", { action: "destroy", id: item.id }, method: :delete

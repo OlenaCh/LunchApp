@@ -1,0 +1,30 @@
+.container
+  For today lunch you can order:
+  = form_for @order do |f|
+  
+    %h4.title First courses:
+    .field
+      - @first_courses.each do |item|
+        = f.radio_button :first_course_id, item.id
+        = item.title
+        = item.price
+        = image_tag item.image_url.to_s
+        
+    %h4.title Main courses:
+    .field
+      - @main_courses.each do |item|
+        = f.radio_button :main_course_id, item.id
+        = item.title
+        = item.price
+        = image_tag item.image_url.to_s
+        
+    %h4.title Drinks:
+    .field
+      - @drinks.each do |item|
+        = f.radio_button :drink_id, item.id
+        = item.title
+        = item.price
+        = image_tag item.image_url.to_s
+        
+    .actions
+      = f.submit "Place order!"

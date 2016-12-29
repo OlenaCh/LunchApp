@@ -1,0 +1,8 @@
+%h2 Add a new organization:
+
+= simple_form_for @organization, :html => { method: :post } do |f|
+  = f.input :title
+  = f.input :address
+  = f.input :email
+  = f.input :phone
+  = f.submit "Add"
