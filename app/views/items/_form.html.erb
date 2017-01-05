@@ -1,0 +1,12 @@
+<%= simple_form_for item, :html => {:multipart => true} do |f| %>
+  <% types.each do |type| %>
+    <input type="radio" name="type" value="<%= type.id %>"><%= type.title %>
+  <% end %>
+  <%= f.input :title %>
+  <%= f.input :price %>
+  <% if image %>
+    <%= image_tag image %>
+  <% end %>
+  <%= f.input :image %>
+  <%= f.submit "#{action}" %>
+<% end %>

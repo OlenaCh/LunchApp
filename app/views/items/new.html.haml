@@ -1,9 +1,0 @@
-%h2 Add a menu item:
-
-= simple_form_for @item, :html => {:multipart => true} do |f|
-  = f.simple_fields_for :item_types do |ff|
-    = ff.input :type_id, as: :radio_buttons, collection: @types
-  = f.input :title
-  = f.input :price
-  = f.input :image
-  = f.submit "Add"

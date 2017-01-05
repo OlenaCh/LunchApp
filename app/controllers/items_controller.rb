@@ -2,64 +2,57 @@ class ItemsController < ApplicationController
   # before_action :allow_admin_only, except: [:index, :show]
 
   def new
-    @types = Type.all
-    @item = Item.new
-    @item.item_types.build
+    new_or_edit 'new'
   end
 
   def create
-  	@item = Item.create(item_params)
-  	if @item.save
-  	  flash[:success] = 'Item created!'
-  	  redirect_to items_path
-  	else
-  	  flash[:error] = 'Something went wrong - no item created!'
-  	  render 'new'
-  	end
+    type = Type.find_by_id(params[:type])
+  	item = type.items.build(item_params)
+  	redirect_to items_path and return false if item.save
+  	new_or_edit 'new'
   end
   
   def index
-    @items_list = sort_by_weekday_and_type
+    @items = Item.all
   end
   
   def edit
-    @item = Item.find_by_id(params[:id])
+    new_or_edit('edit', Item.find_by_id(params[:id]))
   end
   
   def update
-    @item = Item.find_by_id(params[:id])
-    if @item.update(item_params)
-      flash[:success] = 'Item updated!'
-  	  redirect_to items_path
-  	else
-  	  flash[:error] = 'Something went wrong - no item updated!'
-  	  render 'edit'
-  	end
+    item = Item.find_by_id(params[:id])
+    item = change_item_type item if check_for_type_difference item.type_id
+    redirect_to items_path and return false if item.update(item_params)
+    new_or_edit('edit', item)
   end
   
   def destroy
-    @item = Item.find_by_id(params[:id])
-    @item.destroy
-    flash[:success] = 'Item destroyed!'
+    item = Item.find_by_id(params[:id])
+    item.destroy
     redirect_to items_path
   end
 
   private
   
-  def sort_by_weekday_and_type
-    items_list = {}
-    Weekday.all.each do |weekday|
-      types = {}
-      Type.all.each do |type|
-        types[type.title] = Item.includes(:types, :weekdays).where(:types => { :id => type.id }, 
-                            :weekdays => { :id => weekday.id })
-      end
-      items_list[weekday.day] = types
-    end
-    items_list
+  def change_item_type item
+    type = Type.find_by_id(item.type_id)
+    type.items.delete(Item.find_by_id(item.id)) if type
+    type = Type.find_by_id(params[:type])
+    type.items << item
+    item
+  end
+  
+  def check_for_type_difference id
+    return true if id != params[:type] && params[:type].present?
+    false
+  end
+  
+  def new_or_edit(page, item = nil)
+    render page, locals: { types: Type.all, item: item ? item : Item.new }
   end
 
   def item_params
-  	params.require(:item).permit(:title, :price, :image, item_types_attributes: :type_id)
+  	params.require(:item).permit(:title, :price, :image)
   end
 end
