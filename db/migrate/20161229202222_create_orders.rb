@@ -2,6 +2,7 @@ class CreateOrders < ActiveRecord::Migration
   def change
     create_table :orders do |t|
       t.belongs_to :user, index: true
+      t.string  :day
       t.integer :first_course_id,  :default => 0
       t.integer :main_course_id,   :default => 0
       t.integer :drink_id,         :default => 0

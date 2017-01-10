@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20161229203104) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
+    t.string   "day"
     t.integer  "first_course_id", default: 0
     t.integer  "main_course_id",  default: 0
     t.integer  "drink_id",        default: 0
@@ -73,18 +74,5 @@ ActiveRecord::Schema.define(version: 20161229203104) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["organization_id"], name: "index_users_on_organization_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "weekdays", force: :cascade do |t|
-    t.integer  "daily_order_id"
-    t.string   "daily_order_type"
-    t.integer  "daily_menu_id"
-    t.string   "daily_menu_type"
-    t.string   "day"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  add_index "weekdays", ["daily_menu_type", "daily_menu_id"], name: "index_weekdays_on_daily_menu_type_and_daily_menu_id", using: :btree
-  add_index "weekdays", ["daily_order_type", "daily_order_id"], name: "index_weekdays_on_daily_order_type_and_daily_order_id", using: :btree
 
 end

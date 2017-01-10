@@ -1,6 +1,5 @@
 class Order < ActiveRecord::Base
-  belongs_to :user
-  has_many :weekdays, as: :daily_order    
+  belongs_to :user  
   
   validates :first_course_id, presence: true, 
                               numericality: { only_integer: true }
