@@ -1,7 +1,5 @@
 <%= simple_form_for item, :html => {:multipart => true} do |f| %>
-  <% types.each do |type| %>
-    <input type="radio" name="type" value="<%= type.id %>"><%= type.title %>
-  <% end %>
+  <%= f.input :item_type, as: :radio_buttons, collection: types %>
   <%= f.input :title %>
   <%= f.input :price %>
   <% if image %>

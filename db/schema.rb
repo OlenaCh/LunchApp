@@ -17,15 +17,13 @@ ActiveRecord::Schema.define(version: 20161229203104) do
   enable_extension "plpgsql"
 
   create_table "items", force: :cascade do |t|
-    t.integer  "type_id"
+    t.string   "item_type",  null: false
     t.string   "title",      null: false
     t.float    "price",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "image"
   end
-
-  add_index "items", ["type_id"], name: "index_items_on_type_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
@@ -45,12 +43,6 @@ ActiveRecord::Schema.define(version: 20161229203104) do
     t.string   "address",    null: false
     t.string   "phone",      null: false
     t.string   "email",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "types", force: :cascade do |t|
-    t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

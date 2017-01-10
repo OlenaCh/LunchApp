@@ -6,8 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    type = Type.find_by_id(params[:type])
-  	item = type.items.build(item_params)
+  	item = Item.new(item_params)
   	redirect_to items_path and return false if item.save
   	new_or_edit 'new'
   end
@@ -22,7 +21,6 @@ class ItemsController < ApplicationController
   
   def update
     item = Item.find_by_id(params[:id])
-    item = change_item_type item if check_for_type_difference item.type_id
     redirect_to items_path and return false if item.update(item_params)
     new_or_edit('edit', item)
   end
@@ -35,24 +33,12 @@ class ItemsController < ApplicationController
 
   private
   
-  def change_item_type item
-    type = Type.find_by_id(item.type_id)
-    type.items.delete(Item.find_by_id(item.id)) if type
-    type = Type.find_by_id(params[:type])
-    type.items << item
-    item
-  end
-  
-  def check_for_type_difference id
-    return true if id != params[:type] && params[:type].present?
-    false
-  end
-  
   def new_or_edit(page, item = nil)
-    render page, locals: { types: Type.all, item: item ? item : Item.new }
+    render page, locals: { types: Item.types.values, 
+                           item: item ? item : Item.new }
   end
 
   def item_params
-  	params.require(:item).permit(:title, :price, :image)
+  	params.require(:item).permit(:item_type, :title, :price, :image)
   end
 end
