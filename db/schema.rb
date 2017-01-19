@@ -56,15 +56,6 @@ ActiveRecord::Schema.define(version: 20170110203754) do
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
-  create_table "organizations", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.string   "address",    null: false
-    t.string   "phone",      null: false
-    t.string   "email",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.integer  "organization_id"
     t.string   "email",                  default: "",    null: false

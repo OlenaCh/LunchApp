@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   
   resources :users, only: [:index]
   resources :items, :orders, :menus
-  resources :organizations, only: [:new, :create, :edit]
   
   get '/admins' => 'static_pages#admins_only', as: 'not_admins'
   root 'static_pages#index'

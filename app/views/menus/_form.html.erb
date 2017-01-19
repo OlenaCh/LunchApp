@@ -1,0 +1,16 @@
+<%= simple_form_for menu, :html => {:multipart => true} do |f| %>
+  <%= f.input :weekday, as: :radio_buttons, #collection: types %>
+  <%= f.input :f_course_id_1 %>
+  <%= f.input :f_course_id_2 %>
+  <%= f.input :f_course_id_3 %>
+  <%= f.input :f_course_id_4 %>
+  <%= f.input :m_course_id_1 %>
+  <%= f.input :m_course_id_2 %>
+  <%= f.input :m_course_id_3 %>
+  <%= f.input :m_course_id_4 %>
+  <%= f.input :drink_id_1 %>
+  <%= f.input :drink_id_2 %>
+  <%= f.input :drink_id_3 %>
+  <%= f.input :drink_id_4 %>
+  <%= f.submit "#{action}" %>
+<% end %>

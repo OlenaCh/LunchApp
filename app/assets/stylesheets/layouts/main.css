@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box; 
+}
+
+.div.sidebar.items {
+  width: 20%;
+  padding: 40px 0 20px 40px;
+}
+
+.ul.sidebar.items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.li.sidebar.item {
+  padding: 10px 0 10px 10px;
+  font-size: 1.8rem;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+h1 {
+  margin: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}

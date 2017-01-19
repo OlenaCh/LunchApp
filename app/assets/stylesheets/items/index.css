@@ -1,0 +1,19 @@
+.container {
+  width: 80%;
+}
+
+.ul.items.list {
+  list-style: none;
+}
+
+.li.items.list.element {
+  display: flex;
+}
+
+.div.items.list.element.image {
+  padding: 30px;
+}
+
+.div.items.list.element.details {
+  padding: 30px;
+}

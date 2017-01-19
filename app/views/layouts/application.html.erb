@@ -11,26 +11,26 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", :media => "all" %>
   </head>
+  
   <body>
-    <nav class="w3-sidenav w3-white w3-card-2" style="width:25%">
-      <br>
-      <% if signed_in? %>
-        <% if current_user.admin == true %>
-          <li><%= link_to "Users", users_path %></li>
-          <li><%= link_to "Orders", orders_path %></li>
-        <% else %>
-          <li><%= link_to "Edit profile", edit_user_registration_path %></li>
-          <li><%= link_to "Place order", new_order_path %></li>
+    <div class='div sidebar items'>
+      <ul class='ul sidebar items'>
+        <% if signed_in? %>
+          <% if current_user.admin == true %>
+            <li class='li sidebar item'><%= link_to "Users", users_path %></li>
+            <li class='li sidebar item'><%= link_to "Orders", orders_path %></li>
+          <% else %>
+            <li class='li sidebar item'><%= link_to "Edit profile", edit_user_registration_path %></li>
+            <li class='li sidebar item'><%= link_to "Place order", new_order_path %></li>
+          <% end %>
+          <li class='li sidebar item'><%= link_to "All menu items", items_path %></li>
+          <li class='li sidebar item'><%= link_to "Sign out", destroy_user_session_path, method: "delete" %></li>
         <% end %>
-        <li><%= link_to "All menu items", items_path %></li>
-        <li><%= link_to "Sign out", destroy_user_session_path, method: "delete" %></li>
-      <% end %>
-    </nav>
-    <header class="w3-container w3-teal">
-    </header>
-    <div class="main">
-      <%= yield %>
+      </ul>
     </div>
+    
+    <%= yield %>
+    
     <%= render 'layouts/footer' %>
   </body>
 </html>
