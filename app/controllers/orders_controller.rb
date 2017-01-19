@@ -1,9 +1,4 @@
 class OrdersController < ApplicationController
-  include OrdersHelper 
-  respond_to :html, :json, only: [:today_index]
-  before_action :allow_admin_only, only: [:index, :today_index, :show]
-  before_action :allow_user_only, only: [:new, :create]
-  
   def new
     @order = Order.new
     @first_courses = Order.first_courses_for_today

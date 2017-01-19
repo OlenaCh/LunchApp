@@ -1,0 +1,8 @@
+.items-to-choose {
+  display: none;    
+}
+
+input.numeric.integer.optional {
+  width: 50px;
+  background-color: #bbbbbb;
+}

@@ -6,7 +6,4 @@ class StaticPagesController < ApplicationController
   
   def admins_only
   end
-  
-  def users_only
-  end
 end

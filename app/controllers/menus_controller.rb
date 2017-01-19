@@ -29,9 +29,9 @@ class MenusController < ApplicationController
   private
   
   def new_or_edit(page, menu = nil)
-    render page, locals: { fc_items: Item.first_courses, 
-                           mc_items: Item.main_courses,
-                           drink_items: Item.drinks,
+    render page, locals: { weekdays: Menu.weekdays.values,
+                           fc_items: Item.first_courses, 
+                           mc_items: Item.main_courses, drink_items: Item.drinks,
                            menu: menu ? menu : Menu.new }
   end
 

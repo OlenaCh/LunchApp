@@ -15,12 +15,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'simple_form'
-gem 'haml'
-
-# Bootstrap
-gem "twitter-bootstrap-rails"
 
 # Pagination
 gem 'will_paginate',           '3.1.0'
@@ -28,9 +23,6 @@ gem 'bootstrap-will_paginate', '0.0.10'
 
 # Fake data
 gem 'faker',                   '1.6.3'
-
-# JSON APIs
-gem 'jbuilder', '~> 2.0'
 
 # Uploading files
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'

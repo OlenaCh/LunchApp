@@ -1,0 +1,5 @@
+<% items.each do |item| %>
+  <%= image_tag item.image_url.to_s %>
+  <%= item.title %>
+  <%= item.price %>
+<% end %>

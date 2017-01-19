@@ -3,18 +3,11 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   
   def after_sign_in_path_for(resource)
-    if current_user.admin
-      return users_path
-    else
-      return items_path
-    end
+    return users_path if current_user.admin
+    items_path
   end
   
   def allow_admin_only
     redirect_to not_admins_path unless current_user.admin
-  end
-  
-  def allow_user_only
-    redirect_to not_users_path if current_user.admin
   end
 end
