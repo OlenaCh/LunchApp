@@ -1,6 +1,4 @@
 class ItemsController < ApplicationController
-  # before_action :allow_admin_only, except: [:index, :show]
-
   def new
     new_or_edit 'new'
   end
