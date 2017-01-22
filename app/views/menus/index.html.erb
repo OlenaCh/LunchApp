@@ -1,10 +1,12 @@
 <div class='container'>
   <h1>Week menus:</h1>
   <% @menus.each do |menu| %>
+    <%= menu.weekday %>
     <ul class='ul menus list'>
       <li class='li menus list element'>
-        
-        
+        <%= menu.f_course_id_1 %>
+        <%= menu.m_course_id_1 %>
+        <%= menu.drink_id_1 %>
       </li>
     </ul>
   <% end %>

@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20170110203754) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "day"
+    # t.string   "day"    status which can be changed by admin + look for payment. Do we keep details?
     t.integer  "first_course_id", default: 0
     t.integer  "main_course_id",  default: 0
     t.integer  "drink_id",        default: 0
