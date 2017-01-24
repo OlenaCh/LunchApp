@@ -1,12 +1,23 @@
 <div class='container'>
   <h1>Week menus:</h1>
-  <% @menus.each do |menu| %>
+  <% menus.each do |menu| %>
     <%= menu.weekday %>
     <ul class='ul menus list'>
       <li class='li menus list element'>
-        <%= menu.f_course_id_1 %>
-        <%= menu.m_course_id_1 %>
-        <%= menu.drink_id_1 %>
+        <%= menu.f_course_id_1 if menu.f_course_id_1? %>
+        <%= menu.f_course_id_2 if menu.f_course_id_2? %>
+        <%= menu.f_course_id_3 if menu.f_course_id_3? %>
+        <%= menu.f_course_id_4 if menu.f_course_id_4? %>
+        
+        <%= menu.m_course_id_1 if menu.m_course_id_1? %>
+        <%= menu.m_course_id_2 if menu.m_course_id_2? %>
+        <%= menu.m_course_id_3 if menu.m_course_id_3? %>
+        <%= menu.m_course_id_4 if menu.m_course_id_4? %>
+        
+        <%= menu.drink_id_1 if menu.drink_id_1? %>
+        <%= menu.drink_id_2 if menu.drink_id_2? %>
+        <%= menu.drink_id_3 if menu.drink_id_3? %>
+        <%= menu.drink_id_4 if menu.drink_id_4? %>
       </li>
     </ul>
   <% end %>

@@ -1,5 +1,6 @@
 class Item < ActiveRecord::Base
   include ItemType
+  has_and_belongs_to_many :menus
   mount_uploader :image, AvatarUploader
   
   validates :title, presence: true, length: { in: 4..60 }, uniqueness: true

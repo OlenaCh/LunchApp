@@ -1,0 +1,7 @@
+<% (1..4).each do |ctr| %>
+  <div class='course-row'>
+    <label><%= label %></label>
+    <input type='text' class='menu-item' id="menu_<%= input + ctr.to_s %>" name="menu[<%= input + ctr.to_s %>]">
+    <div class="choose <%= cls %>" data="<%= ctr %>"</div>Choose</div>
+  </div>
+<% end %>

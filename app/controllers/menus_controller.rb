@@ -4,13 +4,14 @@ class MenusController < ApplicationController
   end
 
   def create
-  	menu = Menu.new(menu_params)
+  	menu = Menu.new(weekday: menu_params[:weekday])
+  	
   	redirect_to menus_path and return false if menu.save
   	new_or_edit 'new'
   end
   
   def index
-    @menus = Menu.all
+    render 'index', locals: { menus: Menu.all }
   end
   
   def edit
@@ -31,15 +32,10 @@ class MenusController < ApplicationController
   def new_or_edit(page, menu = nil)
     render page, locals: { weekdays: Menu.weekdays.values,
                            fc_items: Item.first_courses, 
-                           mc_items: Item.main_courses, drink_items: Item.drinks,
-                           menu: menu ? menu : Menu.new }
+                           mc_items: Item.main_courses, drink_items: Item.drinks }
   end
 
   def menu_params
-  	params.require(:menu).permit(:weekday, :f_course_id_1, :f_course_id_2,
-  	                             :f_course_id_3, :f_course_id_4, :m_course_id_1,
-  	                             :m_course_id_2, :m_course_id_3, :m_course_id_4, 
-  	                             :drink_id_1, :drink_id_2, :drink_id_3, 
-  	                             :drink_id_4)
+  	params.require(:menu).permit(:weekday, :item_id)
   end
 end

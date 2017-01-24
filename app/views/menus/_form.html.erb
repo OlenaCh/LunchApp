@@ -1,44 +1,36 @@
-<%= simple_form_for menu, :html => {:multipart => true} do |f| %>
-  <%= f.input :weekday, as: :radio_buttons, collection: weekdays %>
+<form action='/menus' method='POST'>
+  <label>Weekday:</label>
+  <% weekdays.each do |day| %>
+    <input type='radio' name="menu[weekday]" value="<%= day %>"><%= day %>
+  <% end %>
   
   <div class='courses'>
-    <div class='input first-courses'>
-      <%= f.input :f_course_id_1, label: 'First course' %>
-      <%= f.input :f_course_id_2, label: 'First course' %>
-      <%= f.input :f_course_id_3, label: 'First course' %>
-      <%= f.input :f_course_id_4, label: 'First course' %>
-    </div>
-    <div class='choose-first-course'>Choose</div>
-    <div class='first-items-to-choose'>
+    <%= render partial: 'menus/inputs', locals: { input: 'f_course_id_',
+                                                  label: 'First course', 
+                                                  cls: 'first-course' } %>
+    <div class='first-items'>
       <%= render partial: 'menus/items', locals: { items: fc_items } %>
     </div>
   </div>
   
   <div class='courses'>
-    <div class='input main-courses'>
-      <%= f.input :m_course_id_1, label: 'Main course' %>
-      <%= f.input :m_course_id_2, label: 'Main course' %>
-      <%= f.input :m_course_id_3, label: 'Main course' %>
-      <%= f.input :m_course_id_4, label: 'Main course' %>
-    </div>
-    <div class='choose-main-course'>Choose</div>
-    <div class='main-items-to-choose'>
+    <%= render partial: 'menus/inputs', locals: { input: 'm_course_id_',
+                                                  label: 'Main course', 
+                                                  cls: 'main-course' } %>
+    
+    <div class='main-items'>
       <%= render partial: 'menus/items', locals: { items: mc_items } %>
     </div>
   </div>
   
   <div class='courses'>
-    <div class='input drinks'>
-      <%= f.input :drink_id_1, label: 'Drink' %>
-      <%= f.input :drink_id_2, label: 'Drink' %>
-      <%= f.input :drink_id_3, label: 'Drink' %>
-      <%= f.input :drink_id_4, label: 'Drinsk' %>
-    </div>
-    <div class='choose-drink'>Choose</div>
-    <div class='drink-items-to-choose'>
+    <%= render partial: 'menus/inputs', locals: { input: 'drink_id_',
+                                                  label: 'Drink', 
+                                                  cls: 'drink' } %>
+    
+    <div class='drinks'>
       <%= render partial: 'menus/items', locals: { items: drink_items } %>
     </div>
   </div>
-  
-  <%= f.submit "#{action}" %>
-<% end %>
+  <input type='submit' value="<%= action %>">
+</form>

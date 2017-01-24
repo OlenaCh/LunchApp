@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  belongs_to :user  
+  belongs_to :user
   
   # validates :first_course_id, presence: true, 
   #                             numericality: { only_integer: true }

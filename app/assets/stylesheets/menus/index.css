@@ -1,8 +1,21 @@
-.items-to-choose {
+div.first-items, div.main-items, div.drinks {
   display: none;    
 }
 
-input.numeric.integer.optional {
+input.menu-item {
   width: 50px;
   background-color: #bbbbbb;
+  margin-left: 200px;
+}
+
+div.choose {
+  margin-left: 200px;
+  border: 1px solid;
+  width: 80px;
+  height: 20px;
+  text-align: center;
+}
+
+div.course-row {
+  display: flex;
 }

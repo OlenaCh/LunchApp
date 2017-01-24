@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   has_many :orders, dependent: :destroy
   
-  validates :name, presence: true, length: { in: 2..40 }  
+  # validates :name, presence: true, length: { in: 2..40 }  
   
   after_create :set_admin
  

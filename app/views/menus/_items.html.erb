@@ -1,5 +1,7 @@
 <% items.each do |item| %>
-  <%= image_tag item.image_url.to_s %>
-  <%= item.title %>
-  <%= item.price %>
+  <div class='item' data="<%= item.id %>">
+    <%= image_tag item.image_url.to_s %>
+    <%= item.title %>
+    <%= item.price %>
+  </div>
 <% end %>
