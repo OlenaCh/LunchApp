@@ -5,7 +5,7 @@ class MenusController < ApplicationController
 
   def create
   	menu = Menu.new(weekday: menu_params[:weekday])
-  	
+  	menu.items = menu_items
   	redirect_to menus_path and return false if menu.save
   	new_or_edit 'new'
   end
@@ -19,9 +19,10 @@ class MenusController < ApplicationController
   end
   
   def update
-    menu = Menu.find_by_id(params[:id])
-    redirect_to menus_path and return false if menu.update(menu_params)
-    new_or_edit('edit', menu)
+    # menu = Menu.find_by_id(params[:id])
+    # menu.items = menu_items
+    # redirect_to menus_path and return false if menu.update
+    # new_or_edit('edit', menu)
   end
   
   def destroy
@@ -29,13 +30,22 @@ class MenusController < ApplicationController
 
   private
   
+  def menu_items
+    menu_items = []
+    menu_params[:items].each do |id| 
+      menu_items.push(Item.find(id)) unless id.blank? 
+    end
+    menu_items
+  end
+  
   def new_or_edit(page, menu = nil)
-    render page, locals: { weekdays: Menu.weekdays.values,
+    render page, locals: { weekdays: Menu.weekdays.values, menu: menu,
                            fc_items: Item.first_courses, 
                            mc_items: Item.main_courses, drink_items: Item.drinks }
   end
 
   def menu_params
-  	params.require(:menu).permit(:weekday, :item_id)
+    params[:menu][:items] ||= []
+  	params.require(:menu).permit(:weekday, items: [] )
   end
 end

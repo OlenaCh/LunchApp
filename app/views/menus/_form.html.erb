@@ -1,32 +1,34 @@
-<form action='/menus' method='POST'>
+<form class='menu-form' action='/menus' method='POST'>
   <label>Weekday:</label>
   <% weekdays.each do |day| %>
-    <input type='radio' name="menu[weekday]" value="<%= day %>"><%= day %>
+    <% if menu %>
+      <input type='radio' name='menu[weekday]' value="<%= day %>" checked><%= day %>
+    <% else %>
+      <input type='radio' name='menu[weekday]' value="<%= day %>"><%= day %>
+    <% end %>
   <% end %>
   
-  <div class='courses'>
-    <%= render partial: 'menus/inputs', locals: { input: 'f_course_id_',
-                                                  label: 'First course', 
-                                                  cls: 'first-course' } %>
+  <div class='courses-wrapper'>
+    <div class='courses'>
+      <% if menu %>
+        <% menu.items.each do |item| %>
+          <%= render partial: 'menus/input', locals: { id: item.id.to_s } %>
+        <% end %>
+      <% else %>
+        <%= render partial: 'menus/input', locals: { id: '' } %>
+      <% end %>
+    </div>
+    <div class='add menu-item'</div>Add item</div>
+  </div>
+  
+  <div class='items'>
     <div class='first-items'>
       <%= render partial: 'menus/items', locals: { items: fc_items } %>
     </div>
-  </div>
-  
-  <div class='courses'>
-    <%= render partial: 'menus/inputs', locals: { input: 'm_course_id_',
-                                                  label: 'Main course', 
-                                                  cls: 'main-course' } %>
     
     <div class='main-items'>
       <%= render partial: 'menus/items', locals: { items: mc_items } %>
     </div>
-  </div>
-  
-  <div class='courses'>
-    <%= render partial: 'menus/inputs', locals: { input: 'drink_id_',
-                                                  label: 'Drink', 
-                                                  cls: 'drink' } %>
     
     <div class='drinks'>
       <%= render partial: 'menus/items', locals: { items: drink_items } %>

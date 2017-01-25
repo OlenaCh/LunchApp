@@ -8,7 +8,7 @@ input.menu-item {
   margin-left: 200px;
 }
 
-div.choose {
+div.choose, div.add {
   margin-left: 200px;
   border: 1px solid;
   width: 80px;
