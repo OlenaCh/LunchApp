@@ -1,33 +1,98 @@
 body {
   margin: 0;
   padding: 0;
-  display: -webkit-box; 
+  display: -webkit-box;
+  background-color: rgba(255, 242, 230, 1);
+  color: rgba(137, 200, 106, 1);
+  width: 100%;
+}
+
+.page-content {
+	width: 80%;
 }
 
 .div.sidebar.items {
   width: 20%;
-  padding: 40px 0 20px 40px;
+  background-color: rgba(137, 200, 106, 1);
 }
 
 .ul.sidebar.items {
-  margin: 0;
-  padding: 0;
   list-style: none;
 }
 
 .li.sidebar.item {
-  padding: 10px 0 10px 10px;
-  font-size: 1.8rem;
+	margin-left: -10px;
+  padding: 15px 0 15px 10px;
+  font-size: 30px;
+  font-family: cursive;
 }
 
-a {
+.li.sidebar.item:hover {
+	background-color: rgba(255, 242, 230, 1);
+	border-radius: 10px 0 0 10px;
+}
+
+.li.sidebar.item a {
 	text-decoration: none;
 	cursor: pointer;
+  color: rgba(255, 242, 230, 1);
+}
+
+.li.sidebar.item a:hover {
+	color: rgba(137, 200, 106, 1);
+}
+
+.header {
+	width: 100%;
+	height: 120px;
+	background-color: rgba(255, 242, 230, 1);
+	display: flex;
+}
+
+.header-img {
+	width: 110px;
+  height: 110px;
+  margin: 20px 75px 20px 75px;
+  background-size: 360px;
+  background-image: url("/assets/food_pics.jpg");
+  border: solid 2px rgba(137, 200, 106, 1);
+  border-radius: 60px;
+}
+
+#img-burger {
+	background-position: -235px -14px;
+}
+
+#img-eggs {
+	background-position: -125px 134px;
+}
+
+#img-pizza {
+	background-position: -125px -14px;
+}
+
+#img-sweets {
+	background-position: -15px -14px;
+}
+
+.container {
+	width: 100%;
+	background-color: rgba(255, 242, 230, 1);
 }
 
 h1 {
   margin: 0;
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   text-align: center;
+  font-family: cursive;
+  font-size: 50px;
+  color: rgba(137, 200, 106, 1);
+}
+
+footer {
+	font-family: cursive;
+  font-size: 20px;
+  float: right;
+  margin-right: 20px;
 }

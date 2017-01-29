@@ -1,9 +1,8 @@
-.container {
-  width: 80%;
-}
-
 .ul.items.list {
   list-style: none;
+  margin: 7px;
+  border: solid 1.5px rgba(137, 200, 106, 1);
+  border-radius: 10px;
 }
 
 .li.items.list.element {
@@ -11,9 +10,49 @@
 }
 
 .div.items.list.element.image {
-  padding: 30px;
+  width: 30%;
+}
+
+.div.items.list.element.image img {
+  margin: 22px 0 22px 53px;
+  border: solid 2px rgba(137, 200, 106, 1);
+  border-radius: 30px;
+  overflow: hidden;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.div.items.list.element.image img:hover {
+  opacity: 1;
 }
 
 .div.items.list.element.details {
-  padding: 30px;
+  width: 30%;
+  font-family: cursive;
+  font-size: 25px;
+  color: rgba(137, 200, 106, 1);
+}
+
+.div.items.list.element.details.title {
+  padding: 50px 0 30px 110px;
+}
+
+.div.items.list.element.details.price {
+  padding: 50px 0 30px 110px;
+}
+
+.div.items.list.element.admin-panel form {
+  padding: 50px 0 30px 110px;
+}
+
+.div.items.list.element.admin-panel input {
+  background-color: rgba(137, 200, 106, 1);
+  border: none;
+  border-radius: 10px;
+  color: rgba(255, 242, 230, 1);
+  width: 90px;
+  height: 40px;
+  font-family: cursive;
+  font-size: 20px;
+  cursor: pointer;
 }
