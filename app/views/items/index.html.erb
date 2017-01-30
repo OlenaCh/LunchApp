@@ -1,6 +1,6 @@
 <div class='container'>
   <h1>All menu items:</h1>
-  <% @items.each do |item| %>
+  <% items.each do |item| %>
     <ul class='ul items list'>
       <li class='li items list element'>
         <div class='div items list element image'>
@@ -23,4 +23,24 @@
       </li>
     </ul>
   <% end %>
+  
+  <ul class='ul items list'>
+    <li class='li items list element'>
+      <div class='div items list element empty-image'>
+        <div class='empty-img'></div>
+      </div>
+      <div class='div items list element admin-panel'>
+        <div class='add-new-item'><p>Add</p></div>
+      </div>
+    </li>
+  </ul>
+  
+  <div class='new-item-form'>
+    <div class='popup-new-item'>
+      <h2 class='header'>Add item:</h2>
+      <%= render partial: 'items/form', locals: { item: item, 
+                                                types: types,
+                                                image: nil } %>
+    </div>
+  </div>
 </div>

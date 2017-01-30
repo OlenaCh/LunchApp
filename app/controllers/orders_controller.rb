@@ -1,8 +1,4 @@
 class OrdersController < ApplicationController
-  def new
-    @order = Order.new
-  end
-  
   def index
     # @orders = sort_by_weekday_and_user
   end
@@ -17,10 +13,6 @@ class OrdersController < ApplicationController
   # 	  flash[:alert] = 'Something went wrong - no order created!'
   # 	  render 'new'
   # 	end
-  end
-  
-  def edit
-    @order = Order.find_by_id(params[:id])
   end
   
   def update

@@ -1,26 +1,17 @@
 class ItemsController < ApplicationController
-  def new
-    new_or_edit 'new'
-  end
-
   def create
-  	item = Item.new(item_params)
-  	redirect_to items_path and return false if item.save
-  	new_or_edit 'new'
+  	Item.create(item_params)
+  	redirect_to items_path
   end
   
   def index
-    @items = Item.all
-  end
-  
-  def edit
-    new_or_edit('edit', Item.find_by_id(params[:id]))
+    render 'index', locals: set_locals()
   end
   
   def update
     item = Item.find_by_id(params[:id])
-    redirect_to items_path and return false if item.update(item_params)
-    new_or_edit('edit', item)
+    item.update(item_params)
+    redirect_to items_path
   end
   
   def destroy
@@ -31,9 +22,8 @@ class ItemsController < ApplicationController
 
   private
   
-  def new_or_edit(page, item = nil)
-    render page, locals: { types: Item.types.values, 
-                           item: item ? item : Item.new }
+  def set_locals(item = nil)
+   { types: Item.types.values, items: Item.all, item: item ? item : Item.new }
   end
 
   def item_params

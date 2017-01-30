@@ -1,0 +1,77 @@
+.new-item-form {
+  width: 100%;
+  height: 100%;
+  opacity: .85;
+  top: 0;
+  left: 0;
+  display: none;
+  position: fixed;
+  background-color: #313131;
+  overflow: auto
+}
+
+.add-new-item-btn-close {
+  position: absolute;
+  right: -14px;
+  top: -14px;
+  cursor: pointer;
+}
+
+.popup-new-item {
+  position: absolute;
+  left: 50%;
+  top: 17%;
+  max-width: 450px;
+  min-width: 250px;
+  margin-left: -202px;
+  background-color: rgba(255, 242, 230, 1);
+  border-radius: 10px;
+}
+
+.popup-new-item h2 {
+  height: auto;
+  width: 34%;
+  padding: 0 0 0 33%;
+  font-family: cursive;
+}
+
+.new-item-label {
+  font-family: cursive;
+  font-size: 25px;
+}
+
+.new-item-form-element {
+  margin: 10px 15px;
+}
+
+.new-item-form-element.radio {
+  display: flex;
+}
+
+.new-item-txt-input {
+  float: right;
+  margin-top: 10px;
+  border: solid 1.5px rgba(137, 200, 106, 1);
+  border-radius: 6px;
+}
+
+.add-new-item-btn {
+  background-color: rgba(137, 200, 106, 1);
+  border: none;
+  border-radius: 10px;
+  color: rgba(255, 242, 230, 1);
+  width: 90px;
+  height: 40px;
+  font-family: cursive;
+  font-size: 20px;
+  cursor: pointer;
+  float: left;
+  margin: 15px 0 15px 37%;
+}
+
+.add-new-item-btn p {
+  height: 80%;
+  width: 45%;
+  margin: 0;
+  padding: 5px 0 0 25px;
+}

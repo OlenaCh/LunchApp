@@ -13,7 +13,7 @@
   width: 30%;
 }
 
-.div.items.list.element.image img {
+.div.items.list.element.image img, .empty-img {
   margin: 22px 0 22px 53px;
   border: solid 2px rgba(137, 200, 106, 1);
   border-radius: 30px;
@@ -24,6 +24,16 @@
 
 .div.items.list.element.image img:hover {
   opacity: 1;
+}
+
+.div.items.list.element.empty-image {
+  width: 60%;
+}
+
+.empty-img {
+  width: 200px;
+  height: 200px;
+  cursor: default;
 }
 
 .div.items.list.element.details {
@@ -45,7 +55,7 @@
   padding: 50px 0 30px 110px;
 }
 
-.div.items.list.element.admin-panel input {
+.div.items.list.element.admin-panel input, .add-new-item {
   background-color: rgba(137, 200, 106, 1);
   border: none;
   border-radius: 10px;
@@ -55,4 +65,15 @@
   font-family: cursive;
   font-size: 20px;
   cursor: pointer;
+}
+
+.add-new-item {
+  margin: 105px 0 0 110px;
+}
+
+.add-new-item p {
+  height: 80%;
+  width: 45%;
+  margin: 0;
+  padding: 5px 0 0 25px;
 }
