@@ -17,12 +17,17 @@ ActiveRecord::Schema.define(version: 20170124214635) do
   enable_extension "plpgsql"
 
   create_table "items", force: :cascade do |t|
-    t.string   "item_type",  null: false
-    t.string   "title",      null: false
-    t.float    "price",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "item_type",    null: false
+    t.string   "title",        null: false
+    t.float    "price",        null: false
     t.string   "image"
+    t.string   "description"
+    t.string   "fat"
+    t.string   "carbohydrate"
+    t.string   "protein"
+    t.string   "calorie"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "items_menus", id: false, force: :cascade do |t|
@@ -38,19 +43,6 @@ ActiveRecord::Schema.define(version: 20170124214635) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "orders", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "day"
-    t.integer  "first_course_id", default: 0
-    t.integer  "main_course_id",  default: 0
-    t.integer  "drink_id",        default: 0
-    t.float    "total",           default: 0.0, null: false
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-  end
-
-  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.integer  "organization_id"

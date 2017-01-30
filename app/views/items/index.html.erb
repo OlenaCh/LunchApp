@@ -1,46 +1,35 @@
-<div class='container'>
-  <h1>All menu items:</h1>
-  <% items.each do |item| %>
-    <ul class='ul items list'>
-      <li class='li items list element'>
-        <div class='div items list element image'>
-          <%= image_tag item.image_url.to_s %>
-        </div>
-        <div class='div items list element details'>
-          <div class='div items list element details title'>
-            <%= item.title %>
-          </div>
-          <div class='div items list element details price'>
-            <%= item.price %>
-          </div>
-        </div>
-        <%# if current_user.admin %>
-          <div class='div items list element admin-panel'>
-            <%= button_to "Edit", { action: "edit", id: item.id }, method: :get %>
-            <%= button_to "Delete", { action: "destroy", id: item.id }, method: :delete %>
-          </div>
-        <%# end %>
-      </li>
-    </ul>
-  <% end %>
-  
+<h1>All menu items:</h1>
+<% items.each do |item| %>
   <ul class='ul items list'>
     <li class='li items list element'>
-      <div class='div items list element empty-image'>
-        <div class='empty-img'></div>
+      <div class='div items list element image'>
+        <%= image_tag item.image_url.to_s %>
       </div>
-      <div class='div items list element admin-panel'>
-        <div class='add-new-item'><p>Add</p></div>
+      <div class='div items list element details'>
+        <div class='div items list element details title'>
+          <%= item.title %>
+        </div>
+        <div class='div items list element details price'>
+          <%= item.price %>
+        </div>
       </div>
+      <%# if current_user.admin %>
+        <div class='div items list element admin-panel'>
+          <%= button_to "Edit", { action: "edit", id: item.id }, method: :get %>
+          <%= button_to "Delete", { action: "destroy", id: item.id }, method: :delete %>
+        </div>
+      <%# end %>
     </li>
   </ul>
-  
-  <div class='new-item-form'>
-    <div class='popup-new-item'>
-      <h2 class='header'>Add item:</h2>
-      <%= render partial: 'items/form', locals: { item: item, 
-                                                types: types,
-                                                image: nil } %>
+<% end %>
+
+<ul class='ul items list'>
+  <li class='li items list element'>
+    <div class='div items list element empty-image'>
+      <div class='empty-img'></div>
     </div>
-  </div>
-</div>
+    <div class='div items list element admin-panel'>
+      <%= button_to 'Add', { action: 'new' }, method: :get, class: 'add-new-item' %>
+    </div>
+  </li>
+</ul>

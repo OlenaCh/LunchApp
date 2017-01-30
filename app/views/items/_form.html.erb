@@ -1,28 +1,15 @@
-<div class='add-new-item-btn-close'>X</div>
-
-<div class='new-item-form-element radio'>
-  <label class='new-item-label'>Type:</label>
-  <% types.each do |t| %>
-    <input type='radio' class='new-item-radio-input' name='item_type' value="<%= t %>"/><p><%= t %></p>
-  <% end %>
-</div>
-
-<div class='new-item-form-element'>
-  <label class='new-item-label'>Title:</label>
-  <input type='text' class='new-item-txt-input' name='item_title'/>
-</div>
-
-<div class='new-item-form-element'>
-  <label class='new-item-label'>Price:</label>
-  <input type='text' class='new-item-txt-input' name='item_price'/>
-</div>
-
-<div class='new-item-form-element'>
+<%= simple_form_for item, html: { multipart: true } do |f| %>
+  <%= f.input :item_type, as: :radio_buttons, collection: types %>
+  <%= f.input :title %>
+  <%= f.input :price %>
+  <%= f.input :fat %>
+  <%= f.input :carbohydrate %>
+  <%= f.input :protein %>
+  <%= f.input :calorie %>
+  <%= f.input :description %>
   <% if image %>
-    <%= image_tag image %>
-  <% end %>
-  <label class='new-item-label'>Image:</label>
-  <input type='file' class='new-item-txt-input' name='item_image'/>
-</div>
-
-<div class='add-new-item-btn'><p>Add</p></div>
+      <%= image_tag image %>
+    <% end %>
+  <%= f.input :image %>
+  <%= f.submit "Place order!" %>
+<% end %>

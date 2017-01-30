@@ -1,17 +1,26 @@
 class ItemsController < ApplicationController
+  def new
+    new_or_edit 'new'
+  end
+  
   def create
-  	Item.create(item_params)
-  	redirect_to items_path
+    item = Item.new(item_params)
+    redirect_to items_path and return false if item.save!
+  	new_or_edit 'new'
   end
   
   def index
-    render 'index', locals: set_locals()
+    render 'index', locals: { items: Item.all }
+  end
+  
+  def edit
+    new_or_edit('edit', Item.find(params[:id]))
   end
   
   def update
     item = Item.find_by_id(params[:id])
-    item.update(item_params)
-    redirect_to items_path
+    redirect_to items_path and return false if item.update(item_params)
+    new_or_edit('edit', item)
   end
   
   def destroy
@@ -22,11 +31,14 @@ class ItemsController < ApplicationController
 
   private
   
-  def set_locals(item = nil)
-   { types: Item.types.values, items: Item.all, item: item ? item : Item.new }
+  def new_or_edit(page, item = nil)
+   render page, locals: { types: Item.types.values, 
+                          item: item ? item : Item.new }
   end
 
   def item_params
-  	params.require(:item).permit(:item_type, :title, :price, :image)
+  	params.require(:item).permit(:item_type, :title, :price, 
+  	                             :description, :fat, :carbohydrate,
+  	                             :protein, :calorie, :image)
   end
 end

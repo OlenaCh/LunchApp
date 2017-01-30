@@ -68,12 +68,5 @@
 }
 
 .add-new-item {
-  margin: 105px 0 0 110px;
-}
-
-.add-new-item p {
-  height: 80%;
-  width: 45%;
-  margin: 0;
-  padding: 5px 0 0 25px;
+  margin-top: 50px;
 }
