@@ -1,12 +1,20 @@
 <form class='menu-form' action='/menus' method='POST'>
-  <label>Weekday:</label>
-  <% weekdays.each do |day| %>
-    <% if menu %>
-      <input type='radio' name='menu[weekday]' value="<%= day %>" checked><%= day %>
-    <% else %>
-      <input type='radio' name='menu[weekday]' value="<%= day %>"><%= day %>
-    <% end %>
-  <% end %>
+  <div class='form-element'>
+    <label class='item-label'>Weekday:</label>
+    <div class='item-type-options'>
+      <% weekdays.each do |day| %>
+        <% if menu %>
+          <div class='radio-input-type'>
+            <input type='radio' name='menu[weekday]' value="<%= day %>" checked><p><%= day %></p>
+          </div>
+        <% else %>
+          <div class='radio-input-type'>
+            <input type='radio' name='menu[weekday]' value="<%= day %>"><p><%= day %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
   
   <div class='courses-wrapper'>
     <div class='courses'>
