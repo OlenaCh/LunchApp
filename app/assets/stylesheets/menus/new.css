@@ -1,0 +1,151 @@
+input.menu-item {
+  width: 150px;
+  height: 20px;
+  background-color: rgba(255, 242, 230, 1);
+  border-radius: 10px;
+  border: solid 2px rgba(137, 200, 106, 1);
+  margin-left: 150px;
+}
+
+.choose {
+  border: 2px solid;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.choose p {
+  width: 50%;
+  height: 50%;
+  margin: 25% 0 0 25%;
+  text-align: center;
+  font-size: 17px;
+  font-family: cursive;
+}
+
+.form-element {
+  display: flex;
+  margin: 50px 0 20px 0;
+}
+
+.menu-form {
+  margin: 0;
+  padding: 17px;
+  width: 1044px;
+  float: left;
+}
+
+.radio-input-type {
+  margin: 0 0 0 40px;
+}
+
+.radio-input-type input {
+  width: 50%;
+  margin: 0 0 0 25%;
+}
+
+.radio-input-type p {
+  margin: 5px 0 0 0;
+  font-family: cursive;
+  font-size: 20px;
+}
+
+.item-type-options {
+  display: flex;  
+}
+
+.item-label.menu-new {
+  margin-left: 35px;
+}
+
+.form-element.courses {
+  display: block;
+}
+
+.item-input.menu-new {
+  margin-left: 35px;
+  display: flex;
+}
+
+.course-row {
+  display: flex;
+}
+
+.menu-new.item-buttons {
+  display: flex;
+  margin-left: 150px;
+}
+
+.add-new-item.new-menu {
+  margin: 0 0 0 900px;
+}
+
+.add-new-item.new-menu p {
+  margin: 0;
+  padding: 5px 0 0 2px;
+}
+
+.add-new-item.new-menu-sbm {
+  margin: 0 0 0 500px;
+}
+
+
+/*popups*/
+
+
+.popup-items.first-course, .popup-items.main-course, .popup-items.drink {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  position: fixed;
+  background-color: rgba(255, 242, 230, 0.75);
+  overflow: auto;
+}
+
+.first-items-close, .main-items-close, .drinks-close {
+  position: absolute;
+  right: -14px;
+  top: -40px;
+  cursor: pointer;
+}
+
+.first-items-close p, .main-items-close p, .drinks-close p {
+  font-size: 20px;
+  font-family: cursive;
+}
+
+.first-items, .main-items, .drinks {
+  position: absolute;
+  left: 50%;
+  top: 17%;
+  margin-left: -202px;
+  max-width: 300px;
+  min-width: 250px;
+  padding: 10px 50px;
+  border-radius: 10px;
+  background-color: rgba(137, 200, 106, 0.7);
+  display: flex;
+}
+
+.item.new-menu {
+  margin: 5px;
+}
+
+.item-img.new-menu {
+  width: 120px;
+  height: 120px;
+  border: solid 2px rgba(255, 242, 230, 1);
+  border-radius: 30px;
+}
+
+.item-title.new-menu p {
+  margin: 0;
+  font-size: 15px;
+  font-family: cursive;
+  color: rgba(255, 242, 230, 1);
+  float: right;
+}

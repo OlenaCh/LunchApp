@@ -1,7 +1,11 @@
 <div class='course-row'>
-  <label class='item-label'>Menu item:</label>
-  <input type='text' class='input menu-item' name='menu[items][]' id='menu' value="<%= id %>">
-  <div class='choose f-menu-item' data='nil'>Choose f</div>
-  <div class='choose m-menu-item' data='nil'>Choose m</div>
-  <div class='choose d-menu-item' data='nil'>Choose d</div>
+  <label class='item-label menu-new'>Menu item:</label>
+  <div class='item-input menu-new'>
+    <input type='text' class='input menu-item' name='menu[items][]' id='menu' value="<%= id %>">
+    <div class='menu-new item-buttons'>
+      <div class='choose f-menu-item' data='nil'><p>F</p></div>
+      <div class='choose m-menu-item' data='nil'><p>M</p></div>
+      <div class='choose d-menu-item' data='nil'><p>D</p></div>
+    </div>
+  </div>
 </div>

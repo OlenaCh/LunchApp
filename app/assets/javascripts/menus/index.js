@@ -9,30 +9,43 @@ $(document).ready(function() {
   $('.item').click(function() {
     var slctr = '#menu-item-' + field_id;
     $(slctr).attr('value', $(this).attr('data'));
+    hidePopups();
   });
   
-  $('.add.menu-item').click(function() {
+  $('.add-new-item.new-menu').click(function() {
     var html = `
       <div class='course-row'>
-        <label>Menu item:</label>
-        <input type='text' class='input menu-item' name='menu[items][]' id='menu'>
-        <div class='choose f-menu-item' data='nil'>Choose f</div>
-        <div class='choose m-menu-item' data='nil'>Choose m</div>
-        <div class='choose d-menu-item' data='nil'>Choose d</div>
+        <label class='item-label menu-new'>Menu item:</label>
+          <div class='item-input menu-new'>
+            <input type='text' class='input menu-item' name='menu[items][]' id='menu' value="">
+            <div class='menu-new item-buttons'>
+              <div class='choose f-menu-item' data='nil'><p>F</p></div>
+              <div class='choose m-menu-item' data='nil'><p>M</p></div>
+              <div class='choose d-menu-item' data='nil'><p>D</p></div>
+            </div>
+          </div>
       </div>
     `;
-    $('.courses').append(html);
+    $('.form-element.courses').append(html);
+  });
+  
+  $('.first-items-close, .main-items-close, .drinks-close').click(function() {
+    hidePopups();
   });
   
   var field_id;
   
+  var hidePopups = function() {
+    $('.popup-items').hide();
+  };
+  
   var openItemsModal = function(obj) {
     if ($(obj).attr('class').includes('f-menu-item'))
-      $('.first-items').show();
+      $('.popup-items.first-course').show();
     if ($(obj).attr('class').includes('m-menu-item'))
-      $('.main-items').show();
+      $('.popup-items.main-course').show();
     if ($(obj).attr('class').includes('d-menu-item'))
-      $('.drinks').show();
+      $('.popup-items.drink').show();
   }
 
   var setButtonsIdentifiers = function() {

@@ -1,6 +1,27 @@
+<div class='popup-items first-course'>
+  <div class='first-items'>
+    <div class='first-items-close'><p>X</p></div>
+    <%= render partial: 'menus/items', locals: { items: fc_items } %>
+  </div>
+</div>
+
+<div class='popup-items main-course'>
+  <div class='main-items'>
+    <div class='main-items-close'><p>X</p></div>
+    <%= render partial: 'menus/items', locals: { items: mc_items } %>
+  </div>
+</div>
+
+<div class='popup-items drink'>
+  <div class='drinks'>
+    <div class='drinks-close'><p>X</p></div>
+    <%= render partial: 'menus/items', locals: { items: drink_items } %>
+  </div>
+</div>
+
 <form class='menu-form' action='/menus' method='POST'>
   <div class='form-element'>
-    <label class='item-label'>Weekday:</label>
+    <label class='item-label menu-new'>Weekday:</label>
     <div class='item-type-options'>
       <% weekdays.each do |day| %>
         <% if menu %>
@@ -16,31 +37,21 @@
     </div>
   </div>
   
-  <div class='courses-wrapper'>
-    <div class='courses'>
-      <% if menu %>
-        <% menu.items.each do |item| %>
-          <%= render partial: 'menus/input', locals: { id: item.id.to_s } %>
-        <% end %>
-      <% else %>
-        <%= render partial: 'menus/input', locals: { id: '' } %>
+  <div class='form-element courses'>
+    <% if menu %>
+      <% menu.items.each do |item| %>
+        <%= render partial: 'menus/input', locals: { id: item.id.to_s } %>
       <% end %>
-    </div>
-    <div class='add menu-item'</div>Add item</div>
+    <% else %>
+      <%= render partial: 'menus/input', locals: { id: '' } %>
+    <% end %>
   </div>
   
-  <div class='items'>
-    <div class='first-items'>
-      <%= render partial: 'menus/items', locals: { items: fc_items } %>
-    </div>
-    
-    <div class='main-items'>
-      <%= render partial: 'menus/items', locals: { items: mc_items } %>
-    </div>
-    
-    <div class='drinks'>
-      <%= render partial: 'menus/items', locals: { items: drink_items } %>
-    </div>
+  <div class='form-element add-btn'>
+    <div class='add-new-item new-menu'><p>Add item</p></div>
   </div>
-  <input type='submit' value="<%= action %>">
+  
+  <div class='form-element add-btn'>
+    <input type='submit' value="<%= action %>" class='add-new-item new-menu-sbm' />
+  </div>
 </form>

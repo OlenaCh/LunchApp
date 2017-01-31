@@ -1,7 +1,10 @@
 <% items.each do |item| %>
-  <div class='item' data="<%= item.id %>">
-    <%= image_tag item.image_url.to_s %>
-    <%= item.title %>
-    <%= item.price %>
+  <div class='item new-menu' data="<%= item.id %>">
+    <div class: 'item-img-wrapper new-menu'>
+      <%= image_tag item.image_url.to_s, class: 'item-img new-menu' %>
+    </div>
+    <div class='item-title new-menu'>
+      <p><%= item.title %></p>
+    </div>
   </div>
 <% end %>
