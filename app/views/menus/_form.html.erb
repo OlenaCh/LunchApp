@@ -19,7 +19,12 @@
   </div>
 </div>
 
-<form class='menu-form' action='/menus' method='POST'>
+<form class='menu-form' action="<%= action == 'Update' ? ('/menus/' + menu.id.to_s) : '/menus/' %>" method='POST'>
+
+  <% if action == 'Update' %>
+    <input type='hidden' name='_method' value='put' />
+  <% end %>
+  
   <div class='form-element'>
     <label class='item-label menu-new'>Weekday:</label>
     <div class='item-type-options'>

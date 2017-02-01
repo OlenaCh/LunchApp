@@ -19,10 +19,11 @@ class MenusController < ApplicationController
   end
   
   def update
-    # menu = Menu.find_by_id(params[:id])
-    # menu.items = menu_items
-    # redirect_to menus_path and return false if menu.update
-    # new_or_edit('edit', menu)
+    menu = Menu.find_by_id(params[:id])
+    menu.items.clear
+    menu.items = menu_items
+    redirect_to menus_path and return false if menu.save
+    new_or_edit('edit', menu)
   end
   
   def destroy
