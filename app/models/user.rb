@@ -1,10 +1,6 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :validatable
-
-  has_many :orders, dependent: :destroy
-  
-  # validates :name, presence: true, length: { in: 2..40 }  
   
   after_create :set_admin
  
