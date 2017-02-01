@@ -1,7 +1,7 @@
 <h1>Week menus:</h1>
 <% menus.each do |menu| %>
-  <div class='course-row'>
-    <div class='form-element courses'>
+  <div class='menu-row'>
+    <div class='weekday-menu'>
       <label class='item-label menu-new'><%= menu.weekday %>:</label>
       <ul class='menus-list'>
         <% menu.items.each do |item| %>
@@ -9,11 +9,16 @@
             <%= image_tag item.image, class: 'menus-list-item small' %>
             <span>
               <%= image_tag item.image, class: 'menus-list-item enlarged' %>
-              <p><%= item.title %> -> <%= item.price %></p>
+              <p><%= item.title %> $<%= item.price %></p>
             </span>
           </li>
         <% end %>
       </ul>
+      <%# if current_user.admin %>
+        <div class='menus-list-item admin-panel'>
+          <%= button_to "Edit", { action: "edit", id: menu.id }, method: :get %>
+        </div>
+      <%# end %>
     </div>  
   </div>  
 <% end %>
