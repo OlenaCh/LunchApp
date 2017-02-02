@@ -118,3 +118,9 @@
 .menus-list-item.small:hover {
   opacity: 1;
 }
+
+/* Order preview popup */
+
+.popup-order-preview {
+  display: none;
+}

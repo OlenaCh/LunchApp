@@ -47,6 +47,8 @@ $(document).ready(function() {
   
   var field_id;
   var ordered_meals = [];
+  var order_sum = 0;
+  var order_calories = 0;
   
   var hidePopups = function() {
     $('.popup-items').hide();

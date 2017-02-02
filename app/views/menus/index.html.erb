@@ -1,3 +1,19 @@
+<div class='popup-order-preview'>
+  <% menus.each do |menu| %>
+    <%# if today?(menu.weekday) %>
+      <p><%= item.title %></p>
+      <p></p>
+      <p><%= item.price * 1 %></p>
+      <p><%= item.calorie * 1 %></p>
+      <div class='add-item-to-order'>+</div>
+      <div class='remove-item-from-order'>-</div>
+    <% end %>
+  <% end %>
+  <p>Calories: </p>
+  <p>Sum: </p>
+  <div class='place-order'>Place order!</div>
+</div>
+
 <h1>Week menus:</h1>
 <% menus.each do |menu| %>
   <div class='menu-row'>
