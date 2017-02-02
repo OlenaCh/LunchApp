@@ -16,6 +16,14 @@
                   <div class='shopping-cart-img' data="<%= item.id %>"></div>
                 <%# end %>
               </div>
+              <div class='menu-item-details'>
+                <p class='menu-item-details-close'>X</p>
+                <p>Calories: <%= item.calorie %></p>
+                <p>Fats: <%= item.fat %></p>
+                <p>Carbohydrates: <%= item.carbohydrate %></p>
+                <p>Proteins: <%= item.protein %></p>
+                <p>Description. <%= item.description %></p>
+              </div>
             </span>
           </li>
         <% end %>

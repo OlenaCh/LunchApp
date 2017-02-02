@@ -37,6 +37,14 @@ $(document).ready(function() {
     ordered_meals.push($(this).attr('data'));
   });
   
+  $('.preview-img').click(function() {
+    $('.menu-item-details').show();
+  });
+  
+  $('.menu-item-details-close').click(function() {
+    $('.menu-item-details').hide();
+  });
+  
   var field_id;
   var ordered_meals = [];
   
