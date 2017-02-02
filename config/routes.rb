@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index]
   resources :items, :orders, :menus
   
-  root 'static_pages#index'
+  root 'menus#index'
 end
