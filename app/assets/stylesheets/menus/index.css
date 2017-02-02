@@ -49,12 +49,23 @@
   margin: 5px 10px 0 0;
 }
 
-.shopping-cart-img {
-	width: 50px;
-  height: 50px;
+.shopping-details p {
+  margin-right: 10px;
+}
+
+.shopping-cart-img, .preview-img {
+	width: 40px;
+  height: 40px;
   margin: 0;
-  background-size: 50px;
+  background-size: 40px;
+}
+
+.shopping-cart-img {
   background-image: url("/assets/1486063408_Cart_by_Artdesigner.lv.png");
+}
+
+.preview-img {
+  background-image: url("/assets/1486094936_document-preview.png");
 }
 
 .menus-list-item.admin-panel {

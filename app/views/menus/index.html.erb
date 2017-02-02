@@ -11,8 +11,9 @@
               <%= image_tag item.image, class: 'menus-list-item enlarged' %>
               <div class='shopping-details'>
                 <p><%= item.title %> $<%= item.price %></p>
+                <div class='preview-img'></div>
                 <%# if today?(menu.weekday) %>
-                  <div class='shopping-cart-img' id='img-cart' data="<%= item.id %>"></div>
+                  <div class='shopping-cart-img' data="<%= item.id %>"></div>
                 <%# end %>
               </div>
             </span>
