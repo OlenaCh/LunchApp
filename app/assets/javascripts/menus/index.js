@@ -33,7 +33,12 @@ $(document).ready(function() {
     hidePopups();
   });
   
+  $('.shopping-cart-img').click(function() {
+    ordered_meals.push($(this).attr('data'));
+  });
+  
   var field_id;
+  var ordered_meals = [];
   
   var hidePopups = function() {
     $('.popup-items').hide();
