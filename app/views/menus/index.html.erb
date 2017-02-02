@@ -9,7 +9,10 @@
             <%= image_tag item.image, class: 'menus-list-item small' %>
             <span>
               <%= image_tag item.image, class: 'menus-list-item enlarged' %>
-              <p><%= item.title %> $<%= item.price %></p>
+              <div class='shopping-details'>
+                <p><%= item.title %> $<%= item.price %></p>
+                <div class='shopping-cart-img' id='img-cart'></div>
+              </div>
             </span>
           </li>
         <% end %>

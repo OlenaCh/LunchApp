@@ -36,12 +36,24 @@
   border-radius: 30px;
   font-family: cursive;
   font-size: 20px;
-  text-align: center;
 }
 
 .menus-list-item.enlarged {
   border: solid 2px rgba(137, 200, 106, 1);
   border-radius: 30px;
+}
+
+.shopping-details {
+  display: flex;
+  margin: 5px 0 0 45px;
+}
+
+.shopping-cart-img {
+	width: 50px;
+  height: 50px;
+  margin: 0;
+  background-size: 50px;
+  background-image: url("/assets/1486063408_Cart_by_Artdesigner.lv.png");
 }
 
 .menus-list-item.admin-panel {
