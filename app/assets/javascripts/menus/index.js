@@ -34,11 +34,10 @@ $(document).ready(function() {
   });
   
   $('.shopping-cart-img').click(function() {
-    ordered_meals.push($(this).attr('data-id'));
-    order_sum += $(this).attr('data-price');
-    order_calories += $(this).attr('data-calories');
+    changeOrderVariables(this);
     formOrderPreview();
     countTotalCalories();
+    countTotalSum();
     $('li.sidebar.item.order-preview-form').removeClass('inactive');
   });
   
@@ -62,6 +61,22 @@ $(document).ready(function() {
   var ordered_meals = [];
   var order_sum = 0;
   var order_calories = 0;
+  
+  var changeOrderVariables = function(obj) {
+    ordered_meals.push($(obj).attr('data-id'));
+    order_sum += $(obj).attr('data-price');
+    order_calories += $(obj).attr('data-calories');
+  };
+  
+  var countTotalCalories = function() {
+    var txt = 'Calories: ' + order_calories;
+    $('.order-preview-calories').text(txt);
+  };
+  
+  var countTotalSum = function() {
+    var txt = 'Sum: ' + order_sum;
+    $('.order-preview-sum').text(txt);
+  };
   
   var formOrderPreview = function() {
     var all_order_items = $('.order-preview-item').find();
