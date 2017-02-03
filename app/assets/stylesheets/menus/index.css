@@ -168,13 +168,13 @@
   display: none;
 }
 
+.flex {
+  display: flex;
+}
+
 .order-preview p {
   width: 100%;
   margin: 0;
-}
-
-.order-preview-item {
-  display: flex;
 }
 
 .remove-item-from-order {

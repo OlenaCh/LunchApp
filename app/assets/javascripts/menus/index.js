@@ -34,7 +34,7 @@ $(document).ready(function() {
   });
   
   $('.shopping-cart-img').click(function() {
-    changeOrderVariables(this);
+    enlargeOrderVariables(this);
     formOrderPreview();
     countTotalCalories();
     countTotalSum();
@@ -57,16 +57,31 @@ $(document).ready(function() {
     $('.popup-order-preview').hide();
   });
   
+  $('.remove-item-from-order').click(function() {
+    var shown_items = $('.popup-order-preview').find('.order-preview-item.flex');
+    for(var i = 0, size = shown_items.length; i < size; i++) {
+      if($(this).attr('data-id') == $(shown_items[i]).attr('data')) {
+        $(shown_items[i]).removeClass('flex');
+        $(shown_items[i]).addClass('hidden');
+      }
+    }
+    lessenOrderVariables(this);
+    countTotalCalories();
+    countTotalSum();
+  });
+  
+  $('.place-order').click(function() {
+    $.ajax({
+      url: 'orders/new',
+      method: 'GET',
+      data: { items_ids: ordered_meals }
+    });
+  });
+  
   var field_id;
   var ordered_meals = [];
   var order_sum = 0;
   var order_calories = 0;
-  
-  var changeOrderVariables = function(obj) {
-    ordered_meals.push($(obj).attr('data-id'));
-    order_sum += $(obj).attr('data-price');
-    order_calories += $(obj).attr('data-calories');
-  };
   
   var countTotalCalories = function() {
     var txt = 'Calories: ' + order_calories;
@@ -78,17 +93,34 @@ $(document).ready(function() {
     $('.order-preview-sum').text(txt);
   };
   
+  var enlargeOrderVariables = function(obj) {
+    ordered_meals.push($(obj).attr('data-id'));
+    order_sum += $(obj).attr('data-price');
+    order_calories += $(obj).attr('data-calories');
+  };
+  
   var formOrderPreview = function() {
-    var all_order_items = $('.order-preview-item').find();
-    for(var i = 0, size = all_order_items.length; i < size; i++) {
-      if(ordered_meals.includes(all_order_items[i].attr('data'))) {
-        all_order_items[i].removeClass('hidden');
+    var order_items = $('.popup-order-preview').find('.order-preview-item.hidden');
+    for(var i = 0, size = order_items.length; i < size; i++) {
+      if(ordered_meals.includes($(order_items[i]).attr('data'))) {
+        $(order_items[i]).removeClass('hidden');
+        $(order_items[i]).addClass('flex');
       }
     }
   };
   
   var hidePopups = function() {
     $('.popup-items').hide();
+  };
+  
+  var lessenOrderVariables = function(obj) {
+    var ind = ordered_meals.indexOf($(obj).attr('data-id'));
+    if(ind != -1) {
+    	ordered_meals.splice(ind, 1);
+    }
+    order_sum -= $(obj).attr('data-price');
+    order_calories -= $(obj).attr('data-calories');
+    console.log(ordered_meals);
   };
   
   var openItemsModal = function(obj) {

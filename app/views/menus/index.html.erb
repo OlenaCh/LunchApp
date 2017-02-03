@@ -8,7 +8,9 @@
             <p><%= item.title %></p>
             <p><%= item.price %> $</p>
             <p><%= item.calorie %> cal</p>
-            <div class='remove-item-from-order'>X</div>
+            <div class='remove-item-from-order' data-id="<%= item.id %>" 
+                 data-calorie="<%= item.calorie %>" 
+                 data-price="<%= item.price %>">X</div>
           </div>
         <% end %>
       <%# end %>
