@@ -3,13 +3,15 @@
     <div class='order-preview-close'><p>X</p></div>
     <% menus.each do |menu| %>
       <%# if today?(menu.weekday) %>
-        <p><%= item.title %></p>
-        <p></p>
-        <p><%= item.price * 1 %></p>
-        <p><%= item.calorie * 1 %></p>
-        <div class='add-item-to-order'>+</div>
-        <div class='remove-item-from-order'>-</div>
-      <% end %>
+        <% menu.items.each do |item| %>
+          <p><%= item.title %></p>
+          <p></p>
+          <p><%= item.price * 1 %></p>
+          <p><%= item.calorie * 1 %></p>
+          <div class='add-item-to-order'>+</div>
+          <div class='remove-item-from-order'>-</div>
+        <% end %>
+      <%# end %>
     <% end %>
     <p>Calories: </p>
     <p>Sum: </p>

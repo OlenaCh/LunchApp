@@ -35,7 +35,7 @@ $(document).ready(function() {
   
   $('.shopping-cart-img').click(function() {
     ordered_meals.push($(this).attr('data'));
-    $().removeClass('inactive');
+    $('li.sidebar.item.order-preview-form').removeClass('inactive');
   });
   
   $('.preview-img').click(function() {
@@ -44,6 +44,14 @@ $(document).ready(function() {
   
   $('.menu-item-details-close').click(function() {
     $('.menu-item-details').hide();
+  });
+  
+  $('.order-preview-form').click(function() {
+    $('.popup-order-preview').show();
+  });
+  
+  $('.order-preview-close').click(function() {
+    $('.popup-order-preview').hide();
   });
   
   var field_id;
