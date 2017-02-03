@@ -5,9 +5,8 @@
       <%# if today?(menu.weekday) %>
         <% menu.items.each do |item| %>
           <p><%= item.title %></p>
-          <p></p>
-          <p><%= item.price * 1 %></p>
-          <p><%= item.calorie * 1 %></p>
+          <p><%= item.price %></p>
+          <p><%= item.calorie %></p>
           <div class='add-item-to-order'>+</div>
           <div class='remove-item-from-order'>-</div>
         <% end %>
@@ -34,7 +33,8 @@
                 <p><%= item.title %> $<%= item.price %></p>
                 <div class='preview-img'></div>
                 <%# if today?(menu.weekday) %>
-                  <div class='shopping-cart-img' data="<%= item.id %>"></div>
+                  <div class='shopping-cart-img' data-id="<%= item.id %>" data-calorie="<%= item.calorie %>" 
+                       data-price="<%= item.price %>"></div>
                 <%# end %>
               </div>
               <div class='menu-item-details'>

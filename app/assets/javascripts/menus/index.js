@@ -34,7 +34,9 @@ $(document).ready(function() {
   });
   
   $('.shopping-cart-img').click(function() {
-    ordered_meals.push($(this).attr('data'));
+    ordered_meals.push($(this).attr('data-id'));
+    order_sum += $(this).attr('data-price');
+    order_calories += $(this).attr('data-calories');
     $('li.sidebar.item.order-preview-form').removeClass('inactive');
   });
   
