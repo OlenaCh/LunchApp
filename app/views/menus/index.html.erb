@@ -4,16 +4,18 @@
     <% menus.each do |menu| %>
       <%# if today?(menu.weekday) %>
         <% menu.items.each do |item| %>
-          <p><%= item.title %></p>
-          <p><%= item.price %></p>
-          <p><%= item.calorie %></p>
-          <div class='add-item-to-order'>+</div>
-          <div class='remove-item-from-order'>-</div>
+          <div class='order-preview-item hidden' data="<%= item.id %>">
+            <p><%= item.title %></p>
+            <p><%= item.price %></p>
+            <p><%= item.calorie %></p>
+            <div class='add-item-to-order'>+</div>
+            <div class='remove-item-from-order'>-</div>
+          </div>
         <% end %>
       <%# end %>
     <% end %>
-    <p>Calories: </p>
-    <p>Sum: </p>
+    <p class='order-preview-calories'>Calories: </p>
+    <p class='order-preview-sum'>Sum: </p>
     <div class='place-order'>Place order!</div>
   </div>
 </div>

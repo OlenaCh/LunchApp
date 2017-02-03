@@ -37,6 +37,8 @@ $(document).ready(function() {
     ordered_meals.push($(this).attr('data-id'));
     order_sum += $(this).attr('data-price');
     order_calories += $(this).attr('data-calories');
+    formOrderPreview();
+    countTotalCalories();
     $('li.sidebar.item.order-preview-form').removeClass('inactive');
   });
   
@@ -61,6 +63,15 @@ $(document).ready(function() {
   var order_sum = 0;
   var order_calories = 0;
   
+  var formOrderPreview = function() {
+    var all_order_items = $('.order-preview-item').find();
+    for(var i = 0, size = all_order_items.length; i < size; i++) {
+      if(ordered_meals.includes(all_order_items[i].attr('data'))) {
+        all_order_items[i].removeClass('hidden');
+      }
+    }
+  };
+  
   var hidePopups = function() {
     $('.popup-items').hide();
   };
@@ -72,7 +83,7 @@ $(document).ready(function() {
       $('.popup-items.main-course').show();
     if ($(obj).attr('class').includes('d-menu-item'))
       $('.popup-items.drink').show();
-  }
+  };
 
   var setButtonsIdentifiers = function() {
     var menu_items = $('form').find('.course-row');
@@ -82,16 +93,16 @@ $(document).ready(function() {
         $(choose_btns[j]).attr('data', i);
       }
     }
-  }
+  };
   
   var setInputIdentifiers = function() {
     var menu_items = $('form').find('.input.menu-item');
     for(var i = 0, size = menu_items.size(); i < size; i++) {
       $(menu_items[i]).attr('id', 'menu-item-' + i);
     }
-  }
+  };
   
   var setPageVariables = function(obj) {
     field_id = $(obj).attr('data');
-  }
+  };
 });
