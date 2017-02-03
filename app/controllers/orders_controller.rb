@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   def new
+    render 'new', locals: { ordered_items: find_items(params[:items_ids]) }
   end
   
   def index
@@ -25,6 +26,12 @@ class OrdersController < ApplicationController
   end
   
   private
+  
+  def find_items item_ids
+    items = []
+    item_ids.each { |id| items << Item.find_by_id(id) }
+    items
+  end
   
   def order_update_params
     params.require(:order).permit(:status)

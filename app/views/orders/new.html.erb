@@ -1,0 +1,8 @@
+<h1>Order preview:</h1>
+<% ordered_items.each do |item| %>
+  <%= item.title %>
+  <%= item.calorie %>
+  <%= item.price %>
+  <input type='text' class='ordered-amount' value='1' />
+  <div class='remove-item-from-order'>X</div>
+<% end %>
