@@ -1,22 +1,21 @@
 <div class='popup-order-preview'>
+  <div class='order-preview-close'><p>X</p></div>
   <div class='order-preview'>
-    <div class='order-preview-close'><p>X</p></div>
     <% menus.each do |menu| %>
       <%# if today?(menu.weekday) %>
         <% menu.items.each do |item| %>
           <div class='order-preview-item hidden' data="<%= item.id %>">
             <p><%= item.title %></p>
-            <p><%= item.price %></p>
-            <p><%= item.calorie %></p>
-            <div class='add-item-to-order'>+</div>
-            <div class='remove-item-from-order'>-</div>
+            <p><%= item.price %> $</p>
+            <p><%= item.calorie %> cal</p>
+            <div class='remove-item-from-order'>X</div>
           </div>
         <% end %>
       <%# end %>
     <% end %>
     <p class='order-preview-calories'></p>
     <p class='order-preview-sum'></p>
-    <div class='place-order'>Place order!</div>
+    <div class='place-order'><p>Place order!</p></div>
   </div>
 </div>
 

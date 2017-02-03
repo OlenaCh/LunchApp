@@ -134,8 +134,8 @@
 
 .order-preview-close {
   position: absolute;
-  right: -14px;
-  top: -40px;
+  right: 37.6%;
+  top: 6%;
   cursor: pointer;
 }
 
@@ -153,10 +153,46 @@
   min-width: 250px;
   padding: 10px 50px;
   border-radius: 10px;
-  background-color: rgba(137, 200, 106, 0.7);
-  display: flex;
+  background-color: rgba(137, 200, 106, 1);
+  display: block;
+  font-family: cursive;
+  font-size: 20px;
+  color: rgba(255, 242, 230, 1);
 }
 
 .inactive {
   display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.order-preview p {
+  width: 100%;
+  margin: 0;
+}
+
+.order-preview-item {
+  display: flex;
+}
+
+.remove-item-from-order {
+  width: 20px;
+  padding: 0 5px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 242, 230, 1);
+  color: rgba(137, 200, 106, 1);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.place-order {
+  float: right;
+  background-color: rgba(255, 242, 230, 1);
+  color: rgba(137, 200, 106, 1);
+  border-radius: 10px;
+  padding: 3px;
+  cursor: pointer;
 }
