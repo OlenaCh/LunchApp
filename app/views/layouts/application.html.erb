@@ -19,8 +19,8 @@
         <%# if signed_in? %>
           <%# if current_user.admin == true %>
             <li class='li sidebar item'><%= link_to "Orders", orders_path %></li>
-            <li class='li sidebar item'><%= link_to "Place order", new_order_path %></li>
           <%# end %>
+          <li class='li sidebar item order-preview-form inactive'><p>Preview order</p></li>
           <li class='li sidebar item'><%= link_to "All menu items", items_path %></li>
         <%# end %>
       </ul>

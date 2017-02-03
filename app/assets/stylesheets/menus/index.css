@@ -122,5 +122,41 @@
 /* Order preview popup */
 
 .popup-order-preview {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
   display: none;
+  position: fixed;
+  background-color: rgba(255, 242, 230, 0.75);
+  overflow: auto;
+}
+
+.order-preview-close {
+  position: absolute;
+  right: -14px;
+  top: -40px;
+  cursor: pointer;
+}
+
+.order-preview-close p {
+  font-size: 20px;
+  font-family: cursive;
+}
+
+.order-preview {
+  position: absolute;
+  left: 50%;
+  top: 17%;
+  margin-left: -202px;
+  max-width: 300px;
+  min-width: 250px;
+  padding: 10px 50px;
+  border-radius: 10px;
+  background-color: rgba(137, 200, 106, 0.7);
+  display: flex;
+}
+
+.inactive {
+  
 }

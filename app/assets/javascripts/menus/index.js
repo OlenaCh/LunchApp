@@ -35,6 +35,7 @@ $(document).ready(function() {
   
   $('.shopping-cart-img').click(function() {
     ordered_meals.push($(this).attr('data'));
+    $().removeClass('inactive');
   });
   
   $('.preview-img').click(function() {
