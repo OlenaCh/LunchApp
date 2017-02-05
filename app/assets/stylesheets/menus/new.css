@@ -22,7 +22,6 @@ input.menu-item {
   margin: 25% 0 0 25%;
   text-align: center;
   font-size: 17px;
-  font-family: cursive;
 }
 
 .form-element {
@@ -48,7 +47,6 @@ input.menu-item {
 
 .radio-input-type p {
   margin: 5px 0 0 0;
-  font-family: cursive;
   font-size: 20px;
 }
 
@@ -115,7 +113,6 @@ input.menu-item {
 
 .first-items-close p, .main-items-close p, .drinks-close p {
   font-size: 20px;
-  font-family: cursive;
 }
 
 .first-items, .main-items, .drinks {
@@ -145,7 +142,6 @@ input.menu-item {
 .item-title.new-menu p {
   margin: 0;
   font-size: 15px;
-  font-family: cursive;
   color: rgba(255, 242, 230, 1);
   float: right;
 }

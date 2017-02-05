@@ -1,15 +1,9 @@
-.new-item {
-  /*width: 100%;*/
-  /*height: 100%;*/
-}
-
 .new-item-form {
   max-width: 450px;
   background-color: rgba(255, 242, 230, 1);
 }
 
 .item-label {
-  font-family: cursive;
   font-size: 25px;
 }
 
@@ -35,7 +29,6 @@
   color: rgba(255, 242, 230, 1);
   width: 90px;
   height: 40px;
-  font-family: cursive;
   font-size: 20px;
   cursor: pointer;
   float: left;
@@ -45,6 +38,5 @@
 .add-new-item-btn p {
   height: 80%;
   width: 45%;
-  margin: 0;
   padding: 5px 0 0 25px;
 }

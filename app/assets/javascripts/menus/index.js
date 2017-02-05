@@ -71,6 +71,24 @@ $(document).ready(function() {
     countTotalSum();
     setNewOrderParams();
   });
+  
+  $('.menus-list-item.small').click(function() {
+    var menu_list = $('.menus-list').find('.hidden-data');
+    for (var i = 0, size = menu_list.length; i < size; i++) {
+      if ($(this).attr('data') == $(menu_list[i]).attr('data')) {
+        $(menu_list[i]).removeClass('hidden-data');
+        $(menu_list[i]).addClass('shown-data');
+      }
+    }
+  });
+  
+  $('.menus-list-item-enlarged-close').click(function() {
+    var menu_list = $('.menus-list').find('.shown-data');
+    for (var i = 0, size = menu_list.length; i < size; i++) {
+      $(menu_list[i]).removeClass('shown-data');
+      $(menu_list[i]).addClass('hidden-data');
+    }
+  });
 
   var field_id;
   var ordered_meals = [];

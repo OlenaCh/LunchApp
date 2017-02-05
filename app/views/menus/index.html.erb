@@ -29,8 +29,9 @@
       <ul class='menus-list'>
         <% menu.items.each do |item| %>
           <li class='menus-list-item'>
-            <%= image_tag item.image, class: 'menus-list-item small' %>
-            <span>
+            <%= image_tag item.image, class: 'menus-list-item small', 'data': item.id %>
+            <span class='hidden-data' data="<%= item.id %>">
+              <div class='menus-list-item-enlarged-close'><p>X</p></div>
               <%= image_tag item.image, class: 'menus-list-item enlarged' %>
               <div class='shopping-details'>
                 <p><%= item.title %> $<%= item.price %></p>
