@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
   
   def find_items item_ids
     items = []
-    item_ids.each { |id| items << Item.find_by_id(id) }
+    item_ids.split(',').each { |id| items << Item.find_by_id(id) }
     items
   end
   

@@ -38,6 +38,7 @@ $(document).ready(function() {
     formOrderPreview();
     countTotalCalories();
     countTotalSum();
+    setNewOrderParams();
     $('li.sidebar.item.order-preview-form').removeClass('inactive');
   });
   
@@ -68,16 +69,9 @@ $(document).ready(function() {
     lessenOrderVariables(this);
     countTotalCalories();
     countTotalSum();
+    setNewOrderParams();
   });
-  
-  $('.place-order').click(function() {
-    $.ajax({
-      url: 'orders/new',
-      method: 'GET',
-      data: { items_ids: ordered_meals }
-    });
-  });
-  
+
   var field_id;
   var ordered_meals = [];
   var order_sum = 0;
@@ -151,5 +145,9 @@ $(document).ready(function() {
   
   var setPageVariables = function(obj) {
     field_id = $(obj).attr('data');
+  };
+  
+  var setNewOrderParams = function() {
+    $('.place-order-href').attr('href', '/orders/new?items_ids=' + ordered_meals.join(','));
   };
 });
