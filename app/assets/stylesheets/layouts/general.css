@@ -56,6 +56,10 @@ footer {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .page-content {
 	width: 80%;
 }

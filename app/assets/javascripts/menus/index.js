@@ -39,7 +39,7 @@ $(document).ready(function() {
     countTotalCalories();
     countTotalSum();
     setNewOrderParams();
-    $('.sidebar-item.order-preview-form').removeClass('inactive');
+    $('.sidebar-item.order-preview-form').removeClass('hidden');
   });
   
   $('.preview-img').click(function() {
