@@ -12,7 +12,7 @@ $(document).ready(function() {
     hidePopups();
   });
   
-  $('.add-new-item.new-menu').click(function() {
+  $('.btn.add-item-to-menu').click(function() {
     var html = `
       <div class='course-row'>
         <label class='item-label menu-new'>Menu item:</label>
@@ -39,7 +39,7 @@ $(document).ready(function() {
     countTotalCalories();
     countTotalSum();
     setNewOrderParams();
-    $('li.sidebar.item.order-preview-form').removeClass('inactive');
+    $('.sidebar-item.order-preview-form').removeClass('inactive');
   });
   
   $('.preview-img').click(function() {

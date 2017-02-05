@@ -175,10 +175,6 @@
   display: none;
 }
 
-.flex {
-  display: flex;
-}
-
 .order-preview p {
   width: 100%;
 }

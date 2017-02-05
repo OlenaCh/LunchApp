@@ -67,25 +67,20 @@ input.menu-item {
   display: flex;
 }
 
-.course-row {
-  display: flex;
-}
-
 .menu-new.item-buttons {
   display: flex;
   margin-left: 150px;
 }
 
-.add-new-item.new-menu {
+.btn.add-item-to-menu {
   margin: 0 0 0 900px;
 }
 
-.add-new-item.new-menu p {
-  margin: 0;
+.btn.add-item-to-menu p {
   padding: 5px 0 0 2px;
 }
 
-.add-new-item.new-menu-sbm {
+.btn.sbm-menu {
   margin: 0 0 0 500px;
 }
 
@@ -140,7 +135,6 @@ input.menu-item {
 }
 
 .item-title.new-menu p {
-  margin: 0;
   font-size: 15px;
   color: rgba(255, 242, 230, 1);
   float: right;

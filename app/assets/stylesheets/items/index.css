@@ -1,31 +1,26 @@
-.ul.items.list {
+.items {
   margin: 7px;
-  border: solid 1.5px rgba(137, 200, 106, 1);
   border-radius: 10px;
 }
 
-.li.items.list.element {
-  display: flex;
-}
-
-.div.items.list.element.image {
+.items.element-img,
+.items.element-details {
   width: 30%;
 }
 
-.div.items.list.element.image img, .empty-img {
+.items.element-img img, .empty-img {
   margin: 22px 0 22px 53px;
-  border: solid 2px rgba(137, 200, 106, 1);
   border-radius: 30px;
   overflow: hidden;
   opacity: 0.5;
   cursor: pointer;
 }
 
-.div.items.list.element.image img:hover {
+.items.element-img img:hover {
   opacity: 1;
 }
 
-.div.items.list.element.empty-image {
+.items.element-empty {
   width: 60%;
 }
 
@@ -35,35 +30,17 @@
   cursor: default;
 }
 
-.div.items.list.element.details {
-  width: 30%;
+.items.element-details {
   font-size: 25px;
   color: rgba(137, 200, 106, 1);
 }
 
-.div.items.list.element.details.title {
+.items.element-details.title, 
+.items.element-details.price,
+.items.element-admin-panel form {
   padding: 50px 0 30px 110px;
 }
 
-.div.items.list.element.details.price {
-  padding: 50px 0 30px 110px;
-}
-
-.div.items.list.element.admin-panel form {
-  padding: 50px 0 30px 110px;
-}
-
-.div.items.list.element.admin-panel input, .add-new-item {
-  background-color: rgba(137, 200, 106, 1);
-  border: none;
-  border-radius: 10px;
-  color: rgba(255, 242, 230, 1);
-  width: 90px;
-  height: 40px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.add-new-item {
+.btn.add-item {
   margin-top: 50px;
 }

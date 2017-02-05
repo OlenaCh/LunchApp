@@ -14,14 +14,14 @@
   </head>
   
   <body>
-    <div class='div sidebar items'>
-      <ul class='ul sidebar items'>
+    <div class='sidebar'>
+      <ul class='sidebar-items'>
         <%# if signed_in? %>
           <%# if current_user.admin == true %>
-            <li class='li sidebar item'><%= link_to "Orders", orders_path %></li>
+            <li class='sidebar-item'><%= link_to "Orders", orders_path %></li>
           <%# end %>
-          <li class='li sidebar item'><%= link_to "All menu items", items_path %></li>
-          <li class='li sidebar item order-preview-form inactive'><a href='#'>Preview order</a></li>
+          <li class='sidebar-item'><%= link_to "All menu items", items_path %></li>
+          <li class='sidebar-item order-preview-form inactive'><a href='#'>Preview order</a></li>
         <%# end %>
       </ul>
     </div>
@@ -34,7 +34,7 @@
         <div class='header-img' id='img-sweets'></div>
       </div>
       
-      <div class='container'>
+      <div class='content-container'>
         <%= yield %>
       </div>
       

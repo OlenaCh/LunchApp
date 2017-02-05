@@ -1,0 +1,31 @@
+.header {
+	width: 100%;
+	height: 120px;
+	display: flex;
+}
+
+.header-img {
+	width: 110px;
+  height: 110px;
+  margin: 20px 75px 20px 75px;
+  background-size: 360px;
+  background-image: url("/assets/food_pics.jpg");
+  border: solid 2px rgba(137, 200, 106, 1);
+  border-radius: 60px;
+}
+
+#img-burger {
+	background-position: -235px -14px;
+}
+
+#img-eggs {
+	background-position: -125px 134px;
+}
+
+#img-pizza {
+	background-position: -125px -14px;
+}
+
+#img-sweets {
+	background-position: -15px -14px;
+}
