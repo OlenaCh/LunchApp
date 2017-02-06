@@ -6,7 +6,8 @@
       <%= item.title %>
       <%= item.calorie %>
       <%= item.price %>
-      <input type='text' class='ordered-amount' value='1' />
+      <input type='text' class='ordered-item hidden' name='order[order_items_attributes][][item_id]' value='<%= item.id %>' />
+      <input type='text' class='ordered-amount' name='order[order_items_attributes][][amount]' value='1' />
       <div class='remove-item-from-order'>X</div>
     </div>
   <% end %>

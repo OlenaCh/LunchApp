@@ -1,6 +1,9 @@
 class Item < ActiveRecord::Base
   include ItemType
+  has_many :order_items
+  has_many :orders, through: :order_items
   has_and_belongs_to_many :menus
+  
   mount_uploader :image, ImageUploader
   
   validates :title, presence: true, length: { in: 4..60 }, uniqueness: true

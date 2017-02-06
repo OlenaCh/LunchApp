@@ -28,6 +28,9 @@ gem 'faker',                   '1.6.3'
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 gem 'rmagick', :require => 'rmagick'
 
+# PDF generation
+gem 'prawn'
+
 # Documentation
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'railroady'
