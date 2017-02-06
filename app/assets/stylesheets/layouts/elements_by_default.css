@@ -36,34 +36,3 @@ footer {
   font-size: 20px;
   text-align: right;
 }
-
-.btn {
-  width: 90px;
-  height: 40px;
-  border: none;
-  border-radius: 10px;
-  background-color: rgba(137, 200, 106, 1);
-  color: rgba(255, 242, 230, 1);
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.content-container {
-	width: 100%;
-}
-
-.flex {
-  display: flex;
-}
-
-.hidden {
-  display: none;
-}
-
-.page-content {
-	width: 80%;
-}
-
-.wth-border {
-  border: solid 1.75px rgba(137, 200, 106, 1);
-}
