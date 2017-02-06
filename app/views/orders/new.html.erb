@@ -2,11 +2,13 @@
 
 <form class='order-form' action='/orders' method='POST'>
   <% ordered_items.each do |item| %>
-    <%= item.title %>
-    <%= item.calorie %>
-    <%= item.price %>
-    <input type='text' class='ordered-amount' value='1' />
-    <div class='remove-item-from-order'>X</div>
+    <div class='flex order-item'>
+      <%= item.title %>
+      <%= item.calorie %>
+      <%= item.price %>
+      <input type='text' class='ordered-amount' value='1' />
+      <div class='remove-item-from-order'>X</div>
+    </div>
   <% end %>
 
   <div class='form-element'>
@@ -23,7 +25,18 @@
     </div>
   </div>
   
+  <div class='form-element hidden'>
+    <label class='item-label order-new'>Email:</label>
+    <div class='order-input-type'>
+      <input type='text' name='order[email]' />
+    </div>
+  </div>
+  
   <div class='form-element add-btn'>
-    <input type='submit' value='Place order' class='add-new-order' />
+    <input type='checkbox' value='1' name='order[email_msg_required]' />Send invoice by email
+  </div>
+  
+  <div class='form-element add-btn'>
+    <input type='submit' value='Place order' class='btn add-order' />
   </div>
 </form>
