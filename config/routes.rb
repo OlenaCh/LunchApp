@@ -7,7 +7,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index]
   resources :items, :orders, :menus
   
-  get '/bills/show' => 'bills#show', as: bill
-  
   root 'menus#index'
 end

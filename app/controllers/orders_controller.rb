@@ -1,7 +1,10 @@
 class OrdersController < ApplicationController
   def new
-    render 'thank_you', locals: { billed_order: params[:billed_order] } unless params[:billed_order].blank?
-    render 'new', locals: { ordered_items: find_items(params[:items_ids]) }
+    if params[:billed_order].blank?
+      render 'new', locals: { ordered_items: find_items(params[:items_ids]) }
+    else
+      render 'thank_you', locals: { billed_order: params[:billed_order] }
+    end
   end
   
   def index
@@ -9,10 +12,16 @@ class OrdersController < ApplicationController
   end
   
   def create
-    byebug
     order = Order.create(order_params)
     order = count_totals(order)
     redirect_to new_order_path(billed_order: order.id) and return false if order.save
+  end
+  
+  def show
+    respond_to do |format|
+      format.html
+      format.pdf { generate_pdf(Order.find_by_id(params[:id])) }
+    end
   end
   
   def update
@@ -34,6 +43,12 @@ class OrdersController < ApplicationController
     items = []
     item_ids.split(',').each { |id| items << Item.find_by_id(id) }
     items
+  end
+  
+  def generate_pdf order
+    pdf = Prawn::Document.new
+    pdf.text "Hello World"
+    send_data pdf.render, filename: "bill_#{order.id}.pdf", type: 'application/pdf'
   end
   
   def order_params
