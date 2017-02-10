@@ -30,6 +30,7 @@ gem 'rmagick', :require => 'rmagick'
 
 # PDF generation
 gem 'prawn'
+gem 'prawn-table'
 
 # Documentation
 gem 'sdoc', '~> 0.4.0', group: :doc

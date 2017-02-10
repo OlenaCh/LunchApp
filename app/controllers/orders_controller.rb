@@ -46,8 +46,7 @@ class OrdersController < ApplicationController
   end
   
   def generate_pdf order
-    pdf = Prawn::Document.new
-    pdf.text "Hello World"
+    pdf = GenerateBill.new(order).run
     send_data pdf.render, filename: "bill_#{order.id}.pdf", type: 'application/pdf'
   end
   
