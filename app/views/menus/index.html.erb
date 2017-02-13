@@ -1,6 +1,6 @@
-<div class='popup-order-preview'>
-  <div class='order-preview-close'><p>X</p></div>
-  <div class='order-preview'>
+<div class='popup order-preview hidden'>
+  <div class='popup-close order-preview'><p>X</p></div>
+  <div class='popup-form order-preview'>
     <% menus.each do |menu| %>
       <%# if today?(menu.weekday) %>
         <% menu.items.each do |item| %>
@@ -17,32 +17,38 @@
     <% end %>
     <p class='order-preview-calories'></p>
     <p class='order-preview-sum'></p>
-    <div class='place-order'><a class='place-order-href' href=''>Place order!</a></div>
+    <div class='btn place-order'>
+      <a class='place-order-href' href=''>Place order!</a>
+    </div>
   </div>
 </div>
 
 <h1>Week menus:</h1>
 <% menus.each do |menu| %>
-  <div class='menu-row'>
+  <div class='weekday flex'>
     <div class='weekday-menu'>
-      <label class='item-label menu-new'><%= menu.weekday %>:</label>
-      <ul class='menus-list'>
+      <label class='weekday-menu-label'><%= menu.weekday %>:</label>
+      <ul class='weekday-menu-items'>
         <% menu.items.each do |item| %>
-          <li class='menus-list-item'>
-            <%= image_tag item.image, class: 'menus-list-item small', 'data': item.id %>
+          <li class='weekday-menu-item'>
+            <%= image_tag item.image, 
+                          class: 'weekday-menu-item small-img wth-border', 
+                          'data': item.id %>
             <span class='hidden-data' data="<%= item.id %>">
-              <div class='menus-list-item-enlarged-close'><p>X</p></div>
-              <%= image_tag item.image, class: 'menus-list-item enlarged' %>
+              <div class='weekday-menu-item enlarged-img close'><p>X</p></div>
+              <%= image_tag item.image, 
+                            class: 'weekday-menu-item enlarged-img wth-border' %>
               <div class='shopping-details'>
                 <p><%= item.title %> $<%= item.price %></p>
                 <div class='preview-img'></div>
                 <%# if today?(menu.weekday) %>
-                  <div class='shopping-cart-img' data-id="<%= item.id %>" data-calorie="<%= item.calorie %>" 
+                  <div class='shopping-cart-img' data-id="<%= item.id %>" 
+                       data-calorie="<%= item.calorie %>" 
                        data-price="<%= item.price %>"></div>
                 <%# end %>
               </div>
-              <div class='menu-item-details'>
-                <p class='menu-item-details-close'>X</p>
+              <div class='weekday-menu-item-details hidden'>
+                <p class='weekday-menu-item-details-close'>X</p>
                 <p>Calories: <%= item.calorie %></p>
                 <p>Fats: <%= item.fat %></p>
                 <p>Carbohydrates: <%= item.carbohydrate %></p>
@@ -54,7 +60,7 @@
         <% end %>
       </ul>
       <%# if current_user.admin %>
-        <div class='menus-list-item admin-panel'>
+        <div class='weekday-menu-item admin-panel'>
           <%= button_to "Edit", { action: "edit", id: menu.id }, method: :get %>
         </div>
       <%# end %>

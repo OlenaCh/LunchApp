@@ -1,0 +1,18 @@
+.popup-close.first-course, 
+.popup-close.main-course, 
+.popup-close.drink { right: -14px; top: -40px }
+
+.menu.item { margin: 5px }
+
+.menu.item-img { 
+  width: 120px; 
+  height: 120px;
+  border: solid 2px rgba(255, 242, 230, 1);
+  border-radius: 30px
+}
+
+.menu.item-title p { 
+  font-size: 15px; 
+  color: rgba(255, 242, 230, 1); 
+  float: right
+}

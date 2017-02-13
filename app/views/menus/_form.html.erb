@@ -1,48 +1,52 @@
-<div class='popup-items first-course'>
-  <div class='first-items'>
-    <div class='first-items-close'><p>X</p></div>
+<div class='popup first-course hidden'>
+  <div class='popup-form'>
+    <div class='popup-close first-course'><p>X</p></div>
     <%= render partial: 'menus/items', locals: { items: fc_items } %>
   </div>
 </div>
 
-<div class='popup-items main-course'>
-  <div class='main-items'>
-    <div class='main-items-close'><p>X</p></div>
+<div class='popup main-course hidden'>
+  <div class='popup-form'>
+    <div class='popup-close main-course'><p>X</p></div>
     <%= render partial: 'menus/items', locals: { items: mc_items } %>
   </div>
 </div>
 
-<div class='popup-items drink'>
-  <div class='drinks'>
-    <div class='drinks-close'><p>X</p></div>
+<div class='popup drink hidden'>
+  <div class='popup-form'>
+    <div class='popup-close drink'><p>X</p></div>
     <%= render partial: 'menus/items', locals: { items: drink_items } %>
   </div>
 </div>
 
-<form class='menu-form' action="<%= action == 'Update' ? ('/menus/' + menu.id.to_s) : '/menus/' %>" method='POST'>
+<form class='menu form' 
+      action="<%= action == 'Update' ? ('/menus/' + menu.id.to_s) : '/menus/' %>" 
+      method='POST'>
 
   <% if action == 'Update' %>
     <input type='hidden' name='_method' value='put' />
   <% end %>
   
-  <div class='form-element'>
-    <label class='item-label menu-new'>Weekday:</label>
-    <div class='item-type-options'>
+  <div class='menu form-element flex'>
+    <label class='menu form-element label'>Weekday:</label>
+    <div class='flex'>
       <% weekdays.each do |day| %>
         <% if menu %>
-          <div class='radio-input-type'>
-            <input type='radio' name='menu[weekday]' value="<%= day %>" checked><p><%= day %></p>
+          <div class='weekday-option'>
+            <input type='radio' name='menu[weekday]' 
+                   value="<%= day %>" checked><p><%= day %></p>
           </div>
         <% else %>
-          <div class='radio-input-type'>
-            <input type='radio' name='menu[weekday]' value="<%= day %>"><p><%= day %></p>
+          <div class='weekday-option'>
+            <input type='radio' name='menu[weekday]' 
+                   value="<%= day %>"><p><%= day %></p>
           </div>
         <% end %>
       <% end %>
     </div>
   </div>
   
-  <div class='form-element courses'>
+  <div class='menu form-element courses flex'>
     <% if menu %>
       <% menu.items.each do |item| %>
         <%= render partial: 'menus/input', locals: { id: item.id.to_s } %>
@@ -52,11 +56,11 @@
     <% end %>
   </div>
   
-  <div class='form-element add-btn'>
+  <div class='form-element add-btn flex'>
     <div class='btn add-item-to-menu'><p>Add item</p></div>
   </div>
   
-  <div class='form-element add-btn'>
+  <div class='form-element add-btn flex'>
     <input type='submit' value="<%= action %>" class='btn sbm-menu' />
   </div>
 </form>

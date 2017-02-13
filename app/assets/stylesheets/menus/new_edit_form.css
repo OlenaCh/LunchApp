@@ -1,19 +1,34 @@
-input.menu-item {
+.menu.form { margin: 0; padding: 17px; width: 1044px; float: left }
+
+.menu.form-element { margin: 15px 0 10px 0 }
+
+.menu.form-element.label,
+.menu.form-element.input { margin-left: 35px }
+
+.weekday-option { margin: 0 0 0 40px }
+
+.weekday-option input { width: 50%; margin: 0 0 0 25% }
+
+.weekday-option p { margin: 5px 0 0 0; font-size: 20px }
+
+.menu.form-element.courses { display: block }
+
+.menu.item.form-element.input {
   width: 150px;
   height: 20px;
   background-color: rgba(255, 242, 230, 1);
-  border-radius: 10px;
-  border: solid 2px rgba(137, 200, 106, 1);
-  margin-left: 150px;
+  border-radius: 10px
 }
 
-.choose {
-  border: 2px solid;
+.menu.item.form-element.input,
+.menu.item-buttons { margin-left: 150px }
+
+.choose { 
   width: 40px;
   height: 40px;
   border-radius: 100px;
   margin-left: 30px;
-  cursor: pointer;
+  cursor: pointer
 }
 
 .choose p {
@@ -21,65 +36,11 @@ input.menu-item {
   height: 50%;
   margin: 25% 0 0 25%;
   text-align: center;
-  font-size: 17px;
+  font-size: 17px
 }
 
-.form-element {
-  display: flex;
-  margin: 50px 0 20px 0;
-}
+.btn.add-item-to-menu {  margin: 0 0 0 900px }
 
-.menu-form {
-  margin: 0;
-  padding: 17px;
-  width: 1044px;
-  float: left;
-}
+.btn.add-item-to-menu p {  padding: 5px 0 0 2px }
 
-.radio-input-type {
-  margin: 0 0 0 40px;
-}
-
-.radio-input-type input {
-  width: 50%;
-  margin: 0 0 0 25%;
-}
-
-.radio-input-type p {
-  margin: 5px 0 0 0;
-  font-size: 20px;
-}
-
-.item-type-options {
-  display: flex;  
-}
-
-.item-label.menu-new {
-  margin-left: 35px;
-}
-
-.form-element.courses {
-  display: block;
-}
-
-.item-input.menu-new {
-  margin-left: 35px;
-  display: flex;
-}
-
-.menu-new.item-buttons {
-  display: flex;
-  margin-left: 150px;
-}
-
-.btn.add-item-to-menu {
-  margin: 0 0 0 900px;
-}
-
-.btn.add-item-to-menu p {
-  padding: 5px 0 0 2px;
-}
-
-.btn.sbm-menu {
-  margin: 0 0 0 500px;
-}
+.btn.sbm-menu {  margin: 0 0 0 500px }

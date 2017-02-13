@@ -1,9 +1,9 @@
 <% items.each do |item| %>
-  <div class='item new-menu' data="<%= item.id %>">
-    <div class: 'item-img-wrapper new-menu'>
-      <%= image_tag item.image_url.to_s, class: 'item-img new-menu' %>
+  <div class='menu item' data="<%= item.id %>">
+    <div class: 'menu item-img-wrapper'>
+      <%= image_tag item.image_url.to_s, class: 'menu item-img' %>
     </div>
-    <div class='item-title new-menu'>
+    <div class='menu item-title'>
       <p><%= item.title %></p>
     </div>
   </div>
