@@ -1,22 +1,22 @@
 <div class='popup order-preview hidden'>
   <div class='popup-close order-preview'><p>X</p></div>
-  <div class='popup-form order-preview'>
+  <div class='popup-form preview'>
     <% menus.each do |menu| %>
       <%# if today?(menu.weekday) %>
         <% menu.items.each do |item| %>
-          <div class='order-preview-item hidden' data="<%= item.id %>">
+          <div class='preview-item hidden' data="<%= item.id %>">
             <p><%= item.title %></p>
             <p><%= item.price %> $</p>
             <p><%= item.calorie %> cal</p>
-            <div class='remove-item-from-order' data-id="<%= item.id %>" 
+            <div class='remove-item-from-preview' data-id="<%= item.id %>" 
                  data-calorie="<%= item.calorie %>" 
                  data-price="<%= item.price %>">X</div>
           </div>
         <% end %>
       <%# end %>
     <% end %>
-    <p class='order-preview-calories'></p>
-    <p class='order-preview-sum'></p>
+    <p class='preview-calories'></p>
+    <p class='preview-sum'></p>
     <div class='btn place-order'>
       <a class='place-order-href' href=''>Place order!</a>
     </div>
@@ -40,7 +40,7 @@
                             class: 'weekday-menu-item enlarged-img wth-border' %>
               <div class='shopping-details'>
                 <p><%= item.title %> $<%= item.price %></p>
-                <div class='preview-img'></div>
+                <div class='view-img'></div>
                 <%# if today?(menu.weekday) %>
                   <div class='shopping-cart-img' data-id="<%= item.id %>" 
                        data-calorie="<%= item.calorie %>" 

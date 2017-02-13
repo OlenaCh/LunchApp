@@ -25,7 +25,7 @@
 
 .shopping-details p { margin: 10px 10px 10px 0 }
 
-.shopping-cart-img, .preview-img {
+.shopping-cart-img, .view-img {
 	width: 40px;
   height: 40px;
   margin: 0;
@@ -34,7 +34,7 @@
 
 .shopping-cart-img { background-image: url("/assets/1486063408_Cart_by_Artdesigner.lv.png") }
 
-.preview-img { background-image: url("/assets/1486094936_document-preview.png") }
+.view-img { background-image: url("/assets/1486094936_document-preview.png") }
 
 .weekday-menu-item-details { margin: 10px }
 

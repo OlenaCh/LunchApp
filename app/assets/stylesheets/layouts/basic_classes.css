@@ -9,7 +9,12 @@
   cursor: pointer
 }
 
-.content-container { width: 100% }
+.content-container { 
+  width: 100%; 
+  height: calc(100% - 190px); 
+  /*position: absolute; */
+  /*bottom: 50px*/
+}
 
 .flex { display: flex }
 

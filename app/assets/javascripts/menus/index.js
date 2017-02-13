@@ -4,7 +4,7 @@ $(document).ready(function() {
     prepareOrderPreview();
   });
   
-  $('.preview-img').click(function() {
+  $('.view-img').click(function() {
     $('.weekday-menu-item-details').show();
   });
   
@@ -20,7 +20,7 @@ $(document).ready(function() {
     $('.popup.order-preview').hide();
   });
   
-  $('.remove-item-from-order').click(function() {
+  $('.remove-item-from-preview').click(function() {
     removeChosenItem(this);
     lessenOrderVariables(this);
     countTotalCalories();
@@ -52,12 +52,12 @@ $(document).ready(function() {
   
   var countTotalCalories = function() {
     var txt = 'Calories: ' + order_calories;
-    $('.order-preview-calories').text(txt);
+    $('.preview-calories').text(txt);
   };
   
   var countTotalSum = function() {
     var txt = 'Sum: ' + order_sum;
-    $('.order-preview-sum').text(txt);
+    $('.preview-sum').text(txt);
   };
   
   var enlargeOrderVariables = function(obj) {
@@ -67,7 +67,7 @@ $(document).ready(function() {
   };
   
   var formOrderPreview = function() {
-    var order_items = $('.popup.order-preview').find('.order-preview-item.hidden');
+    var order_items = $('.popup.order-preview').find('.preview-item.hidden');
     for(var i = 0, size = order_items.length; i < size; i++)
       if(ordered_meals.includes($(order_items[i]).attr('data'))) {
         $(order_items[i]).removeClass('hidden');
@@ -92,7 +92,7 @@ $(document).ready(function() {
   };
   
   var removeChosenItem = function(obj) {
-    var shown_items = $('.popup.order-preview').find('.order-preview-item.flex');
+    var shown_items = $('.popup.order-preview').find('.preview-item.flex');
     for(var i = 0, size = shown_items.length; i < size; i++) {
       if($(obj).attr('data-id') == $(shown_items[i]).attr('data')) {
         $(shown_items[i]).removeClass('flex');

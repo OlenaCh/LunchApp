@@ -1,17 +1,17 @@
 .popup-close.order-preview, 
-.remove-item-from-order, 
+.remove-item-from-preview, 
 .place-order { color: rgba(137, 200, 106, 1) }
 
-.remove-item-from-order, 
+.remove-item-from-preview, 
 .place-order { background-color: rgba(255, 242, 230, 1); cursor: pointer }
 
 .popup-close.order-preview { right: 37.6%; top: 6% }
 
-.order-preview { display: block; font-size: 20px; color: rgba(255, 242, 230, 1) }
+.preview { display: block; font-size: 20px; color: rgba(255, 242, 230, 1) }
 
-.order-preview p { width: 100% }
+.preview p { width: 100% }
 
-.remove-item-from-order {
+.remove-item-from-preview {
   width: 20px;
   padding: 0 5px;
   height: 20px;
