@@ -5,7 +5,7 @@
 .remove-item-from-preview, 
 .place-order { background-color: rgba(255, 242, 230, 1); cursor: pointer }
 
-.popup-close.order-preview { right: 37.6%; top: 6% }
+.popup-close.order-preview { left: 71%; top: 11% }
 
 .preview { display: block; font-size: 20px; color: rgba(255, 242, 230, 1) }
 

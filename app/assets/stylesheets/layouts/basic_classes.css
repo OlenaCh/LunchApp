@@ -11,15 +11,13 @@
 
 .content-container { 
   width: 100%; 
-  height: calc(100% - 190px); 
-  /*position: absolute; */
-  /*bottom: 50px*/
+  height: calc(100% - 190px);
 }
 
 .flex { display: flex }
 
 .hidden { display: none }
 
-.page-content { width: 80% }
+.page-content { width: 80%; height: 100% }
 
-.wth-border { border: solid 2px rgba(137, 200, 106, 1) }
+/*.wth-border { border: solid 2px rgba(137, 200, 106, 1) }*/

@@ -3,15 +3,7 @@ $(document).ready(function() {
     enlargeOrderVariables(this);
     prepareOrderPreview();
   });
-  
-  $('.view-img').click(function() {
-    $('.weekday-menu-item-details').show();
-  });
-  
-  $('.weekday-menu-item-details-close').click(function() {
-    $('.weekday-menu-item-details').hide();
-  });
-  
+
   $('.order-preview-form').click(function() {
     $('.popup.order-preview').show();
   });

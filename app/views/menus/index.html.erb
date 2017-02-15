@@ -4,7 +4,7 @@
     <% menus.each do |menu| %>
       <%# if today?(menu.weekday) %>
         <% menu.items.each do |item| %>
-          <div class='preview-item hidden' data="<%= item.id %>">
+          <div class='preview-item hidden flex' data="<%= item.id %>">
             <p><%= item.title %></p>
             <p><%= item.price %> $</p>
             <p><%= item.calorie %> cal</p>
@@ -31,31 +31,29 @@
       <ul class='weekday-menu-items'>
         <% menu.items.each do |item| %>
           <li class='weekday-menu-item'>
-            <%= image_tag item.image, 
+            <div class='main-data ' data="<%= item.id %>">
+              <div class='main-data-general'>
+                <%= image_tag item.image, 
                           class: 'weekday-menu-item small-img wth-border', 
                           'data': item.id %>
-            <span class='hidden-data' data="<%= item.id %>">
-              <div class='weekday-menu-item enlarged-img close'><p>X</p></div>
-              <%= image_tag item.image, 
-                            class: 'weekday-menu-item enlarged-img wth-border' %>
-              <div class='shopping-details'>
-                <p><%= item.title %> $<%= item.price %></p>
-                <div class='view-img'></div>
-                <%# if today?(menu.weekday) %>
-                  <div class='shopping-cart-img' data-id="<%= item.id %>" 
-                       data-calorie="<%= item.calorie %>" 
-                       data-price="<%= item.price %>"></div>
-                <%# end %>
+                <div class='shopping-details hidden'>
+                  <p><%= item.title %> $<%= item.price %></p>
+                  <%# if today?(menu.weekday) %>
+                    <div class='shopping-cart-img' data-id="<%= item.id %>" 
+                         data-calorie="<%= item.calorie %>" 
+                         data-price="<%= item.price %>"></div>
+                  <%# end %>
+                </div>
               </div>
-              <div class='weekday-menu-item-details hidden'>
-                <p class='weekday-menu-item-details-close'>X</p>
+              <div class='main-data-details hidden'>
                 <p>Calories: <%= item.calorie %></p>
                 <p>Fats: <%= item.fat %></p>
                 <p>Carbohydrates: <%= item.carbohydrate %></p>
                 <p>Proteins: <%= item.protein %></p>
                 <p>Description. <%= item.description %></p>
+                <p class='weekday-menu-item-details-close'>X</p>
               </div>
-            </span>
+            </div>
           </li>
         <% end %>
       </ul>

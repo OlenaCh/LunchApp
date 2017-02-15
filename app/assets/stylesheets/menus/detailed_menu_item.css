@@ -1,31 +1,14 @@
-.weekday-menu-item span,
-.weekday-menu-item.enlarged-img.close { position: absolute }
-
-.weekday-menu-item span,
-.weekday-menu-item.enlarged-img { border-radius: 30px }
-
-.weekday-menu-item span {
-  padding: 10px;
-  background: rgba(255, 242, 230, 1);
-  box-shadow: 0 0 20px rgba(137, 200, 106, .85);
-  font-size: 20px
-}
-
-.hidden-data { left: -9999px }
-
-.shown-data { top: -230px; left: 60px }
-
-.weekday-menu-item.enlarged-img.close { right: 5%; top: 2%; cursor: pointer }
+.weekday-menu-item-details p { font-size: 15px }
 
 .shopping-details,
 .weekday-menu-item-details,
 .weekday-menu-item-details p { width: 100% }
 
-.shopping-details { display: flex; justify-content: center; margin: 5px 10px }
+.shopping-details { justify-content: center; margin: 5px 10px } 
 
 .shopping-details p { margin: 10px 10px 10px 0 }
 
-.shopping-cart-img, .view-img {
+.shopping-cart-img {
 	width: 40px;
   height: 40px;
   margin: 0;
@@ -34,10 +17,8 @@
 
 .shopping-cart-img { background-image: url("/assets/1486063408_Cart_by_Artdesigner.lv.png") }
 
-.view-img { background-image: url("/assets/1486094936_document-preview.png") }
-
 .weekday-menu-item-details { margin: 10px }
 
-.weekday-menu-item-details p { font-size: 15px }
-
-.weekday-menu-item-details-close { position: relative; top: 0; right: -88% }
+.key-info {
+  display: inline-block;
+}
