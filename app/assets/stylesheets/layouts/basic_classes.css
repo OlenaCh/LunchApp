@@ -1,3 +1,12 @@
+.content-wrapper { width: 100%; height: 100%; position: fixed }
+
+.content { width: 80%; height: 100% }
+
+.main { 
+  width: 100%; 
+  height: calc(100% - 190px);
+}
+
 .btn {
   width: 90px;
   height: 40px;
@@ -9,15 +18,12 @@
   cursor: pointer
 }
 
-.content-container { 
-  width: 100%; 
-  height: calc(100% - 190px);
-}
-
 .flex { display: flex }
+
+.block { display: inline-block }
+
+.max-width { width: 100% }
 
 .hidden { display: none }
 
-.page-content { width: 80%; height: 100% }
-
-/*.wth-border { border: solid 2px rgba(137, 200, 106, 1) }*/
+.wth-border { border: solid 2px rgba(137, 200, 106, 1) }

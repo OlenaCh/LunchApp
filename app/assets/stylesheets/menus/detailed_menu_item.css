@@ -4,7 +4,7 @@
 .weekday-menu-item-details,
 .weekday-menu-item-details p { width: 100% }
 
-.shopping-details { justify-content: center; margin: 5px 10px } 
+.shopping-details { justify-content: center; padding: 0 42px } /*flex*/
 
 .shopping-details p { margin: 10px 10px 10px 0 }
 
@@ -19,6 +19,9 @@
 
 .weekday-menu-item-details { margin: 10px }
 
-.key-info {
-  display: inline-block;
-}
+/*.main-data-general {*/
+/*  width:50%;*/
+/*}*/
+/*.img-wrapper {padding:0 42px;}*/
+
+/*.main-data {width:100%;display: flex}*/

@@ -29,3 +29,5 @@ footer {
   font-size: 20px; 
   text-align: right
 }
+
+footer p { padding-right: 1% }

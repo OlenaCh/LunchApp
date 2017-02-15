@@ -21,12 +21,21 @@ $(document).ready(function() {
   });
   
   $('.weekday-menu-item.small-img').click(function() {
-    var menu_list = $('.weekday-menu-items').find('.hidden-data');
-    for (var i = 0, size = menu_list.length; i < size; i++) {
-      if ($(this).attr('data') == $(menu_list[i]).attr('data')) {
-        $(menu_list[i]).removeClass('hidden-data');
-        $(menu_list[i]).addClass('shown-data');
-      }
+    var parents = $(this).parents();
+    $(this).removeClass('small-img');
+    $(this).addClass('enlarged-img');
+    $(parents[2]).removeClass('flex');
+    var x = $(parents[2]).children();
+    
+    var y = $(parents[1]).children();
+    for (var i = 0, size = x.size(); i < size; i++){
+      if ($(x[i]).hasClass('hidden'))
+        $(x[i]).removeClass('hidden');
+    }
+    
+    for (var i = 0, size = y.size(); i < size; i++){
+      if ($(y[i]).hasClass('hidden'))
+        $(y[i]).removeClass('hidden');
     }
   });
   
