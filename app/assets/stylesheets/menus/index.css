@@ -1,14 +1,14 @@
-.weekday-menu { width: 100%; margin: 10px 0; display: block }
+.weekday { padding: 5px }
 
-.weekday-menu-items { margin: 0 }
+.weekday-name { width: 100%; height: 10% }
+
+.weekday-menu { width: 100%; height: calc(90% - 40px); padding: 10px 0 }
+
+.weekday-menu-items { width: 100%; margin: 0 }
 
 .weekday-menu-items li:hover { z-index: 50 }
 
-.weekday-menu-item {
-  position: relative;
-  z-index: 0;
-  margin: 0 10px
-}
+.weekday-menu-item { position: relative; z-index: 0 }
 
 .small-img {
   margin: 0;
@@ -26,11 +26,11 @@
 
 .weekday-menu-item.small-img:hover { opacity: 1; cursor: pointer }
 
-.weekday-menu-item.admin-panel { width: 100%; margin: 0 }
+.weekday-admin-panel { width: 100%; height: 40px; margin: 0 }
 
-.weekday-menu-item.admin-panel form { width: 15%; float: right }
+.weekday-admin-panel form { width: 15%; float: right }
 
-.weekday-menu-item.admin-panel input {
+.weekday-admin-panel input {
   background-color: rgba(137, 200, 106, 1);
   border: none;
   border-radius: 10px;

@@ -1,4 +1,9 @@
-.sidebar { width: 20%; background-color: rgba(137, 200, 106, 1) }
+.sidebar { 
+  width: 20%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(137, 200, 106, 1)
+}
 
 .sidebar-item {
   padding: 15px 0 15px 10px;
