@@ -14,7 +14,7 @@
           <%= item.price %>
         </div>
       </div>
-      <%# if current_user.admin %>
+      <%# if current_user? %>
         <div class='items element-admin-panel'>
           <%= button_to "Edit", { action: "edit", id: item.id }, 
               method: :get, class: 'btn' %>
@@ -26,14 +26,6 @@
   </ul>
 <% end %>
 
-<ul class='items wth-border'>
-  <li class='items flex element'>
-    <div class='items element-empty'>
-      <div class='empty-img wth-border'></div>
-    </div>
-    <div class='items element-admin-panel'>
-      <%= button_to 'Add', { action: 'new' }, 
-          method: :get, class: 'btn add-item' %>
-    </div>
-  </li>
-</ul>
+<div class='pagination-bar'>
+  <%= paginate items, :window => 2, :outer_window => 1 %>
+</div>

@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   end
   
   def index
-    render 'index', locals: { items: Item.all }
+    render 'index', locals: { items: Item.all.page(params[:page]) }
   end
   
   def edit
@@ -37,8 +37,14 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-  	params.require(:item).permit(:item_type, :title, :price, 
-  	                             :description, :fat, :carbohydrate,
-  	                             :protein, :calorie, :image)
+  	params.require(:item).permit(:item_type, 
+  	                             :title, 
+  	                             :price, 
+  	                             :description, 
+  	                             :fat, 
+  	                             :carbohydrate,
+  	                             :protein, 
+  	                             :calorie, 
+  	                             :image)
   end
 end

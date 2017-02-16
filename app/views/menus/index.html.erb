@@ -62,9 +62,10 @@
         <% end %>
       </ul>
     </div>
-    <%# if current_user.admin %>
+    <%# if current_user? %>
       <div class='weekday-admin-panel'>
-        <%= button_to "Edit", { action: "edit", id: menu.id }, method: :get %>
+        <%= button_to 'Edit', { action: 'edit', id: menu.id }, method: :get %>
+        <%#= button_to 'Delete', { action: 'destroy', id: menu.id }, method: :delete %>
       </div>
     <%# end %>
   </div>  

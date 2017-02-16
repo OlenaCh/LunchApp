@@ -18,8 +18,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 
 # Pagination
-gem 'will_paginate',           '3.1.0'
-gem 'bootstrap-will_paginate', '0.0.10'
+gem 'kaminari'
 
 # Fake data
 gem 'faker',                   '1.6.3'

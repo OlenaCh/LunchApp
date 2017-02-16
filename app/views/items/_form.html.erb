@@ -1,15 +1,49 @@
 <%= simple_form_for item, html: { multipart: true } do |f| %>
-  <%= f.input :item_type, as: :radio_buttons, collection: types %>
-  <%= f.input :title %>
-  <%= f.input :price %>
-  <%= f.input :fat %>
-  <%= f.input :carbohydrate %>
-  <%= f.input :protein %>
-  <%= f.input :calorie %>
-  <%= f.input :description %>
-  <% if image %>
-    <%= image_tag image %>
-  <% end %>
-  <%= f.input :image %>
-  <%= f.submit "Place order!" %>
+  <div class='item-field'>
+    <%= f.input :item_type, as: :radio_buttons, collection: types %>
+  </div>
+  
+  <div class='item-field'>
+    <%= f.input :title %>
+  </div>
+  
+  <div class='item-field'>
+    <%= f.input :price %>
+  </div>
+  
+  <div class='item-field'>
+    <%= f.input :fat %>
+  </div>
+  
+  <div class='item-field'>
+    <%= f.input :carbohydrate %>
+  </div>
+  
+  <div class='item-field'>
+    <%= f.input :protein %>
+  </div>
+  
+  <div class='item-field'>
+    <%= f.input :calorie %>
+  </div>
+  
+  <div class='item-field'>
+    <%= f.input :description %>
+  </div>
+  
+  <div class='item-field'>
+    <% if image %>
+      <%= image_tag image %>
+    <% end %>
+  </div>
+  
+  <div class='item-field'>
+    <%= f.input :image %>
+  </div>
+  
+  <div class='item-submit-btn-wrapper'>
+    <div class='btn'>
+      <%= f.submit "#{action}"%>
+    </div>
+  </div>
 <% end %>

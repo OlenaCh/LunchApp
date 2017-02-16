@@ -1,4 +1,7 @@
 <div class='item-form'>
   <h1>Edit item:</h1>
-  <%= render partial: 'items/form', locals: { item: item, types: types, image: item.image } %>  
+  <%= render partial: 'items/form', locals: { item: item, 
+                                              types: types, 
+                                              image: item.image,
+                                              action: 'Edit' } %>  
 </div>

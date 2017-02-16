@@ -19,9 +19,10 @@
         <ul class='sidebar-items'>
           <%# if signed_in? %>
             <%# if current_user.admin == true %>
-              <li class='sidebar-item'><%= link_to "Orders", orders_path %></li>
+              <li class='sidebar-item'><%= link_to 'Orders', orders_path %></li>
+              <li class='sidebar-item'><%= link_to 'Add new item', new_item_path %></li>
             <%# end %>
-            <li class='sidebar-item'><%= link_to "All menu items", items_path %></li>
+            <li class='sidebar-item'><%= link_to 'All menu items', items_path %></li>
             <li class='sidebar-item order-preview-form hidden'><a href='#'>Preview order</a></li>
           <%# end %>
         </ul>

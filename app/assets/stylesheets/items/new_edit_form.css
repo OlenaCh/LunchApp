@@ -1,0 +1,37 @@
+.item-form { width: 100% }
+
+.item-form form { margin: 2% 3% }
+
+.item-field { width: 100%; padding: 2% 0 }
+
+.input label { font-size: 23px }
+
+.input input { 
+  height: 23px; 
+  float: right; 
+  margin-right: 10%;
+  background-color: rgba(255, 242, 230, 1);
+  color: rgba(137, 200, 106, 1);
+  border: solid 2px rgba(137, 200, 106, 1);
+  border-radius: 10px
+}
+
+span.radio { float: right; margin-right: 10% }
+
+input[type="RADIO"] { float: none; margin: 0 }
+
+.item-field img {
+  border: solid 2px rgba(137, 200, 106, 1);
+  border-radius: 30px;
+  overflow: hidden
+}
+
+.item-submit-btn-wrapper { width: 55%; padding: 1% 0 0 45% }
+
+.btn input[type="SUBMIT"] {
+  background-color: transparent;
+  padding: 3% 27%;
+  border: none;
+  color: rgba(255, 242, 230, 1);
+  font-size: 20px
+}
