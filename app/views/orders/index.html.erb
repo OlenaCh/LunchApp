@@ -17,7 +17,7 @@
       <td><%= order.address %></td>
       <td><%= order.email %></td>
       <td><%= order.total %></td>
-      <td>
+      <td class='order-details flex'>
         <% order.order_items.each do |item| %>
           <div class='order-item-img' data="<%= item.id %>">
             <%= image_tag item.item.image %>
@@ -28,10 +28,12 @@
           </span>
         <% end %>
       </td>
-      <td>
-        <div><%= order.status %></div>
-        <div>
-          
+      <td class='order-status' data="<%= order.id %>">
+        <div class='order-status-current'><%= order.status %></div>
+        <div class='order-statuses hidden'>
+          <input class='order-status-radio' type='radio' name='status' value='Confirmed'> Confirmed</br>
+          <input class='order-status-radio' type='radio' name='status' value='Being processed'> Being processed</br>
+          <input class='order-status-radio' type='radio' name='status' value='Delivered'> Delivered
         </div>
       </td>
     </tr>

@@ -16,6 +16,14 @@
 
 .remove-item-from-order { font-weight: bold; cursor: pointer }
 
+.order.form-element { 
+  width: 100%;
+  justify-content: space-between;
+  padding: 2% 0
+}
+
+.order.form-element label { padding-left: 2%; font-size: 20px }
+
 .order-input-type input { 
   height: 23px; 
   float: right; 
@@ -24,6 +32,15 @@
   color: rgba(137, 200, 106, 1);
   border: solid 2px rgba(137, 200, 106, 1);
   border-radius: 10px
+}
+
+.btn-add-order { width: 100%; padding-right: 2% }
+
+.btn-add-order input[value="Place order"] { 
+  width: 150px !important;
+  float: right;
+  color: rgba(255, 242, 230, 1);
+  background-color: rgba(137, 200, 106, 1)
 }
 
 .thank-you {
@@ -38,4 +55,8 @@
   font-weight: bold
 }
 
-.btn-wrapper { padding: 2% 3%; width: 94% }
+.btn-wrapper { padding: 2% 3%; width: 94%; justify-content: center }
+
+.btn.download-bill { padding: 1% 0 0 2% }
+
+.btn.download-bill a { color: rgba(255, 242, 230, 1) }

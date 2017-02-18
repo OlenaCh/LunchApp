@@ -25,8 +25,12 @@ class OrdersController < ApplicationController
   
   def update
     order = Order.find_by_id(params[:id])
-    redirect_to orders_path and return false if order.update(order_update_params)
-    new_or_edit('edit', order)
+    if order.update(order_update_params)
+      respond_to { |format| 
+        format.html 
+        format.json { render json: { status: 200 } }
+      }
+    end
   end
   
   private

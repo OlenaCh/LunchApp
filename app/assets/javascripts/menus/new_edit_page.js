@@ -17,11 +17,12 @@ $(document).ready(function() {
       <div class='course flex'>
         <label class='menu form-element label'>Menu item:</label>
         <div class='menu form-element input flex'>
-          <input type='text' class='menu item form-element input' name='menu[items][]' id='menu'>
+          <input type='text' class='menu item form-element input wth-border' 
+                 name='menu[items][]' id='menu' value="<%= id %>">
           <div class='menu item-buttons flex'>
-            <div class='choose f-menu-item' data='nil'><p>F</p></div>
-            <div class='choose m-menu-item' data='nil'><p>M</p></div>
-            <div class='choose d-menu-item' data='nil'><p>D</p></div>
+            <div class='choose f-menu-item wth-border' data='nil'><p>F</p></div>
+            <div class='choose m-menu-item wth-border' data='nil'><p>M</p></div>
+            <div class='choose d-menu-item wth-border' data='nil'><p>D</p></div>
           </div>
         </div>
       </div>

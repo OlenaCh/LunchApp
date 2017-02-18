@@ -1,15 +1,16 @@
-.menu.form { margin: 0; padding: 17px; width: 1044px; float: left }
+.menu.form { margin: 2% 3%; width: 94% }
 
-.menu.form-element { margin: 15px 0 10px 0 }
+.menu.form-element { width: 100% }
 
-.menu.form-element.label,
-.menu.form-element.input { margin-left: 35px }
+.menu.form-element.label { width: 20% }
 
-.weekday-option { margin: 0 0 0 40px }
+.weekday-options { width: 80%; padding: 0.5%; display: inline-flex }
+
+.weekday-option { margin: 1.5% }
 
 .weekday-option input { width: 50%; margin: 0 0 0 25% }
 
-.weekday-option p { margin: 5px 0 0 0; font-size: 20px }
+.weekday-option p { padding: 5px 0 0 0; font-size: 17px }
 
 .menu.form-element.courses { display: block }
 
@@ -39,8 +40,8 @@
   font-size: 17px
 }
 
-.btn.add-item-to-menu {  margin: 0 0 0 900px }
+.btn.add-item-to-menu {  }
 
 .btn.add-item-to-menu p {  padding: 5px 0 0 2px }
 
-.btn.sbm-menu {  margin: 0 0 0 500px }
+.btn.sbm-menu {  }

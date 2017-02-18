@@ -6,6 +6,8 @@
 
 .order-item-img img { width: 50px; height: 50px }
 
+.order-details { justify-content: space-around }
+
 span.order-item-details {
   width: 150px;
   justify-content: space-around;
@@ -23,5 +25,9 @@ span.order-item-details {
 @keyframes mymove {
   50% { box-shadow: 1px 1px 1px 1px rgba(137, 200, 106, 0.7) }
 }
+
+.order-status { cursor: pointer }
+
+.order-statuses { font-size: 12px; padding-top: 10px }
 
 .displayed { display: flex; position: fixed; left: 64% }
