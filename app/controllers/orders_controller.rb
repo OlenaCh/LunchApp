@@ -1,10 +1,9 @@
 class OrdersController < ApplicationController
   def new
-    if params[:billed_order].blank?
-      render 'new', locals: { ordered_items: find_items(params[:items_ids]) }
-    else
-      render 'thank_you', locals: { billed_order: params[:billed_order] }
+    unless params[:billed_order].blank?
+      render 'thank_you', locals: { billed_order: params[:billed_order] } and return
     end
+    render 'new', locals: { ordered_items: find_items(params[:items_ids]) }
   end
   
   def index

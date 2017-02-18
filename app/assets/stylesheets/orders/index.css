@@ -1,0 +1,27 @@
+.orders { margin: 2% 3%; width: 94% }
+
+.orders tr { text-align: center; font-size: 18px }
+
+.orders th { font-size: 20px }
+
+.order-item-img img { width: 50px; height: 50px }
+
+span.order-item-details {
+  width: 150px;
+  justify-content: space-around;
+  font-size: 14px;
+  background-color: antiquewhite;
+  border-radius: 8px;
+  -webkit-animation: mymove 5s infinite;
+  animation: mymove 5s infinite
+}
+
+@-webkit-keyframes mymove {
+  50% { box-shadow: 1px 1px 1px 1px rgba(137, 200, 106, 0.7) }
+}
+
+@keyframes mymove {
+  50% { box-shadow: 1px 1px 1px 1px rgba(137, 200, 106, 0.7) }
+}
+
+.displayed { display: flex; position: fixed; left: 64% }

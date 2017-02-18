@@ -1,3 +1,10 @@
-<h2>Your order was successfully created!</h2>
-<p>To get PDF version of your bill press the following button:</p>
-<%= link_to 'Get Bill!', order_path(id: billed_order, format: 'pdf'), class: 'btn download-bill' %>
+<h1>Your order was successfully created!</h1>
+<div class='thank-you'>
+  <p class='get-pdf'>To get PDF version of your bill press the following button:</p>
+  <div class='btn-wrapper'>
+    <div class='btn download-bill'>
+      <%= link_to 'Get Bill!', order_path(id: billed_order, format: 'pdf'), 
+                  class: '' %>
+    </div>
+  </div>
+</div>

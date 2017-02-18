@@ -1,32 +1,47 @@
 <h1>Order preview:</h1>
 
 <form class='order-form' action='/orders' method='POST'>
-  <% ordered_items.each do |item| %>
-    <div class='flex order-item'>
-      <%= item.title %>
-      <%= item.calorie %>
-      <%= item.price %>
-      <input type='text' class='ordered-item hidden' name='order[order_items_attributes][][item_id]' value='<%= item.id %>' />
-      <input type='text' class='ordered-amount' name='order[order_items_attributes][][amount]' value='1' />
-      <div class='remove-item-from-order'>X</div>
-    </div>
-  <% end %>
+  <label>Ordered items:</label>
+  <table class='order-items'>
+    <tr>
+      <th>Title</th>
+      <th>Calories</th>
+      <th>Price for one</th>
+      <th></th>
+      <th>Amount</th>
+      <th>Remove from order</th>
+    </tr>
+    <% ordered_items.each do |item| %>
+      <tr>
+        <td><%= item.title %></td>
+        <td><%= item.calorie %></td>
+        <td><%= item.price %></td>
+        <td>
+          <input type='text' class='ordered-item hidden' name='order[order_items_attributes][][item_id]' value='<%= item.id %>' />
+        </td>
+        <td>
+          <input type='text' class='ordered-amount' name='order[order_items_attributes][][amount]' value='1' />
+        </td>
+        <td><div class='remove-item-from-order'>X</div></td>
+      </tr>
+    <% end %>
+  </table>
 
-  <div class='form-element'>
+  <div class='form-element flex'>
     <label class='item-label order-new'>Full name:</label>
     <div class='order-input-type'>
       <input type='text' name='order[name]' />
     </div>
   </div>
   
-  <div class='form-element'>
+  <div class='form-element flex'>
     <label class='item-label order-new'>Delivery address:</label>
     <div class='order-input-type'>
       <input type='text' name='order[address]' />
     </div>
   </div>
   
-  <div class='form-element add-btn'>
+  <div class='form-element btn'>
     <input type='submit' value='Place order' class='btn add-order' />
   </div>
 </form>
