@@ -18,3 +18,43 @@
 .sidebar-item a { color: rgba(255, 242, 230, 1) }
 
 .sidebar-item a:hover { color: rgba(137, 200, 106, 1) }
+
+@media only screen and (min-width: 360px) {
+  .sidebar {
+    #wrapper {
+      padding-left: 220px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 200px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 40px;
+        
+        
+    }
+
+#wrapper.toggled span {
+        visibility:hidden;
+        
+    }
+  #wrapper.toggled   i {
+ float:right;
+ } 
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+  }
+}

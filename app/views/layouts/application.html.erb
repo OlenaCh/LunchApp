@@ -17,14 +17,13 @@
     <div class='content-wrapper flex'>
       <div class='sidebar'>
         <ul class='sidebar-items'>
-          <%# if signed_in? %>
-            <%# if current_user.admin == true %>
-              <li class='sidebar-item'><%= link_to 'Orders', orders_path %></li>
-              <li class='sidebar-item'><%= link_to 'Add new item', new_item_path %></li>
-            <%# end %>
-            <li class='sidebar-item'><%= link_to 'All menu items', items_path %></li>
-            <li class='sidebar-item order-preview-form hidden'><a href='#'>Preview order</a></li>
+          <i class="fa fa-sort-alpha-asc" aria-hidden="true"> </i>
+          <%# if current_user.admin == true %>
+            <li class='sidebar-item'><%= link_to 'Orders', orders_path %></li>
+            <li class='sidebar-item'><%= link_to 'Add new item', new_item_path %></li>
           <%# end %>
+          <li class='sidebar-item'><%= link_to 'All menu items', items_path %></li>
+          <li class='sidebar-item order-preview-form hidden'><a href='#'>Preview order</a></li>
         </ul>
       </div>
       
