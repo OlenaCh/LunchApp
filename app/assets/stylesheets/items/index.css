@@ -1,4 +1,6 @@
-.items { margin: 7px; padding: 0; border-radius: 10px }
+ul.items { margin: 7px }
+
+.items { padding: 0; border-radius: 10px }
 
 .items.element-img,
 .items.element-details,
