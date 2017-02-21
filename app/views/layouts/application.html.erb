@@ -16,8 +16,8 @@
   <body>
     <div class='content-wrapper flex'>
       <div class='sidebar'>
+        <div class='sidebar-icon-wrapper'><div class='sidebar-icon'></div></div>
         <ul class='sidebar-items'>
-          <i class="fa fa-sort-alpha-asc" aria-hidden="true"> </i>
           <%# if current_user.admin == true %>
             <li class='sidebar-item'><%= link_to 'Orders', orders_path %></li>
             <li class='sidebar-item'><%= link_to 'Add new item', new_item_path %></li>

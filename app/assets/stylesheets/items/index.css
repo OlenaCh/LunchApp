@@ -11,7 +11,7 @@
   cursor: pointer
 }
 
-.items.element-img img:hover { opacity:1 }
+.items.element-img img:hover { opacity: 1 }
 
 .items.element-details { font-size: 25px; color: rgba(137, 200, 106, 1) }
 
