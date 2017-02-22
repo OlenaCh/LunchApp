@@ -125,7 +125,6 @@ $(document).ready(function() {
     for (var i = 0, size = children.length; i < size; i++){
       if ($(children[i]).hasClass('hidden')) {
         $(children[i]).removeClass('hidden');
-        $(children[i]).addClass('flex');
         $(children[i]).addClass('part_width_padding');
       }
     }

@@ -26,6 +26,26 @@
 
 /* RESPONSIVE */
 
+@media only screen and (width: 320px) {
+  .popup-form { max-width: 61%; min-width: 61% }
+}
+
+@media only screen and (width: 360px) {
+  .popup-form { max-width: 65%; min-width: 65% }
+}
+
+@media only screen and (width: 375px) {
+  .popup-form { max-width: 65%; min-width: 65% }
+}
+
+@media only screen and (width: 412px) {
+  .popup-form { max-width: 67%; min-width: 67% }
+}
+
+@media only screen and (width: 414px) {
+  .popup-form { max-width: 67%; min-width: 67% }
+}
+
 @media only screen and (max-width: 414px) {
-  .popup-form { left: 4%; top: 10%; font-size: 15px }
+  .popup-form { left: 4%; top: 10%; font-size: 15px; display: block }
 }

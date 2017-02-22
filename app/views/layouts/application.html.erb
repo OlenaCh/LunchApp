@@ -18,6 +18,7 @@
       <div class='sidebar'>
         <div class='sidebar-icon-wrapper'><div class='sidebar-icon'></div></div>
         <ul class='sidebar-items'>
+          <li class='sidebar-item-close'><p>X</p></li>
           <%# if current_user.admin == true %>
             <li class='sidebar-item'><%= link_to 'Orders', orders_path %></li>
             <li class='sidebar-item'><%= link_to 'Add new item', new_item_path %></li>

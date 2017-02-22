@@ -16,3 +16,22 @@
   color: rgba(255, 242, 230, 1); 
   float: right
 }
+
+/* RESPONSIVE */
+
+@media only screen and (width: 320px) {
+  .popup-close.first-course, 
+  .popup-close.main-course, 
+  .popup-close.drink { right: -8px }
+}
+
+@media only screen and (width: 360px) {
+  .popup-close.first-course, 
+  .popup-close.main-course, 
+  .popup-close.drink { right: -8px }
+}
+
+@media only screen and (max-width: 414px) {
+  .menu.item-title { margin: 0 0 10% 1px }
+  .menu.item-title p { float: none }
+}

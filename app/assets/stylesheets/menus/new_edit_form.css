@@ -1,8 +1,8 @@
 .menu.form { margin: 2% 3%; width: 94% }
 
-.menu.form-element { width: 100% }
+.menu.form-element { width: 100%; padding: 1% 0 }
 
-.menu.form-element.label { width: 20% }
+.menu.form-element.label { width: 20%; font-size: 20px }
 
 .weekday-options { width: 80%; padding: 0.5%; display: inline-flex }
 
@@ -40,8 +40,39 @@
   font-size: 17px
 }
 
-.btn.add-item-to-menu {  }
+.add-item { height: 40px }
 
-.btn.add-item-to-menu p {  padding: 5px 0 0 2px }
+.btn.add-item-to-menu { float: right; text-align: center }
 
-.btn.sbm-menu {  }
+.btn.add-item-to-menu p { padding-top: 5px }
+
+.sbm-form { text-align: center }
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 414px) {
+  .menu.form-element { padding: 2% 0 }
+  
+  .menu.form-element.label { width: 30%; font-size: 16px }
+  
+  .weekday-options { width: 70%; padding: 0.5%; display: block }
+  
+  .weekday-option { display: flex }
+  
+  .weekday-option input { width: 30%; margin: 0 0 0 1% }
+  
+  .weekday-option p { padding: 0 0 10px 20px }
+  
+  .menu.form-element.input { display: block }
+  
+  .menu.item.form-element.input,
+  .menu.item-buttons { margin-left: 0 }
+  
+  .menu.item.form-element.input { margin: 0 0 5% 17%; float: none }
+  
+  .choose { margin: 0 30px 0 0 }
+  
+  .add-item { height: 30px }
+  
+  .btn.add-item-to-menu p { padding-top: 0 }
+}
