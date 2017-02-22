@@ -60,3 +60,11 @@
 .btn.download-bill { padding: 1% 0 0 2% }
 
 .btn.download-bill a { color: rgba(255, 242, 230, 1) }
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 414px) {
+  .ordered-items-table-wrapper { overflow-x: auto }
+  
+  .order-input-type input { float: none; width: 150px }
+}

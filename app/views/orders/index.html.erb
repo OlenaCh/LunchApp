@@ -1,41 +1,43 @@
 <h1>All orders:</h1>
 
-<table class='orders'>
-  <tr>
-    <th>Order #</th>
-    <th>Name</th>
-    <th>Address</th>
-    <th>Email</th>
-    <th>Sum</th>
-    <th>Details</th>
-    <th>Status</th>
-  </tr>
-  <% @orders.each do |order| %>
+<div class='orders-table-wrapper'>
+  <table class='orders'>
     <tr>
-      <td><%= order.id %></td>
-      <td><%= order.name %></td>
-      <td><%= order.address %></td>
-      <td><%= order.email %></td>
-      <td><%= order.total %></td>
-      <td class='order-details flex'>
-        <% order.order_items.each do |item| %>
-          <div class='order-item-img' data="<%= item.id %>">
-            <%= image_tag item.item.image %>
-          </div>
-          <span class='order-item-details hidden' data="<%= item.id %>" >
-            <div class='order-item-title'><%= item.item.title %></div>
-            <div class='order-item-amount'><%= item.amount %></div>
-          </span>
-        <% end %>
-      </td>
-      <td class='order-status' data="<%= order.id %>">
-        <div class='order-status-current'><%= order.status %></div>
-        <div class='order-statuses hidden'>
-          <input class='order-status-radio' type='radio' name='status' value='Confirmed'> Confirmed</br>
-          <input class='order-status-radio' type='radio' name='status' value='Being processed'> Being processed</br>
-          <input class='order-status-radio' type='radio' name='status' value='Delivered'> Delivered
-        </div>
-      </td>
+      <th>Order #</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Sum</th>
+      <th>Details</th>
+      <th>Status</th>
     </tr>
-  <% end %>
-</table>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.name %></td>
+        <td><%= order.address %></td>
+        <td><%= order.email %></td>
+        <td><%= order.total %></td>
+        <td class='order-details flex'>
+          <% order.order_items.each do |item| %>
+            <div class='order-item-img' data="<%= item.id %>">
+              <%= image_tag item.item.image %>
+            </div>
+            <span class='order-item-details hidden' data="<%= item.id %>" >
+              <div class='order-item-title'><%= item.item.title %></div>
+              <div class='order-item-amount'><%= item.amount %></div>
+            </span>
+          <% end %>
+        </td>
+        <td class='order-status' data="<%= order.id %>">
+          <div class='order-status-current'><%= order.status %></div>
+          <div class='order-statuses hidden'>
+            <input class='order-status-radio' type='radio' name='status' value='Confirmed'> Confirmed</br>
+            <input class='order-status-radio' type='radio' name='status' value='Being processed'> Being processed</br>
+            <input class='order-status-radio' type='radio' name='status' value='Delivered'> Delivered
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

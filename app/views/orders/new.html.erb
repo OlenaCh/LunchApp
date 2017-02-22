@@ -3,30 +3,32 @@
 <form class='order-form' action='/orders' method='POST'>
   <div class='order form-element'>
     <label>Ordered items:</label>
-    <table class='order-items'>
-      <tr>
-        <th>Title</th>
-        <th>Calories</th>
-        <th>Price for one</th>
-        <th></th>
-        <th>Amount</th>
-        <th>Remove from order</th>
-      </tr>
-      <% ordered_items.each do |item| %>
+    <div class='ordered-items-table-wrapper'>
+      <table class='order-items'>
         <tr>
-          <td><%= item.title %></td>
-          <td><%= item.calorie %></td>
-          <td><%= item.price %></td>
-          <td>
-            <input type='text' class='ordered-item hidden' name='order[order_items_attributes][][item_id]' value='<%= item.id %>' />
-          </td>
-          <td>
-            <input type='text' class='ordered-amount' name='order[order_items_attributes][][amount]' value='1' />
-          </td>
-          <td><div class='remove-item-from-order'>X</div></td>
+          <th>Title</th>
+          <th>Calories</th>
+          <th>Price for one</th>
+          <th></th>
+          <th>Amount</th>
+          <th>Remove from order</th>
         </tr>
-      <% end %>
-    </table>
+        <% ordered_items.each do |item| %>
+          <tr>
+            <td><%= item.title %></td>
+            <td><%= item.calorie %></td>
+            <td><%= item.price %></td>
+            <td>
+              <input type='text' class='ordered-item hidden' name='order[order_items_attributes][][item_id]' value='<%= item.id %>' />
+            </td>
+            <td>
+              <input type='text' class='ordered-amount' name='order[order_items_attributes][][amount]' value='1' />
+            </td>
+            <td><div class='remove-item-from-order'>X</div></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
   </div>
 
   <div class='order form-element flex'>

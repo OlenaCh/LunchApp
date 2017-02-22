@@ -1,12 +1,19 @@
-.orders { margin: 2% 3%; width: 94% }
+.orders-table-wrapper { margin: 2% 3%; width: 94% }
+
+.orders { width: 100% }
 
 .orders tr { text-align: center; font-size: 18px }
 
 .orders th { font-size: 20px }
 
-.order-item-img img { width: 50px; height: 50px }
+.order-item-img img { 
+  width: 50px; 
+  height: 50px; 
+  border: solid 1px rgba(255, 242, 230, 1);
+  border-radius: 6px
+}
 
-.order-details { justify-content: space-around }
+.order-details { justify-content: center }
 
 span.order-item-details {
   width: 150px;
@@ -19,11 +26,11 @@ span.order-item-details {
 }
 
 @-webkit-keyframes mymove {
-  50% { box-shadow: 1px 1px 1px 1px rgba(137, 200, 106, 0.7) }
+  50% { box-shadow: 1px 1px 1px 1px rgba(137, 200, 106, 0.8) }
 }
 
 @keyframes mymove {
-  50% { box-shadow: 1px 1px 1px 1px rgba(137, 200, 106, 0.7) }
+  50% { box-shadow: 1px 1px 1px 1px rgba(137, 200, 106, 0.8) }
 }
 
 .order-status { cursor: pointer }
@@ -31,3 +38,13 @@ span.order-item-details {
 .order-statuses { font-size: 12px; padding-top: 10px }
 
 .displayed { display: flex; position: fixed; left: 64% }
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 414px) {
+  .orders-table-wrapper { overflow-x: auto }
+  
+  .orders tr { font-size: 14px }
+  
+  .orders th { font-size: 12px }
+}

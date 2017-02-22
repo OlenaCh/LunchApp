@@ -4,6 +4,8 @@
 
 .item-field { width: 100%; padding: 2% 0 }
 
+.item-field.img { text-align: right }
+
 .input label { font-size: 23px }
 
 .input input { 
@@ -21,6 +23,7 @@ span.radio { float: right; margin-right: 10% }
 input[type="RADIO"] { float: none; margin: 0 }
 
 .item-field img {
+  margin-right: 10%;
   border: solid 2px rgba(137, 200, 106, 1);
   border-radius: 30px;
   overflow: hidden
@@ -34,4 +37,50 @@ input[type="RADIO"] { float: none; margin: 0 }
   border: none;
   color: rgba(255, 242, 230, 1);
   font-size: 20px
+}
+
+/* RESPONSIVE */
+
+@media only screen and (width: 320px) {
+  .input label { font-size: 11px }
+}
+
+@media only screen and (width: 360px) {
+  .input label { font-size: 12.5px }
+}
+
+@media only screen and (width: 375px) {
+  .input label { font-size: 13px }
+}
+
+@media only screen and (width: 412px) {
+  .input label { font-size: 14px }
+}
+
+@media only screen and (width: 414px) {
+  .input label { font-size: 14px }
+}
+
+@media only screen and (max-width: 414px) {
+  .input input, 
+  span.radio,
+  .item-field img { margin-right: 0 }
+  
+  .input input { width: 150px }
+  
+  span.radio input { width: 10px }
+  
+  .item-field img { width: 150px; height: 150px }
+  
+  .item-submit-btn-wrapper { padding: 1% 0 0 40% }
+  
+  .btn input[type="SUBMIT"] { padding: 0 27% }
+}
+
+@media only screen and (width: 768px) {
+  .input input,
+  span.radio,
+  .item-field img { margin-right: 3% }
+  
+  span.radio input { margin-right: 0 }
 }
