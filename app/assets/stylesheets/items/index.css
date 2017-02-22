@@ -4,7 +4,7 @@ ul.items { margin: 7px }
 
 .items.element-img,
 .items.element-details,
-.items.element-admin-panel { width: 30%; padding: 7% 4% }
+.items.element-admin-panel { width: 30%; padding: 4% }
 
 .items.element-img img {
   border-radius: 30px;
