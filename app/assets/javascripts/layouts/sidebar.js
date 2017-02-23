@@ -23,9 +23,32 @@ $(document).ready(function() {
     changeLinkColor(this, 'rgba(255, 242, 230, 1)');
   });
   
+  $('.sidebar-item.admin-login').click(function() {
+    if($('.admin-login-form').hasClass('hidden'))
+      $('.admin-login-form').removeClass('hidden');
+    else
+      $('.admin-login-form').addClass('hidden');
+  });
+  
+  $('.admin-login-btn').click(function() {
+    startSession();
+  });
+  
   var changeLinkColor = function(obj, color) {
     var links = $(obj).find('a');
     for (var i = 0, size = links.length; i < size; i++)
       $(links[i]).css('color', color);
+  };
+  
+  var startSession = function() {
+    $.ajax({
+      url: 'admins/sign_in',
+      method: 'POST',
+      dataType: 'json',
+      data: { admin: { 
+        email: $('.admin-login-input.email').val(), 
+        password: $('.admin-login-input.password').val()
+      } }
+    });
   };
 });

@@ -25,16 +25,22 @@
 .sidebar-item a,
 .admin-login-label { color: rgba(255, 242, 230, 1) }
 
-.admin-login-form input { 
+.admin-login-form-wrapper input[type="TEXT"] { 
   width: 130px;
   border: solid 2px rgba(137, 200, 106, 1); 
-  border-radius: 8px
-}
-
-.btn.login { 
-  background-color: rgba(255, 242, 230, 1); 
+  border-radius: 8px;
   color: rgba(137, 200, 106, 1)
 }
+
+.admin-login-btn { width: 100% }
+
+.btn.admin-login { 
+  height: 30px;
+  margin: 3% 0 0 15%;
+  background-color: rgba(255, 242, 230, 1)
+}
+
+input[type="SUBMIT"].login { padding: 0 25%; color: rgba(137, 200, 106, 1) }
 
 /* RESPONSIVE */
 
@@ -57,7 +63,8 @@
   .sidebar-items { display: none; padding: 10% }
   
   .sidebar-item, 
-  .sidebar-item-close { width: calc(96.5%) }
+  .sidebar-item-close,
+  .admin-login-form { width: calc(96.5%) }
   
   .sidebar-item-close {
     padding: 15px 0 15px 10px;
@@ -65,7 +72,22 @@
     text-align: right
   }
   
+  .admin-login-form { display: block }
+  
+  .admin-login-label,
+  .admin-login-input { width: 100% }
+  
   .sidebar-item:hover {
   	border-radius: 10px
+  }
+}
+
+@media only screen and (width: 768px) {
+  .admin-login-form input[type="TEXT"] { width: 95px }
+  
+  .btn.admin-login {
+    width: 95px;
+    height: 25px;
+    margin: 3% 0 0 2%
   }
 }

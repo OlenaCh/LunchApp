@@ -21,24 +21,29 @@
           <li class='sidebar-item-close'><p>X</p></li>
           <li class='sidebar-item'><%= link_to 'Home', menus_path %></li>
           <li class='sidebar-item'><%= link_to 'Menu items', items_path %></li>
-          <%# if current_admin %>
+          <% if signed_in? %>
             <li class='sidebar-item'><%= link_to 'Orders', orders_path %></li>
             <li class='sidebar-item'><%= link_to 'New item', new_item_path %></li>
-          <%# else %>
+            <li class='sidebar-item'><%= link_to 'Sign out', 
+                                         destroy_admin_session_path, 
+                                         method: 'delete' %></li>
+          <% else %>
             <li class='sidebar-item order-preview-form hidden'><a href='#'>Preview order</a></li>
             <li class='sidebar-item admin-login'><a href='#'>Admin</a></li>
-            <li class='admin-login-form'>
-              <label class='admin-login-label'>Email:</label>
-              <input type='text' class='admin-login-input' name='admin[email]' />
-              <label class='admin-login-label'>Password:</label>
-              <input type='text' class='admin-login-input' name='admin[password]' />
-              <div class='admin-login-label-btn'>
-                <div class='btn login'>
-                  <input type='submit' value='Login' class='btn login' />
+            <li class='admin-login-form hidden'>
+              <div class='admin-login-form-wrapper'>
+                <label class='admin-login-label'>Email:</label>
+                <input type='text' class='admin-login-input email' />
+                <label class='admin-login-label'>Password:</label>
+                <input type='text' class='admin-login-input password' />
+                <div class='admin-login-btn'>
+                  <div class='btn admin-login'>
+                    <input type='submit' value='Login' class='login' />
+                  </div>
                 </div>
               </div>
             </li>
-          <%# end %>
+          <% end %>
         </ul>
       </div>
       
