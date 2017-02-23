@@ -10,6 +10,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :carbohydrate
       t.string :protein
       t.string :calorie
+      t.string :net_weight
       t.timestamps null: false
     end
   end

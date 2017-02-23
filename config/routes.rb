@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { 
-    sessions: 'users/sessions', 
-    registrations: 'users/registrations'
-  }
-  
-  resources :users, only: [:index]
+  devise_for :admins, controllers: { sessions: 'admins/sessions' }
   resources :items, :orders, :menus
   
   root 'menus#index'

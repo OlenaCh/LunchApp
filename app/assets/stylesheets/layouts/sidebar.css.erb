@@ -7,11 +7,12 @@
 
 .sidebar-icon-wrapper, .sidebar-icon { display: none }
 
-.sidebar-item {
+.sidebar-item, .admin-login-form {
   padding: 15px 0 15px 10px;
-  font-size: 25px;
   cursor: pointer
 }
+
+.sidebar-item { font-size: 25px }
 
 .sidebar-item-close { display: none }
 
@@ -21,7 +22,19 @@
 }
 
 .sidebar-item-close,
-.sidebar-item a { color: rgba(255, 242, 230, 1) }
+.sidebar-item a,
+.admin-login-label { color: rgba(255, 242, 230, 1) }
+
+.admin-login-form input { 
+  width: 130px;
+  border: solid 2px rgba(137, 200, 106, 1); 
+  border-radius: 8px
+}
+
+.btn.login { 
+  background-color: rgba(255, 242, 230, 1); 
+  color: rgba(137, 200, 106, 1)
+}
 
 /* RESPONSIVE */
 
