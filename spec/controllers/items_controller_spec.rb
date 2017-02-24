@@ -4,19 +4,19 @@ RSpec.describe ItemsController, type: :controller do
   let(:item_params) { FactoryGirl.attributes_for(:item) }
   let!(:item) { FactoryGirl.create(:item) }
 
-  # describe 'admin\'s paths' do
-  #   before(:each) do
-  #     admin = FactoryGirl.create(:admin)
-  #     allow(request.env['warden']).to receive(:authenticate!).and_return(admin)
-  #     allow(controller).to receive(:current_user).and_return(admin)
-  #   end
+  describe 'admin\'s paths' do
+    before(:each) do
+      admin = FactoryGirl.create(:admin)
+      allow(request.env['warden']).to receive(:authenticate!).and_return(admin)
+      allow(controller).to receive(:current_admin).and_return(admin)
+    end
     
-  #   describe 'GET #new' do
-  #     it 'renders new page' do
-  #       get :new
-  #       expect(response).to render_template(:new)
-  #     end
-  #   end
+    describe 'GET #new' do
+      it 'renders new page' do
+        get :new
+        expect(response).to render_template(:new)
+      end
+    end
 
   #   describe 'POST #create' do
   #     before(:each) do
@@ -61,21 +61,21 @@ RSpec.describe ItemsController, type: :controller do
   #     end
   #   end
 
-  #   describe 'GET #index' do
-  #     it 'renders index page' do
-  #       get :index
-  #       expect(response).to render_template(:index)
-  #     end
-  #   end
+    describe 'GET #index' do
+      it 'renders index page' do
+        get :index
+        expect(response).to render_template(:index)
+      end
+    end
 
-  #   describe 'GET #edit' do
-  #     context 'with valid params' do
-  #       it 'renders an existing item' do
-  #         get :edit, :id => item.id
-  #         expect(response).to render_template(:edit)
-  #       end
-  #     end
-  #   end
+    describe 'GET #edit' do
+      context 'with valid params' do
+        it 'renders an existing item' do
+          get :edit, :id => item.id
+          expect(response).to render_template(:edit)
+        end
+      end
+    end
 
   #   describe 'PUT #update' do
   #     context 'with valid params' do
@@ -115,34 +115,28 @@ RSpec.describe ItemsController, type: :controller do
   #     end
   #   end
 
-  #   describe 'DELETE #destroy' do
-  #     context 'with valid params' do
-  #       it 'deletes an existing item' do
-  #         expect { delete :destroy, id: item.id }.to change(Item, :count).by(-1)
-  #       end
+    describe 'DELETE #destroy' do
+      context 'with valid params' do
+        it 'deletes an existing item' do
+          expect { delete :destroy, id: item.id }.to change(Item, :count).by(-1)
+        end
 
-  #       it 'responds with HTTP status 302' do
-  #         allow(@item).to receive(:destroy).and_return(true)
-  #         delete :destroy, id: item.id
-  #         expect(response.status).to eq 302
-  #       end
+        # it 'responds with HTTP status 302' do
+        #   allow(@item).to receive(:destroy).and_return(true)
+        #   delete :destroy, id: item.id
+        #   expect(response.status).to eq 302
+        # end
 
-  #       it 'redirects to index page' do
-  #         allow(@item).to receive(:destroy).and_return(true)
-  #         delete :destroy, id: item.id
-  #         expect(response).to redirect_to items_path
-  #       end
-  #     end
-  #   end
-  # end
+        # it 'redirects to index page' do
+        #   allow(@item).to receive(:destroy).and_return(true)
+        #   delete :destroy, id: item.id
+        #   expect(response).to redirect_to items_path
+        # end
+      end
+    end
+  end
 
   # describe 'authenticated user\'s paths' do
-  #   before(:each) do
-  #     user = FactoryGirl.create(:user)
-  #     allow(request.env['warden']).to receive(:authenticate!).and_return(user)
-  #     allow(controller).to receive(:current_user).and_return(user)
-  #   end
-    
   #   describe 'GET #new' do
   #     it 'responds with HTTP status 302' do
   #       get :new
