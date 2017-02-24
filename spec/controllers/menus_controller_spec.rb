@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe OrdersController, type: :controller do
-  let(:order) { FactoryGirl.create(:order) }
-  let(:order_params) { FactoryGirl.attributes_for(:order) }
+RSpec.describe MenusController, type: :controller do
+  let(:menu) { FactoryGirl.create(:menu) }
+  let(:menu_params) { FactoryGirl.attributes_for(:menu) }
 
   # describe 'admin\'s paths' do
   #   before(:each) do

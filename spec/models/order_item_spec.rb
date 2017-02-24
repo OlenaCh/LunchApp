@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe Item, type: :model do
-  describe 'validate a new item' do
-    it "has valid factory" do
-      expect(FactoryGirl.build(:item)).to be_valid
-    end
+RSpec.describe OrderItem, type: :model do
+  describe 'validate a new order_item' do
+    # it "has valid factory" do
+    #   expect(FactoryGirl.build(:order_item)).to be_valid
+    # end
 
     # it "requires a title" do
     #   expect(FactoryGirl.build(:item, :title => "")).to be_invalid

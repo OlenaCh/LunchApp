@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Item, type: :model do
-  describe 'validate a new item' do
+RSpec.describe Menu, type: :model do
+  describe 'validate a new menu' do
     it "has valid factory" do
-      expect(FactoryGirl.build(:item)).to be_valid
+      expect(FactoryGirl.build(:menu)).to be_valid
     end
 
     # it "requires a title" do
