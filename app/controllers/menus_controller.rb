@@ -1,4 +1,6 @@
 class MenusController < ApplicationController
+  before_action :authenticate_admin!, except: [:index]
+  
   def new
     new_or_edit 'new'
   end

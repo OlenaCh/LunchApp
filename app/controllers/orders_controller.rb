@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_admin!, except: [:new, :create, :show]
+  
   def new
     unless params[:billed_order].blank?
       render 'thank_you', locals: { billed_order: params[:billed_order] } and return
