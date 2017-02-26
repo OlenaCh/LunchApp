@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   
   def create
     item = Item.new(item_params)
-    redirect_to items_path and return false if item.save!
+    redirect_to items_path and return false if item.save
   	new_or_edit 'new'
   end
   
@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
   
   def destroy
     item = Item.find_by_id(params[:id])
-    item.destroy
+    item.destroy if item
     redirect_to items_path
   end
 
