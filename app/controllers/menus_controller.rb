@@ -45,7 +45,8 @@ class MenusController < ApplicationController
   def new_or_edit(page, menu = nil)
     render page, locals: { weekdays: Menu.weekdays.values, menu: menu,
                            fc_items: Item.first_courses, 
-                           mc_items: Item.main_courses, drink_items: Item.drinks }
+                           mc_items: Item.main_courses, 
+                           drink_items: Item.drinks }
   end
 
   def menu_params
