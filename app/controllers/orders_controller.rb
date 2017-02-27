@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
   
   def new
     thank_you_page and return unless params[:billed_order].blank?
-    render 'new', locals: { ordered_items: find_items(params[:items_ids]) }
+    render 'new', locals: { ordered_items: ordered_items_list }
   end
   
   def create
@@ -59,6 +59,11 @@ class OrdersController < ApplicationController
   
   def order_update_params
     params.require(:order).permit(:status)
+  end
+  
+  def ordered_items_list
+    return find_items(params[:items_ids]) unless params[:items_ids].blank?
+    nil
   end
   
   def respond_to_format frmt, actn

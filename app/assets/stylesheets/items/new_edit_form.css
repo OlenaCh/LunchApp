@@ -39,6 +39,8 @@ input[type="RADIO"] { float: none; margin: 0 }
   font-size: 20px
 }
 
+.validation-item { float: right; margin-right: 10% }
+
 /* RESPONSIVE */
 
 @media only screen and (width: 320px) {

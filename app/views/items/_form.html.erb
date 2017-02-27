@@ -1,14 +1,17 @@
 <%= simple_form_for item, html: { multipart: true } do |f| %>
   <div class='item-field'>
     <%= f.input :item_type, as: :radio_buttons, collection: types %>
+    <p class='validation-item'>This field is required!</p>
   </div>
   
   <div class='item-field'>
     <%= f.input :title %>
+    <p class='validation-item'>This field is required!</p>
   </div>
   
   <div class='item-field'>
     <%= f.input :price %>
+    <p class='validation-item'>This field is required!</p>
   </div>
   
   <div class='item-field'>
