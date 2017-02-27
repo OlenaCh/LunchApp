@@ -6,25 +6,40 @@ RSpec.describe Order, type: :model do
       expect(FactoryGirl.build(:order)).to be_valid
     end
 
-    # it "requires a title" do
-    #   expect(FactoryGirl.build(:item, :title => "")).to be_invalid
-    # end
+    it "requires a name" do
+      expect(FactoryGirl.build(:order, :name => "")).to be_invalid
+    end
 
-    # it "requires a title no shorter than 4 symbols" do
-    #   expect(FactoryGirl.build(:item, :title => "a" * 3)).to be_invalid
-    # end
+    it "requires a name no shorter than 10 symbols" do
+      expect(FactoryGirl.build(:order, :name => "a" * 9)).to be_invalid
+    end
 
-    # it "requires a title no longer than 60 symbols" do
-    #   expect(FactoryGirl.build(:item, :title => "a" * 61)).to be_invalid
-    # end
+    it "requires a name no longer than 50 symbols" do
+      expect(FactoryGirl.build(:order, :name => "a" * 51)).to be_invalid
+    end
     
-    # it "requires a price" do
-    #   expect(FactoryGirl.build(:item, :price => "")).to be_invalid
-    # end
+    it "requires an address" do
+      expect(FactoryGirl.build(:order, :address => "")).to be_invalid
+    end
 
-    # it "requires a numeric price" do
-    #   expect(FactoryGirl.build(:item, :price => "twenty")).to be_invalid
-    #   expect(FactoryGirl.build(:item, :price => "20.0")).to be_valid
-    # end
+    it "requires an address no shorter than 10 symbols" do
+      expect(FactoryGirl.build(:order, :address => "a" * 9)).to be_invalid
+    end
+
+    it "requires an address no longer than 60 symbols" do
+      expect(FactoryGirl.build(:order, :address => "a" * 61)).to be_invalid
+    end
+    
+    it "requires a status" do
+      expect(FactoryGirl.build(:order, :status => "")).to be_invalid
+    end
+    
+    it "has many order_items" do
+      expect(Order.reflect_on_association(:order_items).macro).to eq :has_many
+    end
+
+    it "has many orders" do
+      expect(Order.reflect_on_association(:items).macro).to eq :has_many
+    end
   end
 end
