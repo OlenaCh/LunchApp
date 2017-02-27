@@ -7,4 +7,7 @@ class ErrorsController < ApplicationController
   
   def unauthorized
   end
+  
+  def users_only
+  end
 end

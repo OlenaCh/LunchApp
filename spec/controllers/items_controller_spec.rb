@@ -24,11 +24,11 @@ RSpec.describe ItemsController, type: :controller do
     describe 'POST #create' do
       context 'with valid params' do
         it 'creates a new product' do
-          expect { post :create, :item => item_params }.to change(Item, :count).by(1)
+          expect { post :create, item: item_params }.to change(Item, :count).by(1)
         end
         
         context 'redirection' do
-          before(:each) { post :create, :item => item_params }
+          before(:each) { post :create, item: item_params }
           
           it_behaves_like 'redirection to index page'
         end
@@ -36,16 +36,16 @@ RSpec.describe ItemsController, type: :controller do
 
       context 'with invalid params' do
         it 'does not create a new item' do  
-          expect { post :create, :item => item_params.merge({title: ''}) }.to change(Item, :count).by(0)
+          expect { post :create, item: item_params.merge({title: ''}) }.to change(Item, :count).by(0)
         end
           
         it 'renders new template' do 
-          post :create, :item => item_params.merge({title: ''})
+          post :create, item: item_params.merge({title: ''})
           expect(response).to render_template(:new)
         end
         
         it 'does not respond with flash message' do 
-          post :create, :item => item_params.merge({title: ''})
+          post :create, item: item_params.merge({title: ''})
           expect(response.status).not_to eq 302
         end
       end
@@ -53,7 +53,7 @@ RSpec.describe ItemsController, type: :controller do
 
     describe 'PUT #update' do
       context 'with valid params' do
-        before(:each) { put :update, :id => item, :item => item_params }
+        before(:each) { put :update, id: item, item: item_params }
           
         it_behaves_like 'redirection to index page'
       end
@@ -61,7 +61,7 @@ RSpec.describe ItemsController, type: :controller do
       context 'with invalid params' do
         context 'with too short title' do
           before(:each) do 
-            put :update, :id => item, :item => item_params.merge({title: 'tea'})
+            put :update, id: item, item: item_params.merge({title: 'tea'})
           end
           
           it 'renders edit page' do
@@ -142,35 +142,35 @@ RSpec.describe ItemsController, type: :controller do
 
     describe 'POST #create' do
       it 'does not create a new item' do
-        expect { post :create, :item => item_params }.to change(Item, :count).by(0)
+        expect { post :create, item: item_params }.to change(Item, :count).by(0)
       end
       
       context 'redirection' do
-        before(:each) { post :create, :item => item_params }
+        before(:each) { post :create, item: item_params }
         
         it_behaves_like 'unauthorized_user'
       end
     end
 
     describe 'GET #edit' do
-      before(:each) { get :edit, :id => item }
+      before(:each) { get :edit, id: item }
       
       it_behaves_like 'unauthorized_user'
     end
 
     describe 'PUT #update' do
-      before(:each) { put :update, :id => item, :item => item_params }
+      before(:each) { put :update, id: item, item: item_params }
       
       it_behaves_like 'unauthorized_user'
     end
 
     describe 'DELETE #destroy' do
       it 'does not delete an existing item' do
-        expect { delete :destroy, :id => item }.to change(Item, :count).by(0)
+        expect { delete :destroy, id: item }.to change(Item, :count).by(0)
       end
       
       context 'redirection' do
-        before(:each) { delete :destroy, :id => item }
+        before(:each) { delete :destroy, id: item }
         
         it_behaves_like 'unauthorized_user'
       end

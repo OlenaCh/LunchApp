@@ -2,44 +2,44 @@ require 'rails_helper'
 
 RSpec.describe Item, type: :model do
   describe 'validate a new item' do
-    it "has valid factory" do
+    it 'has a valid factory' do
       expect(FactoryGirl.build(:item)).to be_valid
     end
     
-    it "requires a type" do
-      expect(FactoryGirl.build(:item, :item_type => "")).to be_invalid
+    it 'requires a type' do
+      expect(FactoryGirl.build(:item, item_type: '')).to be_invalid
     end
 
-    it "requires a title" do
-      expect(FactoryGirl.build(:item, :title => "")).to be_invalid
+    it 'requires a title' do
+      expect(FactoryGirl.build(:item, title: '')).to be_invalid
     end
 
-    it "requires a title no shorter than 4 symbols" do
-      expect(FactoryGirl.build(:item, :title => "a" * 3)).to be_invalid
+    it 'requires a title no shorter than 4 symbols' do
+      expect(FactoryGirl.build(:item, title: 'a' * 3)).to be_invalid
     end
 
-    it "requires a title no longer than 60 symbols" do
-      expect(FactoryGirl.build(:item, :title => "a" * 61)).to be_invalid
+    it 'requires a title no longer than 60 symbols' do
+      expect(FactoryGirl.build(:item, title: 'a' * 61)).to be_invalid
     end
     
-    it "requires a price" do
-      expect(FactoryGirl.build(:item, :price => "")).to be_invalid
+    it 'requires a price' do
+      expect(FactoryGirl.build(:item, price: '')).to be_invalid
     end
 
-    it "requires a numeric price" do
-      expect(FactoryGirl.build(:item, :price => "twenty")).to be_invalid
-      expect(FactoryGirl.build(:item, :price => "20.0")).to be_valid
+    it 'requires a numeric price' do
+      expect(FactoryGirl.build(:item, price: 'twenty')).to be_invalid
+      expect(FactoryGirl.build(:item, price: '20.0')).to be_valid
     end
 
-    it "has many order_items" do
+    it 'has many order_items' do
       expect(Item.reflect_on_association(:order_items).macro).to eq :has_many
     end
 
-    it "has many orders" do
+    it 'has many orders' do
       expect(Item.reflect_on_association(:orders).macro).to eq :has_many
     end
 
-    it "has many menus" do
+    it 'has many menus' do
       expect(Item.reflect_on_association(:menus).macro).to eq :has_and_belongs_to_many
     end
     

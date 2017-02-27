@@ -13,49 +13,42 @@ RSpec.describe OrdersController, type: :controller do
     
     # Actions that cannot be accessed by admin
     
-    shared_examples 'redirection to index page' do
-      # it 'redirects to index page' do
-      #   expect(response).to redirect_to items_path
-      # end
+    shared_examples 'redirection to users only path' do
+      it 'redirects to users only path' do
+        expect(response).to redirect_to users_only_path
+      end
       
-      # it 'responds with HTTP status 302' do
-      #   expect(response.status).to eq 302
-      # end
+      it 'responds with HTTP status 302' do
+        expect(response.status).to eq 302
+      end
     end
     
     describe 'GET #new' do
-      # it 'responds with HTTP status 302' do
-      #   get :new
-      #   expect(response.status).to eq 302
-      # end
-
-      # it 'renders that this page is for users only' do
-      #   get :new
-      #   expect(response).to redirect_to not_users_path
-      # end
+      before(:each) { get :new }
+        
+      it_behaves_like 'redirection to users only path'
     end
 
     describe 'POST #create' do
-      # it 'does not create a new order' do
-      #   expect { post :create, :order => order_params }.to change(Order, :count).by(0)
-      # end
+      it 'does not create a new order' do
+        expect { post :create, order: order_params }.to change(Order, :count).by(0)
+      end
       
-      # it 'responds with HTTP status 302' do
-      #   post :create, :order => order_params
-      #   expect(response.status).to eq 302
-      # end
-
-      # it 'renders that this page is for users only' do
-      #   post :create, :order => order_params
-      #   expect(response).to redirect_to not_users_path
-      # end
+      context 'redirection' do
+        before(:each) { post :create, order: order_params }
+        
+        it_behaves_like 'redirection to users only path'
+      end
     end
     
     describe 'GET #show' do
-      # it 'does not return an order in pdf' do
-      #   get :show, id: order.id, format: 'pdf'
-      #   expect(response.headers['Content-Type']).not_to eq('application/pdf')
-      # end
+      before(:each) { get :show, id: order, format: 'pdf' }
+      
+      it 'does not return an order in pdf' do
+        expect(response.headers['Content-Type']).not_to eq('application/pdf')
+      end
+      
+      it_behaves_like 'redirection to users only path'
     end
     
     # Actions that can be accessed by admin
@@ -69,7 +62,7 @@ RSpec.describe OrdersController, type: :controller do
     
     describe 'PUT #update' do
       before(:each) do
-        put :update, id: order.id, order: { status: 'Delivered' }, format: 'json'
+        put :update, id: order, order: { status: 'Delivered' }, format: 'json'
       end
       
       it 'updates order record' do
@@ -106,7 +99,7 @@ RSpec.describe OrdersController, type: :controller do
     end
 
     describe 'PUT #update' do
-      before(:each) { put :update, :id => order, :item => order_params }
+      before(:each) { put :update, id: order, order: order_params }
       
       it_behaves_like 'unauthorized_user'
     end
@@ -127,11 +120,11 @@ RSpec.describe OrdersController, type: :controller do
     
     describe 'POST #create' do
       it 'creates a new order' do
-        expect { post :create, :order => order_params }.to change(Order, :count).by(1)
+        expect { post :create, order: order_params }.to change(Order, :count).by(1)
       end
       
       context 'redirection' do
-        before(:each) { post :create, :order => order_params }
+        before(:each) { post :create, order: order_params }
         
         it 'assigns status CONFIRMED to a new order' do
           expect(Order.last.status).to eq('Confirmed')
@@ -149,7 +142,7 @@ RSpec.describe OrdersController, type: :controller do
     
     describe 'GET #show' do
       it 'returns an order in pdf' do
-        get :show, id: order.id, format: 'pdf'
+        get :show, id: order, format: 'pdf'
         expect(response.headers['Content-Type']).to eq('application/pdf')
       end
     end

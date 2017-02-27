@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_admin!, except: [:new, :create, :show]
+  before_action :check_for_admin, only: [:new, :create, :show]
   
   def index
     @orders = Order.all
@@ -26,6 +27,10 @@ class OrdersController < ApplicationController
   end
   
   private
+  
+  def check_for_admin
+    redirect_to users_only_path if current_admin
+  end
   
   def count_totals obj
     total = 0
