@@ -4,11 +4,23 @@ RSpec.describe OrdersController, type: :controller do
   let(:order) { FactoryGirl.create(:order) }
   let(:order_params) { FactoryGirl.attributes_for(:order) }
 
-  describe 'admin\'s paths' do
+  describe 'ADMIN' do
     before(:each) do
       admin = FactoryGirl.create(:admin)
       allow(request.env['warden']).to receive(:authenticate!).and_return(admin)
       allow(controller).to receive(:current_admin).and_return(admin)
+    end
+    
+    # Actions that cannot be accessed by admin
+    
+    shared_examples 'redirection to index page' do
+      # it 'redirects to index page' do
+      #   expect(response).to redirect_to items_path
+      # end
+      
+      # it 'responds with HTTP status 302' do
+      #   expect(response.status).to eq 302
+      # end
     end
     
     describe 'GET #new' do
@@ -22,6 +34,31 @@ RSpec.describe OrdersController, type: :controller do
       #   expect(response).to redirect_to not_users_path
       # end
     end
+
+    describe 'POST #create' do
+      # it 'does not create a new order' do
+      #   expect { post :create, :order => order_params }.to change(Order, :count).by(0)
+      # end
+      
+      # it 'responds with HTTP status 302' do
+      #   post :create, :order => order_params
+      #   expect(response.status).to eq 302
+      # end
+
+      # it 'renders that this page is for users only' do
+      #   post :create, :order => order_params
+      #   expect(response).to redirect_to not_users_path
+      # end
+    end
+    
+    describe 'GET #show' do
+      # it 'does not return an order in pdf' do
+      #   get :show, id: order.id, format: 'pdf'
+      #   expect(response.headers['Content-Type']).not_to eq('application/pdf')
+      # end
+    end
+    
+    # Actions that can be accessed by admin
     
     describe 'GET #index' do
       it 'renders index page' do
@@ -29,82 +66,92 @@ RSpec.describe OrdersController, type: :controller do
         expect(response).to render_template(:index)
       end
     end
-
-    describe 'POST #create' do
-      # it 'does not create a new order' do
-      #   expect { post :create, :order => order_params }.to change(Order, :count).by(0)
-      # end
+    
+    describe 'PUT #update' do
+      before(:each) do
+        put :update, id: order.id, order: { status: 'Delivered' }, format: 'json'
+      end
       
-      # it 'responds with HTTP status 302' do
-      #   post :create, :order => order_params
-      #   expect(response.status).to eq 302
-      # end
-
-      # it 'renders that this page is for users only' do
-      #   post :create, :order => order_params
-      #   expect(response).to redirect_to not_users_path
-      # end
+      it 'updates order record' do
+        expect(Order.find_by_id(order.id).status).to eq('Delivered')
+      end
+      
+      it 'responds with HTTP status 200' do
+        expect(response.status).to eq 200
+      end
     end
   end
 
-  describe 'random visitor\'s paths' do
+  describe 'UNAUTHORIZED USER' do
     before(:each) do
-      allow(request.env['warden']).to receive(:authenticate!).and_throw(:warden, {:scope => :user})
+      allow(request.env['warden']).to receive(:authenticate!).and_throw(:warden, {:scope => :admin})
     end
     
-    describe 'GET #new' do
-      # it 'responds with HTTP status 302' do
-      #   get :new
-      #   expect(response.status).to eq 302
-      # end
-
-      # it 'redirects to log in page' do
-      #   get :new
-      #   expect(response).to redirect_to new_user_session_path
-      # end
+    # Actions that cannot be accessed by unauthorized user 
+    
+    shared_examples 'unauthorized_user' do
+      it 'responds with HTTP status 302' do
+        expect(response.status).to eq 302
+      end
       
-      # it 'flashes that there is a need to sign in or sign up before continuing' do
-      #   get :new
-      #   expect(flash[:alert]).to be_present
-      # end
+      it 'redirects to unauthorized page' do
+        expect(response).to redirect_to unauthorized_path
+      end
     end
-
+    
     describe 'GET #index' do
-      # it 'responds with HTTP status 302' do
-      #   get :index
-      #   expect(response.status).to eq 302
-      # end
-
-      # it 'redirects to log in page' do
-      #   get :index
-      #   expect(response).to redirect_to new_user_session_path
-      # end
+      before(:each) { get :index }
       
-      # it 'flashes that there is a need to sign in or sign up before continuing' do
-      #   get :index
-      #   expect(flash[:alert]).to be_present
-      # end
+      it_behaves_like 'unauthorized_user'
     end
 
-    describe 'POST #create' do
-      # it 'does not create a new order' do
-      #   expect { post :create, :order => order_params }.to change(Order, :count).by(0)
-      # end
-        
-      # it 'responds with HTTP status 302' do
-      #   post :create, :order => order_params
-      #   expect(response.status).to eq 302
-      # end
-
-      # it 'redirects to log in page' do
-      #   post :create, :order => order_params
-      #   expect(response).to redirect_to new_user_session_path
-      # end
+    describe 'PUT #update' do
+      before(:each) { put :update, :id => order, :item => order_params }
       
-      # it 'flashes that there is a need to sign in or sign up before continuing' do
-      #   post :create, :order => order_params
-      #   expect(flash[:alert]).to be_present
-      # end
+      it_behaves_like 'unauthorized_user'
+    end
+    
+    # Actions that can be accessed by unauthorized user
+    
+    describe 'GET #new' do
+      it 'renders new template if no billed order is passed' do
+        get :new, items_ids: [1, 2]
+        expect(response).to render_template(:new)
+      end
+      
+      it 'renders thank you template if a billed order is passed' do
+        get :new, billed_order: 1
+        expect(response).to render_template(:thank_you)
+      end
+    end
+    
+    describe 'POST #create' do
+      it 'creates a new order' do
+        expect { post :create, :order => order_params }.to change(Order, :count).by(1)
+      end
+      
+      context 'redirection' do
+        before(:each) { post :create, :order => order_params }
+        
+        it 'assigns status CONFIRMED to a new order' do
+          expect(Order.last.status).to eq('Confirmed')
+        end
+        
+        it 'redirects to new order page' do
+          expect(response).to redirect_to new_order_path(billed_order: Order.last.id)
+        end
+        
+        it 'responds with HTTP status 302' do
+          expect(response.status).to eq 302
+        end
+      end
+    end
+    
+    describe 'GET #show' do
+      it 'returns an order in pdf' do
+        get :show, id: order.id, format: 'pdf'
+        expect(response.headers['Content-Type']).to eq('application/pdf')
+      end
     end
   end
 end

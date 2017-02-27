@@ -27,12 +27,6 @@ class MenusController < ApplicationController
     redirect_to menus_path and return false if menu.save
     new_or_edit('edit', menu)
   end
-  
-  def destroy
-    # menu = Menu.find_by_id(params[:id])
-    # menu.destroy
-    # redirect_to menus_path
-  end
 
   private
   

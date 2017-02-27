@@ -125,7 +125,7 @@ RSpec.describe ItemsController, type: :controller do
 
   describe 'UNAUTHORIZED USER' do
     before(:each) do
-      allow(request.env['warden']).to receive(:authenticate!).and_throw(:warden, {:scope => :user})
+      allow(request.env['warden']).to receive(:authenticate!).and_throw(:warden, {:scope => :admin})
     end
     
     # Actions that cannot be accessed by unauthorized user 

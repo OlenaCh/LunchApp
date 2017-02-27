@@ -3,27 +3,24 @@ require 'rails_helper'
 RSpec.describe Admins::SessionsController, type: :controller do
   let!(:admin) { FactoryGirl.create(:admin) }
   
-  # let!(:sign_in_error) { 
-  #   sign_in_error = "Invalid Email or password." 
-  # } 
-
   before(:each) do
-    @request.env['devise.mapping'] = Devise.mappings[:user]
+    @request.env['devise.mapping'] = Devise.mappings[:admin]
   end
 
-  # describe 'POST #create' do
-  #   context 'with valid attributes' do
-  #     it 'logs in user' do
-  #       post :create, { :email => user.email, :password => user.password }
-  #       sign_in user
-  #       expect(subject.current_user).to eq user
-  #     end
+  describe 'POST #create' do
+    context 'with valid attributes' do
+      it 'logs in admin' do
+        post :create, { :email => admin.email, :password => admin.password }
+        sign_in admin
+        expect(subject.current_admin).to eq admin
+      end
       
-  #     it 'responds with status 200' do         
-  #       post :create, { :email => user.email, :password => user.password }
-  #       expect(response.status).to eq(200)       
-  #     end
-  #   end
+      it 'redirects to menu index page' do         
+        post :create, { :email => admin.email, :password => admin.password }
+        sign_in admin
+        expect(response).to redirect_to menus_path  
+      end
+    end
 
   #   context 'with invalid attributes' do
   #     context 'it does not login without email' do
@@ -74,5 +71,5 @@ RSpec.describe Admins::SessionsController, type: :controller do
   #       end
   #     end
   #   end
-  # end
+  end
 end
