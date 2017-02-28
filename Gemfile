@@ -26,6 +26,7 @@ gem 'faker',                   '1.6.3'
 # Uploading files
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 gem 'rmagick', :require => 'rmagick'
+gem 'cloudinary'
 
 # PDF generation
 gem 'prawn'
