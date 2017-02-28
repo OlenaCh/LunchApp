@@ -2,7 +2,7 @@
   <div class='popup-close order-preview'><p>X</p></div>
   <div class='popup-form preview'>
     <% menus.each do |menu| %>
-      <%# if today?(menu.weekday) %>
+      <% if today?(menu.weekday) %>
         <% menu.items.each do |item| %>
           <div class='preview-item hidden flex' data="<%= item.id %>">
             <p><%= item.title %></p>
@@ -13,7 +13,7 @@
                  data-price="<%= item.price %>">X</div>
           </div>
         <% end %>
-      <%# end %>
+      <% end %>
     <% end %>
     <p class='preview-calories'></p>
     <p class='preview-sum'></p>
@@ -42,11 +42,11 @@
                 </div>
                 <div class='shopping-details hidden'>
                   <p><%= item.title %> $<%= item.price %></p>
-                  <%# if today?(menu.weekday) %>
+                  <% if today?(menu.weekday) %>
                     <div class='shopping-cart-img' data-id="<%= item.id %>" 
                          data-calorie="<%= item.calorie %>" 
                          data-price="<%= item.price %>"></div>
-                  <%# end %>
+                  <% end %>
                 </div>
               </div>
               <div class='main-data-details hidden'>
@@ -62,11 +62,10 @@
         <% end %>
       </ul>
     </div>
-    <%# if current_user? %>
+    <% if current_admin %>
       <div class='weekday-admin-panel'>
         <%= button_to 'Edit', { action: 'edit', id: menu.id }, method: :get %>
-        <%#= button_to 'Delete', { action: 'destroy', id: menu.id }, method: :delete %>
       </div>
-    <%# end %>
+    <% end %>
   </div>  
 <% end %>
