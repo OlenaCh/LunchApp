@@ -37,4 +37,6 @@ footer p { padding-right: 1% }
 
 @media only screen and (max-width: 414px) {
   h1 { font-size: 45px }
+  
+  footer { position: fixed }
 }
