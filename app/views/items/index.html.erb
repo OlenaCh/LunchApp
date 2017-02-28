@@ -14,14 +14,14 @@
           <%= item.price %>
         </div>
       </div>
-      <%# if current_user? %>
+      <% if current_admin %>
         <div class='items element-admin-panel'>
           <%= button_to "Edit", { action: "edit", id: item.id }, 
               method: :get, class: 'btn' %>
           <%= button_to "Delete", { action: "destroy", id: item.id }, 
               method: :delete, class: 'btn' %>
         </div>
-      <%# end %>
+      <% end %>
     </li>
   </ul>
 <% end %>
