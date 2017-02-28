@@ -17,5 +17,8 @@
 # Ignore application configuration
 /config/application.yml
 
+# Ignore cloudinary configuration
+/config/cloudinary.yml
+
 # Ignore coverage files
 /coverage/*
