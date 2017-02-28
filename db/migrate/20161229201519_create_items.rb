@@ -6,11 +6,11 @@ class CreateItems < ActiveRecord::Migration
       t.float  :price,     null: false
       t.string :image
       t.string :description
-      t.string :fat
-      t.string :carbohydrate
-      t.string :protein
-      t.string :calorie
-      t.string :net_weight
+      t.float  :fat
+      t.float  :carbohydrate
+      t.float  :protein
+      t.float  :calorie
+      t.float  :net_weight
       t.timestamps null: false
     end
   end

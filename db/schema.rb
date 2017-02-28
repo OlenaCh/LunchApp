@@ -31,11 +31,11 @@ ActiveRecord::Schema.define(version: 20170206205326) do
     t.float    "price",        null: false
     t.string   "image"
     t.string   "description"
-    t.string   "fat"
-    t.string   "carbohydrate"
-    t.string   "protein"
-    t.string   "calorie"
-    t.string   "net_weight"
+    t.float    "fat"
+    t.float    "carbohydrate"
+    t.float    "protein"
+    t.float    "calorie"
+    t.float    "net_weight"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
