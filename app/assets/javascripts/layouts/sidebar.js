@@ -45,10 +45,11 @@ $(document).ready(function() {
       url: 'admins/sign_in',
       method: 'POST',
       dataType: 'json',
-      data: { admin: { 
-        email: $('.admin-login-input.email').val(), 
-        password: $('.admin-login-input.password').val()
-      } }
+      data: { 
+        admin: { email: $('.admin-login-input.email').val(), 
+                 password: $('.admin-login-input.password').val() }
+      },
+      success: function(response) { location.reload(); }
     });
   };
 });
