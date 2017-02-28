@@ -11,44 +11,46 @@ RSpec.describe Admins::SessionsController, type: :controller do
     context 'with valid attributes' do
       it 'logs in admin' do
         sign_in admin
-        post :create, { :email => admin.email, :password => admin.password }
+        post :create, admin: { email: admin.email, password: admin.password }
         expect(subject.current_admin).to eq admin
       end
       
       it 'redirects to menu index page' do
         sign_in admin
-        post :create, { :email => admin.email, :password => admin.password }
-        expect(response).to redirect_to menus_path  
+        post :create, admin: { email: admin.email, password: admin.password }
+        expect(response.status).to eq 302
       end
     end
 
     context 'with invalid attributes' do
-      context 'it does not login without email' do
-        it 'does not assign current admin' do
-          post :create, { :email => '', :password => admin.password }
-          expect(subject.current_admin).to eq(nil)
+      shared_examples 'wrong credentials' do
+        it 'redirects to unauthorized path' do
+          expect(response).to redirect_to unauthorized_path
         end
+      end
+      
+      context 'it does not login without email' do
+        before(:each) { post :create, admin: { email: '', password: admin.password } }
+        
+        it_behaves_like 'wrong credentials'
       end
 
       context 'it does not login without password' do
-        it 'does not assign current admin' do
-          post :create, { :email => admin.email, :password => '' }
-          expect(subject.current_admin).to eq(nil)
-        end
+        before(:each) { post :create, admin: { email: admin.email, password: '' } }
+        
+        it_behaves_like 'wrong credentials'
       end
       
       context 'it does not login with wrong password' do
-        it 'does not assign current admin' do
-          post :create, { :email => admin.email, :password => 'aaaaraaaa' }
-          expect(subject.current_admin).to eq(nil)
-        end
+        before(:each) { post :create, admin: { email: admin.email, password: 'eeeee' } }
+        
+        it_behaves_like 'wrong credentials'
       end
       
       context 'admin is not signed in' do
-        it 'does not assign current admin' do
-          post :create, { :email => '', :password => '' }
-          expect(subject.current_admin).to eq(nil)
-        end
+        before(:each) { post :create, admin: { email: '', password: '' } }
+        
+        it_behaves_like 'wrong credentials'
       end
     end
   end
