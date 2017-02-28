@@ -42,8 +42,8 @@ $(document).ready(function() {
   
   var enlargeOrderVariables = function(obj) {
     ordered_meals.push($(obj).attr('data-id'));
-    order_sum += $(obj).attr('data-price');
-    order_calories += $(obj).attr('data-calories');
+    order_sum += parseFloat($(obj).attr('data-price'));
+    order_calories += parseFloat($(obj).attr('data-calorie'));
   };
   
   var formOrderPreview = function() {
@@ -59,8 +59,8 @@ $(document).ready(function() {
     var ind = ordered_meals.indexOf($(obj).attr('data-id'));
     if(ind != -1)
     	ordered_meals.splice(ind, 1);
-    order_sum -= $(obj).attr('data-price');
-    order_calories -= $(obj).attr('data-calories');
+    order_sum -= parseFloat($(obj).attr('data-price'));
+    order_calories -= parseFloat($(obj).attr('data-calorie'));
   };
   
   var prepareOrderPreview = function() {
