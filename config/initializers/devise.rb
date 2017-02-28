@@ -20,4 +20,7 @@ Devise.setup do |config|
   config.warden do |manager|
     manager.failure_app = CustomFailure
   end
+  
+  config.http_authenticatable_on_xhr = false
+  config.navigational_formats = ["*/*", :html, :json]
 end
