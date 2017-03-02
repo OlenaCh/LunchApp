@@ -39,3 +39,7 @@
 @media only screen and (max-width: 414px) {
   .btn { width: 75px; height: 30px }
 }
+
+@media only screen and (width: 320px) {
+  .btn { width: 70px; height: 30px }
+}

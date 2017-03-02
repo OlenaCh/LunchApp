@@ -1,6 +1,6 @@
 ul.items { margin: 7px }
 
-.items { padding: 0; border-radius: 10px }
+.items { padding: 0; border-radius: 10px; justify-content: space-around }
 
 .items.element-img,
 .items.element-details,
