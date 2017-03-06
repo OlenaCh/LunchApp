@@ -18,7 +18,7 @@
 /config/application.yml
 
 # Ignore cloudinary configuration
-/config/cloudinary.yml
+# /config/cloudinary.yml
 
 # Ignore coverage files
 /coverage/*
