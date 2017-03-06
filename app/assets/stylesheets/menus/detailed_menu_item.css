@@ -7,9 +7,10 @@
 	width: 40px;
   height: 40px;
   margin: 0;
-  background-size: 40px;
-  background-image: url(<%= asset_path ("1486063408_Cart_by_Artdesigner.lv.png") %>)
+  padding: 0 39%
 }
+
+.shopping-cart-img img { width: 40px }
 
 .shopping-cart-img,
 .main-data-details-close { cursor: pointer }
@@ -32,7 +33,7 @@
 @media only screen and (max-width: 414px) {
   .main-data-details { font-size: 15px; padding: 0 15px 15px 15px }
   
-  .shopping-cart-img { margin: 0 40px }
+  .shopping-cart-img { padding: 0 31% }
   
   .part_width_padding { padding: 0 }
 }

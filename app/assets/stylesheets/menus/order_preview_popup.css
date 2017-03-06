@@ -1,6 +1,6 @@
 .popup-close.order-preview, 
 .remove-item-from-preview, 
-.place-order { color: rgba(137, 200, 106, 1) }
+.place-order a { color: rgba(137, 200, 106, 1) }
 
 .remove-item-from-preview, 
 .place-order { background-color: rgba(255, 242, 230, 1); cursor: pointer }
@@ -19,12 +19,24 @@
   font-size: 14px
 }
 
-.place-order { float: right; border-radius: 10px; padding: 3px }
+.place-order { float: right; border-radius: 10px; padding-left: 6px }
+
+.place-order a { vertical-align: middle; font-size: 15px }
 
 /* RESPONSIVE */
+
+@media only screen and (width: 320px) {
+  .place-order a { font-size: 11px !important }
+}
 
 @media only screen and (max-width: 414px) {
   .preview { font-size: 15px }
   
   .popup-close.order-preview { left: 91%; top: 6% }
+  
+  .place-order a { font-size: 13px }
+}
+
+@media only screen and (width: 768px) {
+  .popup-close.order-preview { left: 75%; top: 12% }
 }

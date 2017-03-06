@@ -4,6 +4,7 @@ $(document).ready(function() {
     setButtonsIdentifiers();
     openItemsModal(this);
     setPageVariables(this);
+    wrapItemsInItemsBlocks();
   });
   
   $('.menu.item').click(function() {
@@ -67,5 +68,14 @@ $(document).ready(function() {
   
   var setPageVariables = function(obj) {
     field_id = $(obj).attr('data');
+  };
+  
+  var wrapItemsInItemsBlocks = function() {
+    if ($('.popup-form').find('.items-block').length == 0) {
+      var items = $('.popup-form').find('.menu.item');
+      var items_block = "<div class='items-block'></div>";
+      for (var i = 0, size = items.length; i < size; i += 2)
+        $(items[i]).nextUntil(items[i + 2]).andSelf().wrapAll(items_block);
+    }
   };
 });

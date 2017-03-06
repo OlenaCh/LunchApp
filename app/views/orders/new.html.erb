@@ -12,7 +12,6 @@
             <th>Price for one</th>
             <th></th>
             <th>Amount</th>
-            <th>Remove from order</th>
           </tr>
           <% ordered_items.each do |item| %>
             <tr>
@@ -25,7 +24,6 @@
               <td>
                 <input type='text' class='ordered-amount' name='order[order_items_attributes][][amount]' value='1' />
               </td>
-              <td><div class='remove-item-from-order'>X</div></td>
             </tr>
           <% end %>
         </table>

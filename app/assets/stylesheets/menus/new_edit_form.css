@@ -50,7 +50,15 @@
 
 /* RESPONSIVE */
 
-@media only screen and (max-width: 414px) {
+@media only screen and (width: 768px) {
+  .weekday-option input { margin: 0 0 0 10% }
+  
+  .menu.item-buttons { padding-left: 50% }
+  
+  .menu.item.form-element.input { margin: 0 0 5% 50% }
+}
+
+@media only screen and (max-width: 768px) {
   .menu.form-element { padding: 2% 0 }
   
   .menu.form-element.label { width: 30%; font-size: 16px }

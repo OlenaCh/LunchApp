@@ -25,7 +25,8 @@
 .sidebar-item a,
 .admin-login-label { color: rgba(255, 242, 230, 1) }
 
-.admin-login-form-wrapper input[type="TEXT"] { 
+.admin-login-form-wrapper input[type="TEXT"],
+.admin-login-form-wrapper input[type="PASSWORD"] { 
   width: 130px;
   border: solid 2px rgba(137, 200, 106, 1); 
   border-radius: 8px;
@@ -83,7 +84,8 @@ input[type="SUBMIT"].login { padding: 0 25%; color: rgba(137, 200, 106, 1) }
 }
 
 @media only screen and (width: 768px) {
-  .admin-login-form input[type="TEXT"] { width: 95px }
+  .admin-login-form input[type="TEXT"],
+  .admin-login-form-wrapper input[type="PASSWORD"] { width: 95px }
   
   .btn.admin-login {
     width: 95px;

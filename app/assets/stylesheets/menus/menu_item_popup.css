@@ -1,6 +1,10 @@
+.popup-form.menu-items { display: block }
+
 .popup-close.first-course, 
 .popup-close.main-course, 
 .popup-close.drink { right: -14px; top: -40px }
+
+.items-block { width: 100%; display: flex; justify-content: space-between }
 
 .menu.item { margin: 5px }
 
@@ -32,6 +36,8 @@
 }
 
 @media only screen and (max-width: 414px) {
+  .popup-form.menu-items { max-width: 86%; min-width: 86%; padding: 10px }
+  
   .menu.item-title { margin: 0 0 10% 1px }
   .menu.item-title p { float: none }
 }

@@ -14,8 +14,6 @@
   text-align: center
 }
 
-.remove-item-from-order { font-weight: bold; cursor: pointer }
-
 .order.form-element { 
   width: 100%;
   justify-content: space-between;
@@ -67,4 +65,12 @@
   .ordered-items-table-wrapper { overflow-x: auto }
   
   .order-input-type input { float: none; width: 150px }
+  
+  .order.form-element { padding: 4% 0 }
+}
+
+@media only screen and (max-width: 768px) {
+  .order-input-type { text-align: center }
+  
+  .order-input-type input { margin-right: 0 }
 }
