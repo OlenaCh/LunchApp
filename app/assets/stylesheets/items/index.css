@@ -1,10 +1,22 @@
-ul.items { margin: 7px }
-
-.items { padding: 0; border-radius: 10px; justify-content: space-around }
+/* STYLES, SHARED AMONG ELEMENTS ON THE PAGE */
 
 .items.element-img,
 .items.element-details,
 .items.element-admin-panel { width: 30%; padding: 4% }
+
+.items.element-details.title, 
+.items.element-details.price { width: 100%; padding: 3% 0; margin: 0 }
+
+.items.element-details.title,
+.items.element-details.price,
+.items.element-admin-panel { text-align: center }
+
+
+/* INDIVIDUAL STYLES */
+
+ul.items { margin: 7px }
+
+.items { padding: 0; border-radius: 10px; justify-content: space-around }
 
 .items.element-img img {
   border-radius: 30px;
@@ -17,14 +29,8 @@ ul.items { margin: 7px }
 
 .items.element-details { font-size: 25px; color: rgba(137, 200, 106, 1) }
 
-.items.element-details.title, 
-.items.element-details.price { width: 100%; padding: 3% 0; margin: 0 }
-
-.items.element-details.title,
-.items.element-details.price,
-.items.element-admin-panel { text-align: center }
-
 .items.element-admin-panel form { margin: 10% 0 }
+
 
 /* RESPONSIVE */
 

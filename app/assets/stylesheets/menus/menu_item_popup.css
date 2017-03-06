@@ -1,8 +1,15 @@
-.popup-form.menu-items { display: block }
+/* STYLES, SHARED AMONG ELEMENTS ON THE PAGE */
+
+/* Position */
 
 .popup-close.first-course, 
 .popup-close.main-course, 
 .popup-close.drink { right: -14px; top: -40px }
+
+
+/* INDIVIDUAL STYLES */
+
+.popup-form.menu-items { display: block }
 
 .items-block { width: 100%; display: flex; justify-content: space-between }
 
@@ -20,6 +27,7 @@
   color: rgba(255, 242, 230, 1); 
   float: right
 }
+
 
 /* RESPONSIVE */
 

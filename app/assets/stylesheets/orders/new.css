@@ -1,66 +1,72 @@
-.order-form { margin: 2% 3% }
+/* STYLES, SHARED AMONG ELEMENTS ON THE PAGE */
+
+/* Width */
+
+.order-items,
+.order.form-element,
+.btn-add-order,
+.get-pdf { width: 100% }
+
+/* Margins & Paddings */
+
+.order-form,
+.thank-you { margin: 2% 3% }
+
+.order.form-element,
+.get-pdf { padding: 2% 0 }
+
+.order.form-element label,
+.total-sum-of-ordered-items { padding-left: 2% }
+
+/* The display of text */
+
+.order-items tr,
+.ordered-amount,
+.get-pdf { text-align: center }
+
+/* Colors */
+
+.ordered-amount,
+.order-input-type input {
+  background-color: rgba(255, 242, 230, 1);
+  border: solid 2px rgba(137, 200, 106, 1);
+  border-radius: 10px;
+  color: rgba(137, 200, 106, 1)
+}
+
+.btn-add-order input[value="Place order"],
+.btn.download-bill a { color: rgba(255, 242, 230, 1) }
+
+/* Font details */
+
+.order.form-element label,
+.total-sum-of-ordered-items,
+.get-pdf { font-size: 20px }
+
+.total-sum-of-ordered-items,
+.get-pdf { font-weight: bold }
+
+
+/* INDIVIDUAL STYLES */
 
 .order-item { padding: 1% 0 }
 
-.order-items { width: 100% }
+.order.form-element { justify-content: space-between }
 
-.order-items tr { text-align: center }
+.order-input-type input { height: 23px; float: right; margin-right: 10%; }
 
-.ordered-amount {
-  background-color: rgba(255, 242, 230, 1);
-  color: rgba(137, 200, 106, 1);
-  border: solid 2px rgba(137, 200, 106, 1);
-  border-radius: 10px;
-  text-align: center
-}
-
-.order.form-element { 
-  width: 100%;
-  justify-content: space-between;
-  padding: 2% 0
-}
-
-.order.form-element label,
-.total-sum-of-ordered-items { padding-left: 2%; font-size: 20px }
-
-.total-sum-of-ordered-items { font-weight: bold }
-
-.order-input-type input { 
-  height: 23px; 
-  float: right; 
-  margin-right: 10%;
-  background-color: rgba(255, 242, 230, 1);
-  color: rgba(137, 200, 106, 1);
-  border: solid 2px rgba(137, 200, 106, 1);
-  border-radius: 10px
-}
-
-.btn-add-order { width: 100%; padding-right: 2% }
+.btn-add-order { padding-right: 2% }
 
 .btn-add-order input[value="Place order"] { 
   width: 150px !important;
   float: right;
-  color: rgba(255, 242, 230, 1);
   background-color: rgba(137, 200, 106, 1)
-}
-
-.thank-you {
-  margin: 2% 3%
-}
-
-.get-pdf {
-  text-align: center;
-  width: 100%;
-  padding: 2% 0;
-  font-size: 20px;
-  font-weight: bold
 }
 
 .btn-wrapper { padding: 2% 3%; width: 94%; justify-content: center }
 
 .btn.download-bill { padding: 1% 0 0 2% }
 
-.btn.download-bill a { color: rgba(255, 242, 230, 1) }
 
 /* RESPONSIVE */
 

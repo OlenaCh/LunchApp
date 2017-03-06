@@ -1,15 +1,26 @@
-.content-wrapper { width: 100%; height: 100%; position: relative }
+/* STYLES, SHARED AMONG ELEMENTS ON THE PAGE */
 
+/* Width */
+
+.content-wrapper,
+.main,
+.error-msg-wrapper,
+.max-width { width: 100% }
+
+/* Height & Position */
+
+.content-wrapper,
 .content { 
-  width: 80%; 
   height: 100%;
-  margin-left: 20%; 
-  position: relative;
-  overflow: auto;
-  z-index: 1;
+  position: relative
 }
 
-.main { width: 100%; height: calc(100% - 140px); padding-bottom: 60px }
+
+/* INDIVIDUAL STYLES */
+
+.content { width: 80%; margin-left: 20%; overflow: auto; z-index: 1; }
+
+.main { height: calc(100% - 140px); padding-bottom: 60px }
 
 .btn {
   width: 90px;
@@ -22,17 +33,16 @@
   cursor: pointer
 }
 
-.flex { display: flex }
-
 .block { display: inline-block }
 
-.max-width { width: 100% }
+.flex { display: flex }
 
 .hidden { display: none }
 
-.error-msg-wrapper { width: 100%; padding: 20% 0; text-align: center }
+.error-msg-wrapper { padding: 20% 0; text-align: center }
 
 .wth-border { border: solid 2px rgba(137, 200, 106, 1) }
+
 
 /* RESPONSIVE */
 

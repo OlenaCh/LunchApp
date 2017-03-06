@@ -1,32 +1,46 @@
+/* STYLES, SHARED AMONG ELEMENTS ON THE PAGE */
+
+/* Width */
+
+.weekday-name,
+.weekday-menu,
+.weekday-menu-items,
+.weekday-admin-panel { width: 100% }
+
+/* Margins & Paddings */
+
+.weekday-menu-items,
+.small-img,
+.weekday-admin-panel { margin: 0 }
+
+/* Borders & Cursors */
+
+.small-img,
+.enlarged-img { border-radius: 30px }
+
+.weekday-admin-panel input,
+.weekday-menu-item.small-img:hover { cursor: pointer }
+
+
+/* INDIVIDUAL STYLES */
+
 .weekday { padding: 5px }
 
-.weekday-name { width: 100%; height: 10% }
+.weekday-name { height: 10% }
 
-.weekday-menu { width: 100%; height: calc(90% - 40px); padding: 10px 0 }
-
-.weekday-menu-items { width: 100%; margin: 0 }
+.weekday-menu { height: calc(90% - 40px); padding: 10px 0 }
 
 .weekday-menu-items li:hover { z-index: 50 }
 
 .weekday-menu-item { position: relative; z-index: 0 }
 
-.small-img {
-  margin: 0;
-  width: 80px;
-  height: 80px;
-  border-radius: 30px;
-  opacity: 0.5
-}
+.small-img { width: 80px; height: 80px; opacity: 0.5 }
 
-.enlarged-img {
-  width: 180px;
-  height: 180px;
-  border-radius: 30px;
-}
+.enlarged-img { width: 180px; height: 180px }
 
-.weekday-menu-item.small-img:hover { opacity: 1; cursor: pointer }
+.weekday-menu-item.small-img:hover { opacity: 1 }
 
-.weekday-admin-panel { width: 100%; height: 40px; margin: 0 }
+.weekday-admin-panel { height: 40px }
 
 .weekday-admin-panel form { width: 15%; float: right }
 
@@ -37,9 +51,9 @@
   color: rgba(255, 242, 230, 1);
   width: 90px;
   height: 40px;
-  font-size: 20px;
-  cursor: pointer
+  font-size: 20px
 }
+
 
 /* RESPONSIVE */
 

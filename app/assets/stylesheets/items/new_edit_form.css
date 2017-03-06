@@ -1,33 +1,49 @@
-.item-form { width: 100% }
+/* STYLES, SHARED AMONG ELEMENTS ON THE PAGE */
+
+/* Width */
+
+.item-form,
+.item-field { width: 100% }
+
+/* Float */
+
+.input input,
+span.radio,
+.validation-item { float: right }
+
+/* Margins */
+
+.input input,
+span.radio,
+.item-field img,
+.validation-item { margin-right: 10% }
+
+/* Borders */
+
+.input input,
+.item-field img { border: solid 2px rgba(137, 200, 106, 1) }
+
+
+/* INDIVIDUAL STYLES */
 
 .item-form form { margin: 2% 3% }
 
-.item-field { width: 100%; padding: 2% 0 }
+.item-field { padding: 2% 0 }
 
 .item-field.img { text-align: right }
 
 .input label { font-size: 23px }
 
 .input input { 
-  height: 23px; 
-  float: right; 
-  margin-right: 10%;
+  height: 23px;
   background-color: rgba(255, 242, 230, 1);
   color: rgba(137, 200, 106, 1);
-  border: solid 2px rgba(137, 200, 106, 1);
   border-radius: 10px
 }
 
-span.radio { float: right; margin-right: 10% }
-
 input[type="RADIO"] { float: none; margin: 0 }
 
-.item-field img {
-  margin-right: 10%;
-  border: solid 2px rgba(137, 200, 106, 1);
-  border-radius: 30px;
-  overflow: hidden
-}
+.item-field img { border-radius: 30px; overflow: hidden }
 
 .item-submit-btn-wrapper { width: 55%; padding: 1% 0 0 45% }
 
@@ -39,7 +55,6 @@ input[type="RADIO"] { float: none; margin: 0 }
   font-size: 20px
 }
 
-.validation-item { float: right; margin-right: 10% }
 
 /* RESPONSIVE */
 

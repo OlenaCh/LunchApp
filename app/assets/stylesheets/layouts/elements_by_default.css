@@ -1,31 +1,36 @@
-* { font-family: cursive; list-style: none }
+/* STYLES, SHARED AMONG ELEMENTS */
 
-body {
-  width: 100%;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
+*, a { font-family: cursive }
+
+body, h1, p { margin: 0 }
+
+body, h1 { color: rgba(137, 200, 106, 1) }
+
+body, .footer { width: 100% }
+
+
+/* INDIVIDUAL STYLES */
+
+* { list-style: none }
+
+body { 
+  min-height: 100%; 
+  padding: 0; 
   display: -webkit-box;
-  background-color: rgba(255, 242, 230, 1);
-  color: rgba(137, 200, 106, 1)
+  background-color: rgba(255, 242, 230, 1)
 }
 
-h1 {
-  margin: 0;
-  padding-top: 30px;
-  padding-bottom: 10px;
-  text-align: center;
-  font-size: 50px;
-  color: rgba(137, 200, 106, 1)
+h1 { 
+  padding-top: 30px; 
+  padding-bottom: 10px; 
+  text-align: center; 
+  font-size: 50px
 }
 
-p { margin: 0 }
-
-a { font-family: cursive; text-decoration: none; cursor: pointer }
+a { text-decoration: none; cursor: pointer }
 
 .footer { 
   height: 60px;
-  width: 100%;
   position: absolute;
   bottom: 0;
   right: 0;

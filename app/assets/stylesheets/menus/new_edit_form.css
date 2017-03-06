@@ -1,3 +1,29 @@
+/* STYLES, SHARED AMONG ELEMENTS ON THE PAGE */
+
+/* Width */
+
+.weekday-option input,
+.choose p { width: 50% }
+
+/* Height */
+
+.choose,
+.add-item { height: 40px }
+
+/* Margins & Paddings */
+
+.menu.item.form-element.input,
+.menu.item-buttons { margin-left: 150px }
+
+/* The display of text */
+
+.btn.add-item-to-menu,
+.choose p, 
+.sbm-form { text-align: center }
+
+
+/* INDIVIDUAL STYLES */
+
 .menu.form { margin: 2% 3%; width: 94% }
 
 .menu.form-element { width: 100%; padding: 1% 0 }
@@ -8,7 +34,7 @@
 
 .weekday-option { margin: 1.5% }
 
-.weekday-option input { width: 50%; margin: 0 0 0 25% }
+.weekday-option input { margin: 0 0 0 25% }
 
 .weekday-option p { padding: 5px 0 0 0; font-size: 17px }
 
@@ -21,32 +47,23 @@
   border-radius: 10px
 }
 
-.menu.item.form-element.input,
-.menu.item-buttons { margin-left: 150px }
-
 .choose { 
   width: 40px;
-  height: 40px;
   border-radius: 100px;
   margin-left: 30px;
   cursor: pointer
 }
 
 .choose p {
-  width: 50%;
   height: 50%;
   margin: 25% 0 0 25%;
-  text-align: center;
   font-size: 17px
 }
 
-.add-item { height: 40px }
-
-.btn.add-item-to-menu { float: right; text-align: center }
+.btn.add-item-to-menu { float: right }
 
 .btn.add-item-to-menu p { padding-top: 5px }
 
-.sbm-form { text-align: center }
 
 /* RESPONSIVE */
 

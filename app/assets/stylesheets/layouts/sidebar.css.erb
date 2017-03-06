@@ -1,25 +1,20 @@
-.sidebar { 
-  width: 20%;
-  height: 100%;
-  position: fixed;
-  background-color: rgba(137, 200, 106, 1)
-}
+<!-- STYLES, SHARED AMONG ELEMENTS ON THE PAGE -->
 
-.sidebar-icon-wrapper, .sidebar-icon { display: none }
+<!-- Display -->
 
-.sidebar-item, .admin-login-form {
+.sidebar-icon-wrapper, 
+.sidebar-icon, 
+.sidebar-item-close { display: none }
+
+<!-- Paddings & Cursors -->
+
+.sidebar-item, 
+.admin-login-form {
   padding: 15px 0 15px 10px;
   cursor: pointer
 }
 
-.sidebar-item { font-size: 25px }
-
-.sidebar-item-close { display: none }
-
-.sidebar-item:hover { 
-	background-color: rgba(255, 242, 230, 1);
-	border-radius: 10px 0 0 10px
-}
+<!-- Borders & Colors -->
 
 .sidebar-item-close,
 .sidebar-item a,
@@ -33,17 +28,30 @@
   color: rgba(137, 200, 106, 1)
 }
 
+.btn.admin-login,
+.sidebar-item:hover { background-color: rgba(255, 242, 230, 1) }
+
+<!-- INDIVIDUAL STYLES -->
+
+.sidebar { 
+  width: 20%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(137, 200, 106, 1)
+}
+
+.sidebar-item { font-size: 25px }
+
+.sidebar-item:hover { border-radius: 10px 0 0 10px }
+
 .admin-login-btn { width: 100% }
 
-.btn.admin-login { 
-  height: 30px;
-  margin: 3% 0 0 15%;
-  background-color: rgba(255, 242, 230, 1)
-}
+.btn.admin-login { height: 30px; margin: 3% 0 0 15% }
 
 input[type="SUBMIT"].login { padding: 0 25%; color: rgba(137, 200, 106, 1) }
 
-/* RESPONSIVE */
+
+<!-- RESPONSIVE -->
 
 @media only screen and (max-width: 414px) {
   .sidebar-icon-wrapper { display: block; padding: 30% }

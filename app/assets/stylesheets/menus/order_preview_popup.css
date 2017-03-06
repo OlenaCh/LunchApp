@@ -1,9 +1,14 @@
+/* STYLES, SHARED AMONG ELEMENTS ON THE PAGE */
+
 .popup-close.order-preview, 
 .remove-item-from-preview, 
 .place-order a { color: rgba(137, 200, 106, 1) }
 
 .remove-item-from-preview, 
 .place-order { background-color: rgba(255, 242, 230, 1); cursor: pointer }
+
+
+/* INDIVIDUAL STYLES */
 
 .popup-close.order-preview { left: 71%; top: 11% }
 
@@ -13,8 +18,8 @@
 
 .remove-item-from-preview {
   width: 20px;
-  padding: 0 5px;
   height: 20px;
+  padding: 0 5px;
   border-radius: 5px;
   font-size: 14px
 }
@@ -22,6 +27,7 @@
 .place-order { float: right; border-radius: 10px; padding-left: 6px }
 
 .place-order a { vertical-align: middle; font-size: 15px }
+
 
 /* RESPONSIVE */
 
