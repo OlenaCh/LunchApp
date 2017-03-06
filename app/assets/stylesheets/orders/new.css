@@ -20,7 +20,10 @@
   padding: 2% 0
 }
 
-.order.form-element label { padding-left: 2%; font-size: 20px }
+.order.form-element label,
+.total-sum-of-ordered-items { padding-left: 2%; font-size: 20px }
+
+.total-sum-of-ordered-items { font-weight: bold }
 
 .order-input-type input { 
   height: 23px; 

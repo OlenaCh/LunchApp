@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
   end
   
   def new
-    thank_you_page and return unless params[:billed_order].blank?
+    thank_you_page and return false unless params[:billed_order].blank?
     render 'new', locals: { ordered_items: ordered_items_list }
   end
   
