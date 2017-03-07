@@ -39,6 +39,8 @@
 
 .hidden { display: none }
 
+.error { border-color: red !important }
+
 .error-msg-wrapper { padding: 20% 0; text-align: center }
 
 .wth-border { border: solid 2px rgba(137, 200, 106, 1) }

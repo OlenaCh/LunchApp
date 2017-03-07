@@ -31,8 +31,27 @@ $(document).ready(function() {
   });
   
   $('.admin-login-btn').click(function() {
-    startSession();
+    attemptToStartSession();
   });
+  
+  $('.admin-login-input').click(function() {
+    $('.admin-login-input').each (function() {
+      $(this).removeClass('error');               
+    });
+  });
+  
+  var attemptToStartSession = function() {
+    $.ajax({
+      url: '/admins/sign_in',
+      method: 'POST',
+      dataType: 'json',
+      data: { 
+        admin: { email: $('.admin-login-input.email').val(), 
+                 password: $('.admin-login-input.password').val() }
+      },
+      success: function(response) { sessionControllerResponse(response); }
+    });
+  };
   
   var changeLinkColor = function(obj, color) {
     var links = $(obj).find('a');
@@ -40,16 +59,16 @@ $(document).ready(function() {
       $(links[i]).css('color', color);
   };
   
-  var startSession = function() {
-    $.ajax({
-      url: 'admins/sign_in',
-      method: 'POST',
-      dataType: 'json',
-      data: { 
-        admin: { email: $('.admin-login-input.email').val(), 
-                 password: $('.admin-login-input.password').val() }
-      },
-      success: function(response) { location.reload(); }
+  var sessionControllerResponse = function(resp) {
+    if (resp.status == 200)
+      location.reload();
+    if (resp.status == 400)
+      showInvalidFields();
+  };
+  
+  var showInvalidFields = function() {
+    $('.admin-login-input').each (function() {
+      $(this).addClass('error');               
     });
   };
 });
