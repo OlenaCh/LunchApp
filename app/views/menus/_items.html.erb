@@ -1,7 +1,7 @@
 <% items.each do |item| %>
   <div class='menu item' data="<%= item.id %>">
     <div class: 'menu item-img-wrapper'>
-      <%= image_tag item.image_url.to_s, class: 'menu item-img' %>
+      <%= cl_image_tag item.image_url.to_s, class: 'menu item-img' %>
     </div>
     <div class='menu item-title'>
       <p><%= item.title %></p>

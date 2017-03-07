@@ -20,8 +20,11 @@
 </div>
 
 <form class='menu form' 
-      action="<%= action == 'Update' ? ('/menus/' + menu.id.to_s) : '/menus/' %>" 
+      action="<%= action == 'Update' ? ('/menus/' + menu.id.to_s) : '/menus' %>" 
       method='POST'>
+  
+  <input name='authenticity_token' type='hidden' 
+         value="<%= form_authenticity_token %>" />
 
   <% if action == 'Update' %>
     <input type='hidden' name='_method' value='put' />

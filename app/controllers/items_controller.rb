@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
   def create
     item = Item.new(item_params)
     redirect_to items_path and return false if item.save
-  	new_or_edit 'new'
+  	redirect_to session.delete(:return_to)
   end
   
   def index
@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
   def update
     item = Item.find_by_id(params[:id])
     redirect_to items_path and return false if item.update(item_params)
-    new_or_edit('edit', item)
+    redirect_to session.delete(:return_to)
   end
   
   def destroy

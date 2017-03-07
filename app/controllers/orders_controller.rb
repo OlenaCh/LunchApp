@@ -15,6 +15,7 @@ class OrdersController < ApplicationController
     order = Order.create(order_params)
     order = count_totals(order)
     redirect_to new_order_path(billed_order: order.id) and return if order.save
+    redirect_to session.delete(:return_to)
   end
   
   def show
@@ -24,6 +25,7 @@ class OrdersController < ApplicationController
   def update
     order = Order.find_by_id(params[:id])
     respond_to_format(:json, :json_success) if order.update(order_update_params)
+    redirect_to session.delete(:return_to)
   end
   
   private

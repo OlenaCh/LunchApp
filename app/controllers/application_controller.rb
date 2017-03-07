@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :null_session
+  protect_from_forgery with: :exception
   
   rescue_from ActionController::RoutingError, with: :no_route
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  
+  before_action :save_request_referer, only: [:create, :update]
   
   private
   
@@ -12,5 +14,9 @@ class ApplicationController < ActionController::Base
   
   def record_not_found
     redirect_to record_not_found_path
+  end
+  
+  def save_request_referer
+    session[:return_to] ||= request.referer
   end
 end
