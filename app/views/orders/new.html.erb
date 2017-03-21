@@ -1,6 +1,10 @@
 <h1>Order preview:</h1>
 
 <form class='order-form' action='/orders' method='POST'>
+  
+  <input name='authenticity_token' type='hidden' 
+         value="<%= form_authenticity_token %>" />
+         
   <div class='order form-element'>
     <% if ordered_items %>
       <label>Ordered items:</label>

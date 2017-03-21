@@ -1,5 +1,5 @@
 class MenusController < ApplicationController
-  # before_action :authenticate_admin!, except: [:index]
+  before_action :authenticate_admin!, except: [:index]
   
   def new
     new_or_edit 'new'
@@ -9,7 +9,7 @@ class MenusController < ApplicationController
   	menu = Menu.new(weekday: menu_params[:weekday])
   	menu.items = menu_items
   	redirect_to menus_path and return false if menu.save
-  	new_or_edit 'new'
+  	redirect_to session.delete(:return_to)
   end
   
   def index
@@ -25,7 +25,7 @@ class MenusController < ApplicationController
     menu.items.clear
     menu.items = menu_items
     redirect_to menus_path and return false if menu.save
-    new_or_edit('edit', menu)
+    redirect_to session.delete(:return_to)
   end
 
   private

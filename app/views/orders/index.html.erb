@@ -21,7 +21,7 @@
         <td class='order-details flex'>
           <% order.order_items.each do |item| %>
             <div class='order-item-img' data="<%= item.id %>">
-              <%= image_tag item.item.image %>
+              <%= cl_image_tag item.item.image %>
             </div>
             <span class='order-item-details hidden' data="<%= item.id %>" >
               <div class='order-item-title'><%= item.item.title %></div>
