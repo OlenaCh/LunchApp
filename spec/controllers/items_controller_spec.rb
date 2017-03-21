@@ -35,18 +35,20 @@ RSpec.describe ItemsController, type: :controller do
       end
 
       context 'with invalid params' do
+        before(:each) { controller.request.stub referer: '/items/new' }
+        
         it 'does not create a new item' do  
           expect { post :create, item: item_params.merge({title: ''}) }.to change(Item, :count).by(0)
         end
           
         it 'renders new template' do 
           post :create, item: item_params.merge({title: ''})
-          expect(response).to render_template(:new)
+          expect(response).to redirect_to new_item_path
         end
         
         it 'does not respond with flash message' do 
           post :create, item: item_params.merge({title: ''})
-          expect(response.status).not_to eq 302
+          expect(response.status).to eq 302
         end
       end
     end
@@ -60,16 +62,17 @@ RSpec.describe ItemsController, type: :controller do
 
       context 'with invalid params' do
         context 'with too short title' do
-          before(:each) do 
+          before(:each) do
+            controller.request.stub referer: '/items/' + item.id.to_s + '/edit'
             put :update, id: item, item: item_params.merge({title: 'tea'})
           end
           
           it 'renders edit page' do
-            expect(response).to render_template(:edit)
+            expect(response).to redirect_to edit_item_path
           end
         
           it 'does not respond with HTTP status 302' do
-            expect(response.status).not_to eq 302
+            expect(response.status).to eq 302
           end
         end
       end

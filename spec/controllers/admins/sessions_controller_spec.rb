@@ -25,7 +25,7 @@ RSpec.describe Admins::SessionsController, type: :controller do
     context 'with invalid attributes' do
       shared_examples 'wrong credentials' do
         it 'redirects to unauthorized path' do
-          expect(response).to redirect_to unauthorized_path
+          expect(JSON.parse(response.body)['status']).to eq 400
         end
       end
       

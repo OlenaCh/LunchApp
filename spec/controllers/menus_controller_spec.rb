@@ -37,6 +37,8 @@ RSpec.describe MenusController, type: :controller do
       end
 
       context 'with invalid params' do
+        before(:each) { controller.request.stub referer: '/menus/new' }
+        
         it 'does not create a new menu' do  
           expect { 
             post :create, menu: menu_params.merge({weekday: ''})
@@ -45,12 +47,12 @@ RSpec.describe MenusController, type: :controller do
           
         it 'renders new template' do 
           post :create, menu: menu_params.merge({weekday: ''})
-          expect(response).to render_template(:new)
+          expect(response).to redirect_to new_menu_path
         end
         
         it 'does not respond with flash message' do 
           post :create, menu: menu_params.merge({weekday: ''})
-          expect(response.status).not_to eq 302
+          expect(response.status).to eq 302
         end
       end
     end
