@@ -10,17 +10,16 @@
 /* Height & Position */
 
 .content-wrapper,
-.content { 
-  height: 100%;
-  position: relative
-}
+.content { position: relative }
 
 
 /* INDIVIDUAL STYLES */
 
-.content { width: 80%; margin-left: 20%; overflow: auto; z-index: 1; }
+.content-wrapper { min-height: 100% }
 
-.main { height: calc(100% - 140px); padding-bottom: 60px }
+.content { width: 80%; margin-left: 20%; z-index: 1; }
+
+.main { padding-bottom: 7% }
 
 .btn {
   width: 90px;
@@ -48,7 +47,9 @@
 
 /* RESPONSIVE */
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 425px) {
+  .main { padding-bottom: 15% }
+  
   .btn { width: 75px; height: 30px }
 }
 

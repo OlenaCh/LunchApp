@@ -25,7 +25,6 @@ class OrdersController < ApplicationController
   def update
     order = Order.find_by_id(params[:id])
     respond_to_format(:json, :json_success) if order.update(order_update_params)
-    redirect_to session.delete(:return_to)
   end
   
   private

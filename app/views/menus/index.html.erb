@@ -24,6 +24,9 @@
 </div>
 
 <h1>Week menus:</h1>
+<div class='hidden'>
+  <%= ctr = -1 %>
+</div>
 <% menus.each do |menu| %>
   <div class='weekday'>
     <div class='weekday-name'>
@@ -32,13 +35,16 @@
     <div class='weekday-menu flex'>
       <ul class='weekday-menu-items'>
         <% menu.items.each do |item| %>
-          <li class='weekday-menu-item block' data="<%= item.id %>">
+          <div class='hidden'>
+            <%= ctr += 1 %>
+          </div>
+          <li class='weekday-menu-item block' data="<%= ctr %>">
             <div class='main-data flex'>
               <div class='main-data-general'>
                 <div class='img-wrapper'>
                   <%= cl_image_tag item.image, 
                           class: 'weekday-menu-item small-img wth-border', 
-                          'data': item.id %>
+                          'data': ctr %>
                 </div>
                 <div class='shopping-details hidden'>
                   <p><%= item.title %> $<%= item.price %></p>
@@ -52,7 +58,7 @@
                 </div>
               </div>
               <div class='main-data-details hidden'>
-                <p class='main-data-details-close' data="<%= item.id %>">X</p>
+                <p class='main-data-details-close' data="<%= ctr %>">X</p>
                 <p>Calories: <%= item.calorie %></p>
                 <p>Fats: <%= item.fat %></p>
                 <p>Carbohydrates: <%= item.carbohydrate %></p>

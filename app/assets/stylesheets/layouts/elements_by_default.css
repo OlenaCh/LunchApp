@@ -2,19 +2,18 @@
 
 *, a { font-family: cursive }
 
-body, h1, p { margin: 0 }
+html, body, h1, p { margin: 0 }
 
 body, h1 { color: rgba(137, 200, 106, 1) }
-
-body, .footer { width: 100% }
 
 
 /* INDIVIDUAL STYLES */
 
-* { list-style: none }
+html { height: 100%; list-style: none }
 
 body { 
-  min-height: 100%; 
+  width: 100%;
+  min-height: 100%;
   padding: 0; 
   display: -webkit-box;
   background-color: rgba(255, 242, 230, 1)
@@ -29,17 +28,18 @@ h1 {
 
 a { text-decoration: none; cursor: pointer }
 
-.footer { 
-  height: 60px;
+.footer {
+  width: 100%;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 0%;
+  right: 0%;
+  padding: 2% 0;
   font-size: 20px; 
   text-align: right
 }
 
 .footer p { padding-right: 1% }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 425px) {
   h1 { font-size: 45px }
 }

@@ -16,7 +16,7 @@ span.radio,
 .input input,
 span.radio,
 .item-field img,
-.validation-item { margin-right: 10% }
+.validation-item { margin-right: 4% }
 
 /* Borders */
 
@@ -38,7 +38,8 @@ span.radio,
   height: 23px;
   background-color: rgba(255, 242, 230, 1);
   color: rgba(137, 200, 106, 1);
-  border-radius: 10px
+  border-radius: 10px;
+  text-align: center
 }
 
 input[type="RADIO"] { float: none; margin: 0 }
@@ -78,7 +79,11 @@ input[type="RADIO"] { float: none; margin: 0 }
   .input label { font-size: 14px }
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (width: 425px) {
+  .input label { font-size: 14px }
+}
+
+@media only screen and (max-width: 425px) {
   .input input, 
   span.radio,
   .item-field img { margin-right: 0 }
@@ -102,7 +107,7 @@ input[type="RADIO"] { float: none; margin: 0 }
   
   .item-submit-btn-wrapper { padding: 1% 0 0 40% }
   
-  .btn input[type="SUBMIT"] { padding: 0 27% }
+  .btn input[type="SUBMIT"] { padding: 2px 26% }
 }
 
 @media only screen and (width: 768px) {
@@ -112,4 +117,11 @@ input[type="RADIO"] { float: none; margin: 0 }
   .item-field p { margin-right: 3% }
   
   span.radio input { margin-right: 0 }
+}
+
+@media only screen and (width: 2560px) {
+  .input label,
+  .input input { font-size: 30px }
+  
+  .input input { height: 32px }
 }

@@ -26,7 +26,7 @@
 
 .weekday { padding: 5px }
 
-.weekday-name { height: 10% }
+.weekday-name { height: 10%; padding-left: 2% }
 
 .weekday-menu { height: calc(90% - 40px); padding: 10px 0 }
 
@@ -57,7 +57,7 @@
 
 /* RESPONSIVE */
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 425px) {
   .weekday-menu-items { padding: 0 0 0 11.5px }
   
   .enlarged-img { width: 100px; height: 100px }
@@ -65,4 +65,8 @@
   .weekday-admin-panel form { width: initial }
   
   .small-img { opacity: 1 }
+}
+
+@media only screen and (width: 2560px) {
+  .weekday-name { font-size: 25px }
 }

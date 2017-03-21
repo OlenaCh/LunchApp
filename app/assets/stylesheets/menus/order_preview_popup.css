@@ -24,6 +24,8 @@
   font-size: 14px
 }
 
+.preview-item { padding-bottom: 5px }
+
 .place-order { float: right; border-radius: 10px; padding-left: 6px }
 
 .place-order a { vertical-align: middle; font-size: 15px }
@@ -35,14 +37,26 @@
   .place-order a { font-size: 11px !important }
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 425px) {
   .preview { font-size: 15px }
   
-  .popup-close.order-preview { left: 91%; top: 6% }
+  .popup-close.order-preview { left: 91%; top: 5% }
   
   .place-order a { font-size: 13px }
 }
 
 @media only screen and (width: 768px) {
-  .popup-close.order-preview { left: 75%; top: 12% }
+  .popup-close.order-preview { left: 78%; top: 10% }
+}
+
+@media only screen and (width: 1024px) {
+  .popup-close.order-preview { left: 73%; top: 11% }
+}
+
+@media only screen and (width: 1440px) {
+  .popup-close.order-preview { left: 67%; top: 11% }
+}
+
+@media only screen and (width: 2560px) {
+  .popup-close.order-preview { left: 61%; top: 13% }
 }

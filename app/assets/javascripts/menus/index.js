@@ -6,8 +6,10 @@ $(document).ready(function() {
     var parents = $(this).parents();
     var children = $(parents[2]).children();
     closeItemDetailedInfo($(children[1]).children().first());
-    enlargeOrderVariables(this);
-    prepareOrderPreview();
+    if (ordered_meals.includes($(this).attr('data-id')) == false) {
+      enlargeOrderVariables(this);
+      prepareOrderPreview();
+    }
   });
 
   $('.order-preview-form').click(function() {
@@ -31,19 +33,29 @@ $(document).ready(function() {
   var order_calories = 0;
 
   var countTotalCalories = function() {
-    var txt = 'Calories: ' + order_calories;
+    var txt = 'Calories: ' + Math.round(order_calories);
     $('.preview-calories').text(txt);
   };
   
   var countTotalSum = function() {
-    var txt = 'Sum: ' + order_sum;
+    var txt = 'Sum: ' + Math.round(order_sum);
     $('.preview-sum').text(txt);
+  };
+  
+  var enlargeOrderCalorie = function(calorie) {
+    if (isNaN(calorie) == false && calorie != undefined)
+      order_calories += calorie;
+  };
+  
+  var enlargeOrderSum = function(sum) {
+    if (isNaN(sum) == false && sum != undefined)
+      order_sum += sum;
   };
   
   var enlargeOrderVariables = function(obj) {
     ordered_meals.push($(obj).attr('data-id'));
-    order_sum += parseFloat($(obj).attr('data-price'));
-    order_calories += parseFloat($(obj).attr('data-calorie'));
+    enlargeOrderSum(parseFloat($(obj).attr('data-price')));
+    enlargeOrderCalorie(parseFloat($(obj).attr('data-calorie')));
   };
   
   var formOrderPreview = function() {
@@ -54,13 +66,23 @@ $(document).ready(function() {
         $(order_items[i]).addClass('flex');
       }
   };
+  
+  var lessenOrderCalorie = function(calorie) {
+    if (isNaN(calorie) == false && calorie != undefined)
+      order_calories -= calorie;
+  };
+  
+  var lessenOrderSum = function(sum) {
+    if (isNaN(sum) == false && sum != undefined)
+      order_sum -= sum;
+  };
 
   var lessenOrderVariables = function(obj) {
     var ind = ordered_meals.indexOf($(obj).attr('data-id'));
     if(ind != -1)
     	ordered_meals.splice(ind, 1);
-    order_sum -= parseFloat($(obj).attr('data-price'));
-    order_calories -= parseFloat($(obj).attr('data-calorie'));
+    lessenOrderSum(parseFloat($(obj).attr('data-price')));
+    lessenOrderCalorie(parseFloat($(obj).attr('data-calorie')));
   };
   
   var prepareOrderPreview = function() {
@@ -95,10 +117,6 @@ $(document).ready(function() {
     enlargeImage(this);
   });
   
-  $('.main-data-details-close').click(function() {
-    closeItemDetailedInfo(this);
-  });
-
   var applyCSSStyles = function(arr) {
     applyCSSStyleToImgWrapperDiv(arr[0]);
     applyCSSStyleToMainDataGeneralDiv(arr[1]);
@@ -130,17 +148,6 @@ $(document).ready(function() {
     }
   };
   
-  var closeItemDetailedInfo = function(obj) {
-    var parents = $(obj).parents();
-    showOtherItems(parents[3]);
-    reverseAppliedCSSStyles(parents);
-  };
-  
-  var compressImage = function(obj) {
-    $(obj).removeClass('enlarged-img');
-    $(obj).addClass('small-img');
-  };
-  
   var enlargeImage = function(obj) {
     $(obj).removeClass('small-img');
     $(obj).addClass('enlarged-img');
@@ -153,6 +160,28 @@ $(document).ready(function() {
         $(items[i]).addClass('hidden');
     }
   };
+  
+  $('.main-data-details-close').click(function() {
+    closeItemDetailedInfo(this);
+  });
+  
+  var closeItemDetailedInfo = function(obj) {
+      idOfItemToBeClosed = $(obj).attr('data');
+      var parents = $(obj).parents();
+      showOtherItems(parents[3]);
+      reverseAppliedCSSStyles(parents);
+    };
+    
+  var compressImage = function(obj) {
+    for(var i = 0, size = obj.length; i < size; i++)
+      if($(obj[i]).attr('data') == idOfItemToBeClosed) {
+        $(obj[i]).removeClass('enlarged-img');
+        $(obj[i]).addClass('small-img');
+      }
+    idOfItemToBeClosed = '';
+  };
+  
+  var idOfItemToBeClosed;
   
   var reverseAppliedCSSStyles = function(arr) {
     $(arr[0]).addClass('hidden');

@@ -43,7 +43,7 @@
   .popup-close.drink { right: -8px }
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 425px) {
   .popup-form.menu-items { max-width: 86%; min-width: 86%; padding: 10px }
   
   .menu.item-title { margin: 0 0 10% 1px }

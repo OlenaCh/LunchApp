@@ -34,7 +34,7 @@ ul.items { margin: 7px }
 
 /* RESPONSIVE */
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 425px) {
   .items.element-details,
   .items.element-admin-panel { padding: 3% 1% }
   
