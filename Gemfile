@@ -32,6 +32,9 @@ gem 'cloudinary'
 gem 'prawn'
 gem 'prawn-table'
 
+# Encryption
+gem 'figaro'
+
 # Documentation
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'railroady'
