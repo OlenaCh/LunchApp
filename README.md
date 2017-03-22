@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A portfolio piece which is currently running on olena-lunch-app.herokuapp.com
 
-Things you may want to cover:
+While the main part of app is working, 
+still some CSS glitches require fixing and that's what I do.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+If you wish to get admin credentials to see how it works inside, 
+please contact me olena.chernilevska@gmail.com

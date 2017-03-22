@@ -48,9 +48,9 @@
 /* RESPONSIVE */
 
 @media only screen and (max-width: 425px) {
-  .main { padding-bottom: 15% }
+  .main { padding-bottom: 20% }
   
-  .btn { width: 75px; height: 30px }
+  .btn { width: 75px; height: 30px; font-size: 15px; }
 }
 
 @media only screen and (width: 320px) {

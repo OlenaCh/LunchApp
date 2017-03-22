@@ -1,4 +1,4 @@
-class GenerateBill
+class BillGenerator
   def initialize order
     @order = order
     @pdf = Prawn::Document.new(margin: [40, 50, 40, 50], 

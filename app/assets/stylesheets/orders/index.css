@@ -44,7 +44,7 @@ span.order-item-details {
 
 /* RESPONSIVE */
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 425px) {
   .orders-table-wrapper { overflow-x: auto }
   
   .orders tr { font-size: 14px }

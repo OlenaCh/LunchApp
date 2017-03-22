@@ -4,7 +4,7 @@
 
 html, body, h1, p { margin: 0 }
 
-body, h1 { color: rgba(137, 200, 106, 1) }
+body, h1, .footer a { color: rgba(137, 200, 106, 1) }
 
 
 /* INDIVIDUAL STYLES */
@@ -38,8 +38,12 @@ a { text-decoration: none; cursor: pointer }
   text-align: right
 }
 
+.footer a { text-decoration: underline }
+
 .footer p { padding-right: 1% }
 
 @media only screen and (max-width: 425px) {
   h1 { font-size: 45px }
+  
+  .footer { font-size: 15px }
 }

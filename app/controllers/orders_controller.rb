@@ -48,7 +48,7 @@ class OrdersController < ApplicationController
   
   def generate_pdf 
     order = Order.find_by_id(params[:id])
-    pdf = GenerateBill.new(order).run
+    pdf = BillGenerator.new(order).run
     send_data pdf.render, filename: "bill_#{order.id}.pdf", type: 'application/pdf'
   end
   
