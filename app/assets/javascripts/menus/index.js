@@ -1,3 +1,5 @@
+//= require layouts/sidebar.js
+
 $(document).ready(function() {
   
   // ------------ CREATE ORDER PREVIEW -----------------------------------------
@@ -13,11 +15,7 @@ $(document).ready(function() {
   });
 
   $('.order-preview-form').click(function() {
-    $('.sidebar-icon-wrapper').css('display', 'block');
-    $('.sidebar-items').css('display', 'none');
-    $('.sidebar').css('width', '20%');
-    $('.content').show();
-    $('.sidebar-item-close').css('display', 'none');
+    closeMobileSidebar();
     $('.popup.order-preview').show();
   });
   
