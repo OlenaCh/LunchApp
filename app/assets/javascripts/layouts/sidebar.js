@@ -3,7 +3,7 @@ $(document).ready(function() {
     $('.sidebar-icon-wrapper').css('display', 'none');
     $('.sidebar-items').css('display', 'block');
     $('.sidebar').css('width', '100%');
-    $('.content').css('margin-left', '100%');
+    $('.content').hide();
     $('.sidebar-item-close').css('display', 'block');
   });
   
@@ -11,7 +11,7 @@ $(document).ready(function() {
     $('.sidebar-icon-wrapper').css('display', 'block');
     $('.sidebar-items').css('display', 'none');
     $('.sidebar').css('width', '20%');
-    $('.content').css('margin-left', '20%');
+    $('.content').show();
     $('.sidebar-item-close').css('display', 'none');
   });
   
