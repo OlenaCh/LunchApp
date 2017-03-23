@@ -74,5 +74,5 @@
 }
 
 @media only screen and (width: 2560px) {
-  .weekday-name { font-size: 25px; padding-left: 2% }
+  .weekday-name { font-size: 25px }
 }

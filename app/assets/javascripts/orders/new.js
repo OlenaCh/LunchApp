@@ -17,6 +17,6 @@ $(document).ready(function() {
       var ctr = parseInt($(this).next().children().first().val());
       total_sum += parseFloat($(this).html()) * ctr;                     
     });
-    return total_sum;
+    return Math.round(total_sum);
   };
 });
