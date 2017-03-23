@@ -1,4 +1,4 @@
-//= require layouts/sidebar.js
+//= require layouts/sidebar
 
 $(document).ready(function() {
   
