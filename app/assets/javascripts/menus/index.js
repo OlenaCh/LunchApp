@@ -15,7 +15,11 @@ $(document).ready(function() {
   });
 
   $('.order-preview-form').click(function() {
-    closeMobileSidebar();
+    $('.sidebar-icon-wrapper').css('display', 'block');
+    $('.sidebar-items').css('display', 'none');
+    $('.sidebar').css('width', '20%');
+    $('.content').show();
+    $('.sidebar-item-close').css('display', 'none');
     $('.popup.order-preview').show();
   });
   
